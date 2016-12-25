@@ -182,6 +182,9 @@ summary {
 body{
     font-size: 16px;
     font-family: 'Roboto', sans-serif;
+    max-width: 900px;
+    line-height: 1.42;
+    margin: 0 auto;
 }
 a{
     color: #2196F3;
