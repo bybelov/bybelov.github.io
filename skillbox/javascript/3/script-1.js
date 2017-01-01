@@ -68,4 +68,4 @@ function number(min,max){
      }
 }
 
-number(0,1000);
+number(1,1000);
