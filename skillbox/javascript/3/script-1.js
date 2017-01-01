@@ -1,56 +1,71 @@
-//'use strict';
+function number(min,max){
 
-// 1. Присваимваем переменной случайное число в заданных интервалах.
+    // Генерируем случайное число в пределах заданного интервала (от 0 до 1000)
+    // Результат записываем в переменную random
+    var random = Math.floor(Math.random() * (max - min)) + min;
 
+    console.log('Загаданое число: ' + random);
 
+    // Бесконечный цикл
+    while(true){
 
-//console.log(random);
+        // Если пользователь согласился "Поиграть ещё раз", то
+        // генерируем новое случайное число
+        if(startAgain){
 
-// 2. Запрашиваем у пользователя число.
-//var userNumber = prompt('Угадай число, которое я загадал.');
+            random = Math.floor(Math.random() * (max - min)) + min;
+            console.log('Загаданое число: ' + random);
 
-// 3. Вызываем функцию в параметр которой передаем значение числа,
-// которое ввел пользователь
+            // Выполняем только один раз в цикле,
+            // до тех пор, пока пользователь ещё раз не захочет поиграть.
+            startAgain = false;
 
-findNumber();
-
-// 4. Определяем функцию
-function findNumber(random, number){
-    var random = function(){
-        var max = 1000;
-        var min = 0;
-        var randomNumber = Math.floor(Math.random() * (max - min)) + min;
-        return randomNumber;
-    }
-    console.log(random());
-    var number = prompt('Угадай число, которое я загадал.') || number;
-    number = parseInt(number);
-    // 5. Обрабатываем получаемое от пользователя число
-    if(!number){
-        return;
-    }
-    else if(isNaN(number)){
-        alert('Введите число!');
-        findNumber(number);
-    }
-    else if(number == random){
-        alert('Правильно!');
-        var result = confirm('Хотите начать заново?');
-        if(result){
-
-            findNumber(random, number);
         }
-        else{
-            return;
-        }
-    }
-    else if(number > random){
-        alert('Меньше!');
-        findNumber(number);
-    }
-    else if(number < random){
-        alert('Больше!');
-        findNumber(number);
-    }
 
+        // Запрашиваем число у пользователя
+         var number = prompt('Угадай число, которое я загадал.');
+
+         if(number === null){
+             // Если Esc, то выходим из программы
+             console.log('Выход из программы');
+             break;
+         }
+         else if(isNaN(number)){
+             // Если ввели пробелы, пустые строки, строки, то сообщаем, что нужо ввести число
+             // и повторяем цикл
+             alert('Введите число!');
+         }
+         else{
+
+            // Обрабатываем строки с цифрами, отсекаем пробелы,
+            // преобразуем в целые числа.
+            number = parseInt(number);
+
+            if(number == random){
+                // Если угадали число
+                alert('Правильно!');
+
+                // Запрос на повтроную игру
+                var  startAgain = confirm('Хотите поиграть ещё раз?');
+
+                // Если получили отказ, то выходим из цикла,
+                // Прекращаем игру
+                if(!startAgain){
+                    break;
+                }
+             }
+             else if(number > random){
+                 alert('Меньше!');
+             }
+             else if(number < random){
+                 alert('Больше!');
+             }
+             else{
+                 // Если number = NaN, то выводим сообщение и повторяем запрос числа
+                  alert('Введите число!');
+             }
+         }
+     }
 }
+
+number(0,1000);
