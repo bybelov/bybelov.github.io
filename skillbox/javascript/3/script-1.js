@@ -4,7 +4,7 @@ function number(min,max){
     // Результат записываем в переменную random
     var random = Math.floor(Math.random() * (max - min)) + min;
 
-    console.log('Загаданое число: ' + random);
+    console.log('Загаданное число: ' + random);
 
     // Бесконечный цикл
     while(true){
@@ -14,7 +14,7 @@ function number(min,max){
         if(startAgain){
 
             random = Math.floor(Math.random() * (max - min)) + min;
-            console.log('Загаданое число: ' + random);
+            console.log('Загаданное число: ' + random);
 
             // Выполняем только один раз в цикле,
             // до тех пор, пока пользователь ещё раз не захочет поиграть.
