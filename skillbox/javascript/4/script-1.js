@@ -32,6 +32,41 @@ function getWeekDay(currentDate){
 }
 
 
+function getTime(currentDate, type){
+    var ending = {
+        hours: [
+            "час",
+            "часа",
+            "часов"
+        ],
+        minutes: [
+            "минута",
+            "минуты",
+            "минут"
+        ],
+        seconds: [
+            "секунда",
+            "секунды",
+            "секунд"
+        ]
+    };
+    switch (currentDate >= 20 ? currentDate % 10 : currentDate ){
+        case 1 :
+            result = ending[type][0];
+            break;
+        case 2 :
+        case 3 :
+        case 4 :
+            result = ending[type][1];
+            break;
+        default :
+            result = ending[type][2];
+    }
+    return result;
+}
+
+
+
 var currentDate = new Date();
 
 var objDate = {
@@ -39,11 +74,16 @@ var objDate = {
     month: getMonth(currentDate),
     year: currentDate.getFullYear(),
     weekDay: getWeekDay(currentDate),
-    hours: currentDate.getHours(),
-    minutes: currentDate.getMinutes(),
-    seconds: currentDate.getSeconds()
+    hours: currentDate.getHours() + ' ' + getTime(currentDate.getHours(), 'hours'),
+    minutes: currentDate.getMinutes() + ' ' + getTime(currentDate.getMinutes(), 'minutes')
 };
 
+function countSeconds(){
+    var currentDate = new Date();
+    var result = currentDate.getSeconds() + ' ' + getTime(currentDate.getSeconds(), 'seconds');
+    return result;
+    //return setInterval( currentDate, 1000);
+}
 
 // var curDate =
 //
@@ -51,3 +91,4 @@ var objDate = {
 // Сегодня 6 декабря 2016 года, вторник, 20 часов 6 минут 54 секунды
 
 console.log( objDate );
+console.log( countSeconds() );
