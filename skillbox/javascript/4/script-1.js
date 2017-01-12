@@ -1,4 +1,4 @@
-
+// Функция для получения текущего месяца из текущей даты
 function getMonth(currentDate){
     // Создаем массив с названиями месяцев на кирилице
     var arrMonth = [
@@ -17,6 +17,7 @@ function getMonth(currentDate){
     ];
     return arrMonth[currentDate.getMonth()];
 }
+// Функция для получения текущего дня недели из текущей даты
 function getWeekDay(currentDate){
     // Создаем массив с названиями дней недели на кирилице
     var arrWeekDay = [
@@ -30,8 +31,7 @@ function getWeekDay(currentDate){
     ];
     return arrWeekDay[currentDate.getDay()];
 }
-
-
+// Функция для получения правильного окончания времени (час, мин, сек) из текущей даты
 function getTime(currentDate, type){
     var ending = {
         hours: [
@@ -50,6 +50,7 @@ function getTime(currentDate, type){
             "секунд"
         ]
     };
+    // Производим проверку для определения правильного окончания слов
     switch (currentDate >= 20 ? currentDate % 10 : currentDate ){
         case 1 :
             result = ending[type][0];
@@ -64,24 +65,21 @@ function getTime(currentDate, type){
     }
     return result;
 }
-
-function countSeconds(){
+// Функция получения текущей полной даты и времени
+function getDateTime(){
     var currentDate = new Date();
     var objDate = {
         day: currentDate.getDate(),
         month: getMonth(currentDate),
-        year: currentDate.getFullYear(),
+        year: currentDate.getFullYear() + ' года, ',
         weekDay: getWeekDay(currentDate),
         hours: currentDate.getHours() + ' ' + getTime(currentDate.getHours(), 'hours'),
         minutes: currentDate.getMinutes() + ' ' + getTime(currentDate.getMinutes(), 'minutes'),
         seconds: currentDate.getSeconds() + ' ' + getTime(currentDate.getSeconds(), 'seconds')
     };
-
-    var result = 'Сегодня ' + objDate.day + ' ' + objDate.month + ' ' + objDate.year + ' года, ' + objDate.weekDay + ', ' + objDate.hours + ' ' + objDate.minutes + ' ' + objDate.seconds;
+    var result = 'Сегодня ' + objDate.day + ' ' + objDate.month + ' ' + objDate.year + objDate.weekDay + ', ' + objDate.hours + ' ' + objDate.minutes + ' ' + objDate.seconds;
     return result;
 }
-
-//
-// Сегодня 6 декабря 2016 года, вторник, 20 часов 6 минут 54 секунды
-
-setInterval( function(){ console.log(countSeconds()) }, 1000);
+// С помощью setInterval выводим в консоль через каждую секунду,
+// значение текущей даты и времени (т.е. повторяем ф. getDateTime каждую секунду)
+setInterval( function(){ console.log(getDateTime()) }, 1000);
