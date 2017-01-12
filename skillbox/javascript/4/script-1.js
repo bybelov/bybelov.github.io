@@ -65,30 +65,23 @@ function getTime(currentDate, type){
     return result;
 }
 
-
-
-var currentDate = new Date();
-
-var objDate = {
-    day: currentDate.getDate(),
-    month: getMonth(currentDate),
-    year: currentDate.getFullYear(),
-    weekDay: getWeekDay(currentDate),
-    hours: currentDate.getHours() + ' ' + getTime(currentDate.getHours(), 'hours'),
-    minutes: currentDate.getMinutes() + ' ' + getTime(currentDate.getMinutes(), 'minutes')
-};
-
 function countSeconds(){
     var currentDate = new Date();
-    var result = currentDate.getSeconds() + ' ' + getTime(currentDate.getSeconds(), 'seconds');
+    var objDate = {
+        day: currentDate.getDate(),
+        month: getMonth(currentDate),
+        year: currentDate.getFullYear(),
+        weekDay: getWeekDay(currentDate),
+        hours: currentDate.getHours() + ' ' + getTime(currentDate.getHours(), 'hours'),
+        minutes: currentDate.getMinutes() + ' ' + getTime(currentDate.getMinutes(), 'minutes'),
+        seconds: currentDate.getSeconds() + ' ' + getTime(currentDate.getSeconds(), 'seconds')
+    };
+
+    var result = 'Сегодня ' + objDate.day + ' ' + objDate.month + ' ' + objDate.year + ' года, ' + objDate.weekDay + ', ' + objDate.hours + ' ' + objDate.minutes + ' ' + objDate.seconds;
     return result;
-    //return setInterval( currentDate, 1000);
 }
 
-// var curDate =
-//
 //
 // Сегодня 6 декабря 2016 года, вторник, 20 часов 6 минут 54 секунды
 
-console.log( objDate );
-console.log( countSeconds() );
+setInterval( function(){ console.log(countSeconds()) }, 1000);
