@@ -67,6 +67,7 @@ function getTime(currentDate, type){
 }
 // Функция получения текущей полной даты и времени
 function getDateTime(){
+    // получаем значение текущей даты и времени
     var currentDate = new Date();
     var objDate = {
         day: currentDate.getDate(),
@@ -77,8 +78,7 @@ function getDateTime(){
         minutes: currentDate.getMinutes() + ' ' + getTime(currentDate.getMinutes(), 'minutes'),
         seconds: currentDate.getSeconds() + ' ' + getTime(currentDate.getSeconds(), 'seconds')
     };
-    var result = 'Сегодня ' + objDate.day + ' ' + objDate.month + ' ' + objDate.year + objDate.weekDay + ', ' + objDate.hours + ' ' + objDate.minutes + ' ' + objDate.seconds;
-    return result;
+    return 'Сегодня ' + objDate.day + ' ' + objDate.month + ' ' + objDate.year + objDate.weekDay + ', ' + objDate.hours + ' ' + objDate.minutes + ' ' + objDate.seconds;
 }
 // С помощью setInterval выводим в консоль через каждую секунду,
 // значение текущей даты и времени (т.е. повторяем ф. getDateTime каждую секунду)
