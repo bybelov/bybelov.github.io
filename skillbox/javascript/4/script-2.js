@@ -1,5 +1,5 @@
 // Массив пользователей со свойствами
-var arrUser = [
+var users = [
     {
         name: 'Игорь',
         login: 'belov',
@@ -28,7 +28,7 @@ var arrUser = [
 ];
 
 // Фунция авторизации пользователя, с входным параметром
-function authorize(arrUser){
+function authorize(users){
     // Бесконечный цикл запроса Логина, если он не верен,
     // или до тех пор, пока не нажата клавиша Отмена
     while(true){
@@ -36,13 +36,13 @@ function authorize(arrUser){
         var userLogin = prompt('Введите свой Логин');
         // Если пользователь заполнил поле
         if(userLogin != null){
-            // Цикл перебора элементов массива arrUser
-            for(var i = 0; i < arrUser.length; i++){
-                // Цикл перебора свойств объекта, каждого из элементов массива arrUser
-                for (var prop in arrUser[i]){
+            // Цикл перебора элементов массива users
+            for(var i = 0; i < users.length; i++){
+                // Цикл перебора свойств объекта, каждого из элементов массива users
+                for (var prop in users[i]){
                     // Если введенный логин совпадает с найденным значением свойства login
                     // какого-либо объекта массива
-                    if(userLogin == arrUser[i].login){
+                    if(userLogin == users[i].login){
                         // Бесконечный цикл проверки пароля, для найденного пользователя
                         while(true){
                             // Запрашиваем пароль у пользователя
@@ -51,9 +51,9 @@ function authorize(arrUser){
                             if(userPass != null){
                                 // Если введенный пароль совпадает со значением у свойства password объекта
                                 // пользователя с уже найденым логином
-                                if( userPass == arrUser[i].password){
+                                if( userPass == users[i].password){
                                     // то выводим приветственное сообщение
-                                    alert('Привет, ' + arrUser[i].name + '!');
+                                    alert('Привет, ' + users[i].name + '!');
                                     // выходим из функции, и передаем true - авторизован
                                     return true;
                                 }
@@ -84,4 +84,4 @@ function authorize(arrUser){
     }
 }
 // Передаем функции массив пользователей, по которому искать совпадения
-authorize(arrUser);
+authorize(users);
