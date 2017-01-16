@@ -83,6 +83,8 @@ function getDateTime(){
 // Создаем параграф
 var paragraph = document.createElement('p');
 setInterval( function(){
+// Если var paragraph = document.createElement('p'); вставим внутри setInterval,
+// То на странице будут плодится параграфы, отличающиеся на 1 секунду
   // Вставляем в параграф значение даты и времени
 	paragraph.innerHTML = getDateTime();
   // Добавляем параграф на страницу внутрь тега body
