@@ -5,42 +5,62 @@
     var min = 1;
     var max = 1000;
     var random = Math.floor(Math.random() * (max - min)) + min;
-    console.log('Загаданное число: ' + random);
 
-    while(true){
-        var num = 1;
-        window.start = function (){
+    //console.log('Загаданное число: ' + random);
+    var counter = 1;
 
-            var number = prompt('Угадай число, которое я загадал.');
-            if(number === null){
-                break;
-            }
-            else if(isNaN(number)){
-                alert('Введите число!');
-            }
-            else{
-                number = parseInt(number);
-                if(number == random){
-                    alert('Правильно!');
-                    //var  startAgain = confirm('Хотите поиграть ещё раз?');
-                    // if(!startAgain){
-                    //     break;
-                    // }
+
+    return window.start = function inner(){
+
+        while(true){
+            console.log('Попытка №' + counter);
+            if(counter <= 10){
+                console.log(random);
+                var number = prompt('Угадай число, которое я загадал.');
+                if(number === null){
+                    console.log('Выход из программы');
+                    break;
                 }
-                else if(number > random){
-                    alert('Меньше!');
-                }
-                else if(number < random){
-                    alert('Больше!');
-                }
-                else{
+                else if(isNaN(number)){
                     alert('Введите число!');
                 }
-            }
+                else{
+                    number = parseInt(number);
 
-        };
+                    if(number == random){
+
+                        alert('Правильно!');
+
+                        var  startAgain = confirm('Хотите поиграть ещё раз?');
+                        if(!startAgain){
+                            break;
+                        }
+                        else{
+                            random = Math.floor(Math.random() * (max - min)) + min;
+                            counter = 0;
+                        }
+
+                    }
+                    else if(number > random){
+                        alert('Меньше!');
+                    }
+                    else if(number < random){
+                        alert('Больше!');
+                    }
+                    else{
+                        // Если number = NaN, то выводим сообщение и повторяем запрос числа
+                        alert('Введите число!');
+                    }
+                }
+            }
+            else{
+                return alert('Попытки закончились');
+            }
+            counter++;
+        }
 
     }
+
     //
     // window.start = function(){
     //
