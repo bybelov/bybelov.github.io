@@ -12,6 +12,16 @@
     // Устанавливаем начальное значение для подсчета попыток угадывания числа
     var counter = 1;
 
+    var button = document.getElementById('button');
+    button.onclick = function(){
+        // Сбрасываем случаное число, и генерируем новое
+        random = getRandomNumber(1,1000);
+        // Сбрасываем счетчик попыток.
+        counter = 1;
+        // Запускаем программу
+        start();
+    };
+
     return window.start = function (){
 
         while(true){
@@ -40,6 +50,7 @@
 
                         if(!startAgain){
                             alert('Спасибо за игру!');
+                            console.log('Выход.');
                             break;
                         }
                         else{
@@ -61,12 +72,21 @@
                 }
             }
             else{
-                return alert('Попытки закончились');
+
+                var error = document.createElement('div');
+                error.className = "alert";
+                error.innerHTML = "Попытки закончились";
+                document.body.appendChild(error);
+                setTimeout(function() {
+                    error.parentNode.removeChild(error);
+                }, 2000);
+
+                console.log('Выход. Попытки закончились.');
+                break;
             }
             // Увеличиваем счетчик попыток на 1, если число не угадано
             counter++;
         }
-
     }
 
 })()
