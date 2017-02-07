@@ -1,4 +1,4 @@
-'strict mode';
+'use strict';
 
 (function (){
 
@@ -9,13 +9,22 @@
         this.regDate = new Date();
     }
 
-    function UserList(User){
+    function UserList(){
         var users = [];
-        this.add = function(){
-            this.users = users.push(User);
+        this.add = function(user){
+            users.push(user);
         }
         this.getAllUsers = function(){
-            return this.users;
+            var div = document.getElementById('user_list');
+            var ol = document.createElement('ol');
+            div.appendChild(ol);
+
+            for (var i = 0; i < users.length; i++){
+                var li = document.createElement('li');
+                li.innerHTML = users[i].firstName + ' ' + users[i].lastName + ' - ' + users[i].regDate  + '\n';
+                ol.appendChild(li);
+                //console.log( users[i].firstName + ' ' + users[i].lastName + ' ' + users[i].regDate  + '\n' );
+            }
         }
     }
 
@@ -25,20 +34,15 @@
     };
 
     return window.registration = function(){
+        var userList = new UserList();
         while(true){
             var user = prompt('Введите Имя и Фамилию');
             if(user === null){
-                console.log('Выход из программы');
-
-                console.log( addUser.getAllUsers() );
-                break;
+                userList.getAllUsers();
+                return;
             }
-            var createUser = new User(user);
-            console.log(createUser);
-            var userList = new UserList(createUser);
-            userList.add();
-            console.log(userList);
-
+            var user = new User(user);
+            userList.add(user);
         }
     }
 
