@@ -23,7 +23,7 @@
                 for (var i = 0; i < users.length; i++){
 
                     var li = document.createElement('li');
-                    li.innerHTML = users[i].firstName + '1 ' + users[i].lastName + '2 - ' + users[i].regDate;
+                    li.innerHTML = users[i].firstName + ' ' + users[i].lastName + ' - ' + users[i].regDate;
                     ol.appendChild(li);
                     //console.log( users[i].firstName + ' ' + users[i].lastName + ' ' + users[i].regDate);
                 }
@@ -53,8 +53,11 @@
 				var arr = user.split(' ');
 				
 				// Если в массиве больше трех элементов (трех слов)
-				if(arr.length > 3){
-					alert('Введите только Имя и Фамилию, через пробел')
+				if(arr.length > 2){
+					alert('Введите только Имя и Фамилию, через пробел');
+				}
+		    		else if(arr.length == 1){
+					alert('Не введена фамилия. Повторите ввод');
 				}
 				else{
 					// Проверяем на принадлежность к числу Имени и Фамилии
