@@ -2,10 +2,9 @@
 
 (function (){
 
-    function User(user){
-        var arr = user.split(' ');
-        this.firstName = arr[0];
-        this.lastName = arr[1];
+    function User(firstName,lastName){
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.regDate = new Date();
     }
 
@@ -24,7 +23,7 @@
                 for (var i = 0; i < users.length; i++){
 
                     var li = document.createElement('li');
-                    li.innerHTML = users[i].firstName + ' ' + users[i].lastName + ' - ' + users[i].regDate;
+                    li.innerHTML = users[i].firstName + '1 ' + users[i].lastName + '2 - ' + users[i].regDate;
                     ol.appendChild(li);
                     //console.log( users[i].firstName + ' ' + users[i].lastName + ' ' + users[i].regDate);
                 }
@@ -41,17 +40,36 @@
         var userList = new UserList();
         while(true){
             var user = prompt('Введите Имя и Фамилию');
-            // Если нажали ESQ
+            // Если нажали ESC
             if(user === null){
                 // Выводим список пользователей
                 userList.getAllUsers();
                 return;
             }
-            // Если поле не пустое, то заводим нового пользователя
+            // Если поле не пустое
             else if (user != ''){
-                var user = new User(user);
-                userList.add(user);
+
+				// Разбиваем полученную строку на массив
+				var arr = user.split(' ');
+				
+				// Если в массиве больше трех элементов (трех слов)
+				if(arr.length > 3){
+					alert('Введите только Имя и Фамилию, через пробел')
+				}
+				else{
+					// Проверяем на принадлежность к числу Имени и Фамилии
+					if(isNaN(arr[0]) && isNaN(arr[1])){
+						var user = new User(arr[0],arr[1]);
+						userList.add(user);
+					}
+					else{
+						alert('Не корректное Имя или Фамилия. Повторите ввод.');
+					}
+				}
             }
+			else{
+				alert('Введите корректные данные.')
+			}
         }
     }
 
