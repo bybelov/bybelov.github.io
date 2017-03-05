@@ -33,12 +33,15 @@
         Vehicle.apply(this, arguments);
         // Устанавливаем своё свойство для конструктора Plane
         this.speed = 850; // Средняя скорость пассажирского самолета
+        this.getSpeed = function(){
+            alert('Средняя скорость нашего самолета ' + this.speed + ' км в час');
+        }
     }
 
     function Ship(distance,speed){
 		Vehicle.apply(this, arguments);
         this.speed = 20; // Средняя скорость пассажирского речного судна
-        this.getSpeed = function(speed){
+        this.getSpeed = function(){
             alert('Средняя скорость нашего корабля ' + this.speed + ' км в час');
         }
         this.changeDistance = function(distance){
@@ -65,6 +68,7 @@
                 break;
             case 'plane':
                 var plane = new Plane(distance);
+                plane.getSpeed();
                 alert(plane.getTimeWay());
                 break;
             case 'ship':
