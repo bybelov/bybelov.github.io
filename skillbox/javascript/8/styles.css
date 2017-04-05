@@ -1,0 +1,48 @@
+body{
+    position: relative;
+    font-family: arial;
+    font-size: 16px;
+    line-height: 1.42;
+}
+h1{
+    margin-bottom: 2em;
+}
+h2{
+    margin-bottom: 1em;
+}
+.container{
+    max-width: 991px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+ul li{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+ul li a{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    padding: 12px 30px;
+    background: #0087e7;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all ease .25s;
+}
+ul li a:hover{
+    background: #29a6ff;
+}
+ul li a:active{
+    background: #0087e7;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.3) inset;
+}
