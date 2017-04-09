@@ -1,24 +1,12 @@
 (function (){
-
-    function getUserCode(){
-
+    return window.start = function(){
         'use strict';
-
-        var userCode = prompt('Введите JS код, например: alert("Привет")');
-
-        eval(userCode);
-
+        try{
+            var userCode = document.getElementById('textarea').value;
+            eval(userCode);
+        }
+        catch(err){
+            alert('Возникла ошибка: ' + err);
+        }
     }
-
-    try{
-
-        getUserCode();
-
-    }
-    catch(err){
-
-        alert('Возникла ошибка: ' + err);
-
-    }
-
 })();
