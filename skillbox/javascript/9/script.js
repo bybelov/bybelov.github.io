@@ -31,7 +31,7 @@
                 taskListWrapper.removeChild(error);
             }
             // Создаем регулярное выражение, Название новой задачи
-            var reg = new RegExp(inputText.value);
+            var reg = new RegExp('^' + inputText.value + '$');
             var validDublicates = false;
             // Пробегаем по имеющимся задачам в списке (по LI)
             for (var i = 0; i < taskListElements.length; i++){
