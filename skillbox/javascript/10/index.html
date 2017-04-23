@@ -1,38 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Тема 9</title>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic" rel="stylesheet">
-        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
 
-        <div class="container">
-            <h1>Тема 10. Текстовый редактор</h1>
+<head>
+    <meta charset="utf-8">
+    <title>Тема 10</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-            <div class="content js-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis eaque vel distinctio molestiae <b>voluptatum</b> repudiandae fugiat commodi laboriosam velit id animi, consequuntur incidunt, odit quae, voluptates sed. Consectetur, amet, recusandae.</p>
-                <h4>Lorem</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates debitis perspiciatis enim, voluptas consectetur non quia, at sequi molestias laborum laudantium soluta minus omnis ipsa rem necessitatibus! Quisquam, non, maxime.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat rerum sit iure, perferendis tempore <em>voluptatibus</em> dolor minus? Minus nisi architecto, modi dicta, deleniti, iusto blanditiis velit esse doloribus veniam totam.</p>
+<body>
+
+    <div class="container">
+        <h1>Тема 10. Текстовый редактор</h1>
+
+        <div class="content js-content">
+            <div>
+                <p><strong>Ваша задача после просмотра уроков:</strong></p>
+                <p>Разработайте простой текстовый редактор с возможностью сохранения контента в LocalStorage.</p>
+                <p><strong>Страница должна состоять из:</strong></p>
+                <ol>
+                    <li>Блока с текстом</li>
+                    <li>Кнопки «Редактировать»</li>
+                    <li>Кнопок «Сохранить» и «Отмена» (по умолчанию неактивных — disabled)</li>
+                </ol>
+                <p><strong>Механика работы страницы:</strong></p>
+                <ol>
+                    <li>При первой загрузке страницы в блоке с текстом отображается текст по умолчанию (любой)</li>
+                    <li>При нажатии на кнопку «Редактировать» блок с текстом становится редактируемым (contenteditable=<wbr style="background-color: initial;">true), кнопки «Сохранить» и «Отмена» становятся активными, а сама кнопка «Редактировать» — неактивной.</li>
+                    <li>При нажатии на кнопку «Сохранить» содержимое блока с текстом сохраняется в LocalStorage, а режим редактирования отключается (кнопки возвращаются в исходное состояние)</li>
+                    <li>При нажатии на кнопку «Отмена» содержимое блока с текстом заменяется на последний сохраненный вариант изLocalStorage, режим редактирования отключается</li>
+                    <li>При следующих перезагрузках страницы содержимое блока с текстом автоматически подтягивается из LocalStorage (последний сохраненный вариант)</li>
+                </ol>
             </div>
-            <div class="edit-block">
-                <div class="edit-block__right js-btn-block">
-                    <select name="" id="">
-                        <option value="">21.04.2017, 21:03:09</option>
-                        <option value="">21.04.2017, 21:03:09</option>
-                    </select>
-                    <a href="#" class="btn btn-primary js-btn-save" disabled="disabled"><i class="ion-checkmark-round"></i>Сохранить</a>
-                    <a href="#" class="btn btn-danger js-btn-cancel" disabled="disabled"><i class="ion-close-round"></i>Отмена</a>
-                </div>
-                <a href="#" class="btn js-btn-edit"><i class="ion-edit"></i>Редактировать</a>
+        </div>
+        <div class="edit-block">
+            <div class="edit-block__right js-btn-block">
+                <a href="#" class="btn btn-primary js-btn-save" disabled="disabled"><i class="ion-checkmark-round"></i>Сохранить</a>
+                <a href="#" class="btn btn-danger js-btn-cancel" disabled="disabled"><i class="ion-close-round"></i>Отмена</a>
             </div>
-
+            <a href="#" class="btn js-btn-edit"><i class="ion-edit"></i>Редактировать</a>
         </div>
 
-        <script src="script.js" defer></script>
+    </div>
 
-    </body>
+    <script src="script.js" defer></script>
+
+</body>
+
 </html>

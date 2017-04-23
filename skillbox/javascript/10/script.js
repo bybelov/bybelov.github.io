@@ -5,37 +5,26 @@
     var buttonEdit = document.querySelector('.js-btn-edit');
     var buttonSave = document.querySelector('.js-btn-save');
     var buttonCancel = document.querySelector('.js-btn-cancel');
-    var story = [];
+    var getHistory = [];
 
-    // Если в локальном хранилище есть запись, то загружаем текст из неё на страницу
+    // Если в локальном хранилище есть запись
     if(localStorage.getItem('textStorage') != null){
-        var getLastTextFromHistory = JSON.parse(localStorage.getItem("textStorage"));
-        contentArea.innerHTML = getLastTextFromHistory;
-
-
-         var optionArray = [];
-         for(i = 0; i <= getLastTextFromHistory.length; i++){
-             optionArray[i] = getLastTextFromHistory
-         }
-
-
-
-         var select = document.createElement('select');
-         var option = document.createElement('option')
-         buttonBlock.appendChild(select);
-         select.appendChild(option);
+        // то создаем селект с историей изменений
+        createSelect();
+        // слушаем селект
+        listenerSelect();
+        // Вставляем контент с последними изменения
+        getLastChange();
     }
 
     // Слушаем события клик на кнопку Редактировать
     buttonEdit.addEventListener('click', function(e){
         e.preventDefault();
         if(!contentArea.hasAttribute('contenteditable')){
-
             this.setAttribute('disabled','disabled');
             contentArea.setAttribute('contenteditable','');
             buttonCancel.removeAttribute('disabled');
             buttonSave.removeAttribute('disabled');
-
         }
     });
 
@@ -49,19 +38,16 @@
             buttonCancel.setAttribute('disabled','disabled');
             buttonEdit.removeAttribute('disabled');
 
-            //contentAreaText = contentArea.innerHTML;
-            //localStorage.setItem('textStorage', contentAreaText);
-
-
-            story.push({
+            // Добавляем в массив getHistory объект со свойствами даты и контента
+            getHistory.push({
                 date : getDate(),
                 content :  contentArea.innerHTML
             });
-
-            localStorage.setItem("textStorage", JSON.stringify(story));
-
-            console.log(story);
-
+            // Сохраняем данный массив в локальное хранилище
+            localStorage.setItem("textStorage", JSON.stringify(getHistory));
+            // Создаем select с историей изменений, с учетом только что отредактированной информацией
+            createSelect();
+            listenerSelect();
         }
     });
     // Слушаем события клик на кнопку Отмена
@@ -72,17 +58,70 @@
             buttonSave.setAttribute('disabled','disabled');
             buttonEdit.removeAttribute('disabled');
             contentArea.removeAttribute('contenteditable');
+            getLastChange();
 
-            var getLastTextFromHistory = JSON.parse(localStorage.getItem("textStorage"));
-
-            contentArea.innerHTML = localStorage.getItem('getLastTextFromHistory');
         }
     });
 
 
+    // Функция создания select с историей изменений
+    function createSelect(){
+        // Получаем историю сохранений из локального хранилища
+        // Преобразуем строку в массив с объектами
+        getHistory = JSON.parse(localStorage.getItem("textStorage"));
+
+        // Если select уже есть на странице, то удаляем его
+        if(document.querySelector('.js-select')){
+            buttonBlock.removeChild(document.querySelector('.js-select'));
+        }
+        // Создаем select с датами редактирования текста
+        var select = document.createElement('select');
+        select.className = 'js-select';
+        // Обходим в цикле массив с историей изменений
+        // Добавляем в select options со значениеми дат
+        for(i = 0; i < getHistory.length; i++){
+
+            var selected;
+            // Последнему option добавляем selected
+            if(i == (getHistory.length - 1)){
+                selected = true;
+            }
+            // Для отображения даты в привычном формате преобразуем Дату
+            var optionDate = new Date( getHistory[i]['date'] );
+            // Создаем option
+            var option = new Option( optionDate.toLocaleString(), i, selected, selected);
+            // Добавляем каждый option в select
+            select.appendChild(option);
+        }
+        // Добавляем select с options в блок .js-btn-block
+        buttonBlock.appendChild(select);
+    }
+
+    // Функция для слушания за изменениями селекта
+    function listenerSelect(){
+        var getSelect = document.querySelector('.js-select');
+        // начинаем слушать изменения селекта
+        getSelect.addEventListener('change', function(e){
+            // Получаем и парсим из локального хранилиша историю изменений
+            var getHistory = JSON.parse(localStorage.getItem("textStorage"));
+            contentArea.innerHTML = getHistory[e.target.value]['content'];
+
+        });
+    }
+
+    // Получение контента последнего изменения
+    function getLastChange(){
+        // Получаем и парсим из локального хранилиша историю изменений
+        var getHistory = JSON.parse(localStorage.getItem("textStorage"));
+        // Последний элемент в массиве и будет последним сохраненным вариантом изменения контента
+        var getLastDateContent = getHistory[ getHistory.length - 1 ]['content'];
+        // При нажатии на кнопку Отмена вставляем в контентную область последнюю измененную версию
+        contentArea.innerHTML = getLastDateContent;
+    }
+
+    // Получить время
     function getDate(){
         return Date.now();
     }
-
 
 })();
