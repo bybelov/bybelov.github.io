@@ -5,6 +5,7 @@
     var buttonEdit = document.querySelector('.js-btn-edit');
     var buttonSave = document.querySelector('.js-btn-save');
     var buttonCancel = document.querySelector('.js-btn-cancel');
+    var selectColor = document.querySelector('.js-color');
     var getHistory = [];
 
     // Если в локальном хранилище есть запись
@@ -16,6 +17,39 @@
         // Вставляем контент с последними изменения
         getLastChange();
     }
+
+
+
+    var getSelectedText = function(colorValue) {
+        var text = '';
+        if (window.getSelection) {
+            text = window.getSelection().toString();
+        } else if (document.selection) {
+            text = document.selection.createRange().text;
+        }
+        return '<span style="color:'+ colorValue +'">' + text + '</span>';
+    }
+
+    // contentArea.addEventListener('mouseup', function(ev){
+    //     var text = getSelectedText();
+    //     if (text != ''){
+    //         console.log(text);
+    //     }
+    // });
+    // Функция для слушания за изменениями селекта выбора цвета
+
+    // начинаем слушать изменения селекта
+    selectColor.addEventListener('change', function(e){
+        var colorValue = e.target.value;
+        var text = getSelectedText(colorValue);
+        if(text != ''){
+            console.log(text);
+        }
+
+        //text.style.color = colorValue;
+    });
+
+
 
     // Слушаем события клик на кнопку Редактировать
     buttonEdit.addEventListener('click', function(e){
