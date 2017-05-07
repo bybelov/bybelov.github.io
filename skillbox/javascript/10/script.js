@@ -18,38 +18,43 @@
         getLastChange();
     }
 
-
-
-    var getSelectedText = function(colorValue) {
-        var text = '';
-        if (window.getSelection) {
-            text = window.getSelection().toString();
-        } else if (document.selection) {
-            text = document.selection.createRange().text;
+    var changeSelectedText = function(colorValue) {
+        // Выполняем, только если передано значение цвета
+        if (colorValue){
+            var selection = window.getSelection();
+            if (selection.rangeCount) {
+                // Получаем объект выделенного диапазона
+                var range = selection.getRangeAt(0);
+                // Создаем новый элемент
+                var newTextNode = document.createElement('span');
+                // Применям цвет для него
+                newTextNode.style.color = colorValue;
+                // И вставляем в созданный элемент текст, который был выделен
+                newTextNode.appendChild(document.createTextNode(range));
+                // удаляем текст выделения
+                range.deleteContents();
+                // Вставляем на его место тот же текст, но в теге SPAN с выбранным цветом из select
+                range.insertNode(newTextNode);
+            }
         }
-        return '<span style="color:'+ colorValue +'">' + text + '</span>';
     }
 
-    // contentArea.addEventListener('mouseup', function(ev){
-    //     var text = getSelectedText();
-    //     if (text != ''){
-    //         console.log(text);
-    //     }
-    // });
-    // Функция для слушания за изменениями селекта выбора цвета
-
-    // начинаем слушать изменения селекта
+    // Начинаем слушать изменения селекта
     selectColor.addEventListener('change', function(e){
+        // Получаем value с HEX кодом цвета
         var colorValue = e.target.value;
-        var text = getSelectedText(colorValue);
-        if(text != ''){
-            console.log(text);
+        // Если есть выделенный текст
+        if(window.getSelection().rangeCount){
+            // Вызываем функцию изменения цвета у выделенного текста
+            changeSelectedText(colorValue);
         }
+        else{
+            alert('Текст не выделен. Сначала выделите текст, у которого нужно изменить цвет');
+        }
+        // Возвращаем select на дефолтное значение
+        this.selectedIndex = 0;
 
-        //text.style.color = colorValue;
     });
-
-
 
     // Слушаем события клик на кнопку Редактировать
     buttonEdit.addEventListener('click', function(e){
@@ -84,6 +89,7 @@
             listenerSelect();
         }
     });
+
     // Слушаем события клик на кнопку Отмена
     buttonCancel.addEventListener('click', function(e){
         e.preventDefault();
@@ -96,7 +102,6 @@
 
         }
     });
-
 
     // Функция создания select с историей изменений
     function createSelect(){
