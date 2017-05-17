@@ -20,12 +20,6 @@
         req.addEventListener('load', function(){
             // Преобразуем полученный JSON в js объект
             var response = JSON.parse( req.response );
-            var translateResult = document.querySelector('.translator-result');
-            // 200 — это ОК, остальные — ошибка или что-то другое
-            if (response.code !== 200) {
-                translateResult.innerHTML = 'Произошла ошибка при получении ответа от сервера:\n\n' + response.message;
-                return;
-            }
             // Находим все селекты с классом js-select (их 2 на странице)
             var select = document.querySelectorAll('.js-select');
             // Пробегаемся по каждому селекту
@@ -49,6 +43,7 @@
 
     btnTranslate.addEventListener('click', function(ev){
 
+        ev.preventDefault();
         // Получаем код языка на котором написан текст
         var translatorFrom = document.getElementById('translator_from').value;
         // Получаем код языка на который переводим
@@ -70,7 +65,7 @@
 
         // Назначаем обработчик события load
         req.addEventListener('load', function() {
-            console.log(req.response); // отображаем в консоли текст ответа сервера
+
             var response = JSON.parse(req.response); // парсим его из JSON-строки в JavaScript-объект
 
             // Проверяем статус-код, который прислал сервер
