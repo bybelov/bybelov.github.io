@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Тема 11. Переводчик</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Тема 11. Переводчик</h1>
+
+        <div class="translate"></div>
+
+        <div class="translator">
+            <div class="translator__inner">
+                <div class="translator-item">
+                    <div class="translator-toolbar">
+                        <select name="" id="translator_from" class="js-select">
+                        </select>
+                    </div>
+                    <textarea name="name" rows="8" cols="80" class="textarea"></textarea>
+                </div>
+                <div class="translator-item">
+                    <div class="translator-toolbar">
+                        <select name="" id="translator_to" class="js-select">
+                        </select>
+                    </div>
+                    <div class="translator-result"></div>
+                </div>
+                <a href="#" class="translator-submit btn btn-primary" title="Перевести"><i class="ion-android-arrow-forward"></i></a>
+            </div>
+            <div class="copyright">
+                <a href="http://translate.yandex.ru/">«Переведено сервисом «Яндекс.Переводчик»</a>.
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js" defer></script>
+
+</body>
+
+</html>
