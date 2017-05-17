@@ -20,6 +20,7 @@
         req.addEventListener('load', function(){
             // Преобразуем полученный JSON в js объект
             var response = JSON.parse( req.response );
+            var translateResult = document.querySelector('.translator-result');
             // 200 — это ОК, остальные — ошибка или что-то другое
             if (response.code !== 200) {
                 translateResult.innerHTML = 'Произошла ошибка при получении ответа от сервера:\n\n' + response.message;
