@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.4237;
+    margin-bottom: 40px;
+}
+h1{
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    text-align: center;
+    font-weight: 300;
+}
+p{
+    margin: 0 0 10px 0;
+}
+.container{
+    width: 1200px;
+    max-width: 75em; /* 1200 */
+    margin-left: auto;
+    margin-right: auto;
+}
+.football {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.alert{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -100px;
+    margin-top: -25px;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.5);
+    text-align: center;
+    background-color: #dd0000;
+}
+.field {
+    width: 100%;
+    border-radius: 10px;
+}
+.field img{
+    display: block;
+}
+.ball {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
