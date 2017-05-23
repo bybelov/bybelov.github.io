@@ -7,7 +7,7 @@
 
         $('.ball').on('click', function () {
 
-            var gatesLength = 90; // Длина футбольный ворот
+            var gatesLength = 96; // Длина футбольный ворот
             var ballSize = 50; // Размер мяча
             var max = 644; // Высота поля
             var min = 0;
@@ -19,14 +19,24 @@
                 $('.alert').remove();
             }
 
+            // Возвращает true если забит гол
+            var isGoal = function(){
+                if(random > (max - gatesLength)/2 && random < ((max + gatesLength)/2 - ballSize)){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+
             $(this).animate({
                 left: (position.left == 0 ? '100%' : 0),
                 top: random,
                 'margin-left': (position.left == 0 ? -ballSize : 0) // корректируем положение мяча, чтобы он не вылетал за границы поля
-            }, 300);
+            }, 1500, (isGoal() ? 'easeOutQuart' : 'easeOutBounce') ); // Если гол, то используем easing = easeOutQuart, иначе easeOutBounce
 
-            // Определяем границы, через которые если пролетит мяч, то будет засчитан гол
-            if(random > ((max - gatesLength)/2) && random < ((max + gatesLength)/2 - ballSize)){
+            // Если забит гол, то
+            if(isGoal()){
                 $('.football').append('<div class="alert">Гооол!</div>');
                 goals++; // Увеличиваем счетчик голов
                 $('.goals').html('Голов: '+ goals); // Выводим голы на табло
