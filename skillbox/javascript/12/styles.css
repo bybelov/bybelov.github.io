@@ -60,3 +60,25 @@ p{
     height: 50px;
     cursor: pointer;
 }
+.hide{
+    display: none;
+}
+.scoreboard{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -100px;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+    font-weight: bold;
+    background-color: rgba(0,0,0,.2);
+    border-radius: 4px;
+    margin-top: 10px;
+}
+.scoreboard span{
+    display: block;
+}
