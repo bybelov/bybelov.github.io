@@ -60,6 +60,9 @@ p{
     height: 50px;
     cursor: pointer;
 }
+.text-center{
+    text-align: center;
+}
 .hide{
     display: none;
 }
