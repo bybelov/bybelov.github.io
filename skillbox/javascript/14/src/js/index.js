@@ -1,3 +1,4 @@
+import '../css/build.css';
 import Button from './button.js';
 
 const btn = new Button('.button');

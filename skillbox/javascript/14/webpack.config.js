@@ -1,4 +1,5 @@
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: './src/js/index.js',
@@ -15,20 +16,20 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-          test: /\.css$/,
-          exclude: /node_modules/,
-          use: ExtractTextPlugin.extract(
-            {
-              loader: "style-loader",
-              use: "css-loader"
-            }
-          )
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
       }
     ]
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'build.css',
+      filename:  (getPath) => {
+        return getPath('../css/build.css').replace('css/js', 'css'); // Помещаем общий файл стилей в папку build/css/ под именем build.css
+      },
       allChunks: true
     })
   ]
