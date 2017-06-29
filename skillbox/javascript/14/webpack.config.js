@@ -2,10 +2,14 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: './src/js/index.js',
+  context: path.resolve(__dirname, './src'),
+  entry: {
+    build: './js/index.js'
+  },
   output: {
     path: path.resolve(__dirname, 'build/js'),
-    filename: 'build.js'
+    filename: '[name].js',
+    publicPath: '/build'
   },
 
   module:{
@@ -22,16 +26,22 @@ module.exports = {
           fallback: "style-loader",
           use: "css-loader"
         })
+      },
+      {
+        test: /\.html$/,
+        use: "file-loader?name=[path][name].html"
       }
     ]
   },
   plugins: [
-    new ExtractTextPlugin({
-      filename:  (getPath) => {
-        return getPath('../css/build.css').replace('css/js', 'css'); // Помещаем общий файл стилей в папку build/css/ под именем build.css
-      },
-      allChunks: true
-    })
+    new ExtractTextPlugin(
+      {
+        filename:  (getPath) => {
+          return getPath('../css/[name].css').replace('css/js', 'css'); // Помещаем общий файл стилей в папку build/css/ под именем build.css
+        },
+        allChunks: true
+      }
+    )
   ]
 
 };
