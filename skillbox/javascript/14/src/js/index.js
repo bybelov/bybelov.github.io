@@ -1,6 +1,13 @@
+import '../index.html';
 import '../css/build.css';
-import Button from './button.js';
 
-const btn = new Button('.button');
+import Button from './button/button.js';
 
-console.log( btn.getButton() );
+const button = new Button('Кнопка');
+
+button.createIn('.container');
+button.counter(1);
+
+// button.addEventListener('click', function(e){
+//
+// }

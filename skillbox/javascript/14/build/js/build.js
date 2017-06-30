@@ -60,10 +60,10 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/build";
+/******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -79,19 +79,40 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+__webpack_require__(4);
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 var Button = function () {
-  function Button(n) {
+  function Button(btnText) {
     _classCallCheck(this, Button);
 
-    this.button = n;
+    this.btnText = btnText;
   }
 
   _createClass(Button, [{
-    key: "getButton",
-    value: function getButton() {
-      return this.button;
+    key: 'counter',
+    value: function counter(count) {
+      var startCounter = count;
+      var button = document.querySelector('.btn');
+      var buttonText = button.textContent;
+      button.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        button.innerHTML = buttonText + ' <span>' + startCounter + '</span>';
+        startCounter++;
+      });
+    }
+  }, {
+    key: 'createIn',
+    value: function createIn(wrapper) {
+      var container = document.querySelector(wrapper); // Контейнер для вставки кнопки
+      var button = document.createElement('button'); // Создаем кнопку ввиде ссылки
+      var buttonText = document.createTextNode(this.btnText); // Создаем текстовую ноду для вставки в кнопку
+      button.appendChild(buttonText); // Вставляем название кнопки
+      button.className = "btn"; // Задаем класс для кнопки
+      button.type = "button"; // Задаем атрибут type для кнопки
+      container.appendChild(button); // Вставляем созданную кнопку в указанный контейнер 'wrapper'
     }
   }]);
 
@@ -110,8 +131,16 @@ exports.default = Button;
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "../index.html";
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
+
+__webpack_require__(2);
 
 __webpack_require__(1);
 
@@ -121,9 +150,20 @@ var _button2 = _interopRequireDefault(_button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var btn = new _button2.default('.button');
+var button = new _button2.default('Кнопка');
 
-console.log(btn.getButton());
+button.createIn('.container');
+button.counter(1);
+
+// button.addEventListener('click', function(e){
+//
+// }
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

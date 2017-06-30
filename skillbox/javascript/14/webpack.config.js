@@ -8,8 +8,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'build/js'),
-    filename: '[name].js',
-    publicPath: '/build'
+    filename: '[name].js'
   },
 
   module:{
@@ -28,8 +27,8 @@ module.exports = {
         })
       },
       {
-        test: /\.html$/,
-        use: "file-loader?name=[path][name].html"
+        test: /\.html$/, // Ищем html файлы
+        use: "file-loader?name=[name].html&outputPath=../" // Копируем файлы в родителя папки js/
       }
     ]
   },
