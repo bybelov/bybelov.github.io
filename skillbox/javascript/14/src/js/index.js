@@ -1,13 +1,9 @@
-import '../index.html';
-import '../css/build.css';
+import '../index.html'; // Импортируем html
+import '../css/build.css'; // Импортируем базовые стили
 
-import Button from './button/button.js';
+import Button from './button/button.js'; // Импортируем кнопку со стилями
 
 const button = new Button('Кнопка');
 
-button.createIn('.container');
-button.counter(1);
-
-// button.addEventListener('click', function(e){
-//
-// }
+button.createIn('.container'); // Создаем кнопку внутри контейнера с классом .container
+button.counter(1); // Запускаем скрипт подсчета кол-ва кликов по кнопке. Отсчет начинаем с 1.

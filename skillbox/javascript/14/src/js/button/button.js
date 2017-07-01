@@ -1,6 +1,6 @@
-import './button.css';
+import './button.css'; // Импортируем стили кнопки
 
-export default class Button{
+export default class Button{ // Разрешаем экспорт класса Button
   constructor(btnText){
     this.btnText = btnText;
   }
@@ -10,7 +10,7 @@ export default class Button{
     let buttonText = button.textContent;
     button.addEventListener('click', function(e){
       e.preventDefault();
-      button.innerHTML = `${buttonText} <span>${startCounter}</span>`;
+      button.innerHTML = `${buttonText} <span>(Клик ${startCounter})</span>`;
       startCounter++;
     });
   }

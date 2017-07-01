@@ -83,7 +83,10 @@ __webpack_require__(4);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+// Импортируем стили кнопки
+
 var Button = function () {
+  // Разрешаем экспорт класса Button
   function Button(btnText) {
     _classCallCheck(this, Button);
 
@@ -98,8 +101,7 @@ var Button = function () {
       var buttonText = button.textContent;
       button.addEventListener('click', function (e) {
         e.preventDefault();
-
-        button.innerHTML = buttonText + ' <span>' + startCounter + '</span>';
+        button.innerHTML = buttonText + ' <span>(\u041A\u043B\u0438\u043A ' + startCounter + ')</span>';
         startCounter++;
       });
     }
@@ -150,14 +152,13 @@ var _button2 = _interopRequireDefault(_button);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var button = new _button2.default('Кнопка');
+// Импортируем кнопку со стилями
 
-button.createIn('.container');
-button.counter(1);
+// Импортируем html
+var button = new _button2.default('Кнопка'); // Импортируем базовые стили
 
-// button.addEventListener('click', function(e){
-//
-// }
+button.createIn('.container'); // Создаем кнопку внутри контейнера с классом .container
+button.counter(1); // Запускаем скрипт подсчета кол-ва кликов по кнопке. Отсчет начинаем с 1.
 
 /***/ }),
 /* 4 */
