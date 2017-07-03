@@ -131,7 +131,7 @@ exports.default = Button;
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -143,38 +143,33 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 // Импортируем стили select
 
 var Select = function () {
-    // Разрешаем экспорт класса select
-    function Select(array) {
-        _classCallCheck(this, Select);
+  // Разрешаем экспорт класса select
+  function Select(array) {
+    _classCallCheck(this, Select);
 
-        this.array = array;
+    this.array = array;
+  }
+
+  _createClass(Select, [{
+    key: 'createIn',
+    value: function createIn(wrapper) {
+      var container = document.querySelector(wrapper); // Контейнер для вставки select
+      var arr = this.array;
+      // Создаем select
+      var select = document.createElement('select');
+      // Обходим в цикле массив
+      for (var i = 0; i < arr.length; i++) {
+        // Создаем option
+        var option = new Option(arr[i].value, arr[i].value, arr[i].selected, arr[i].selected);
+        // Добавляем каждый option в select
+        select.appendChild(option);
+      }
+      // Добавляем select с options в контейнер
+      container.appendChild(select);
     }
+  }]);
 
-    _createClass(Select, [{
-        key: 'createIn',
-        value: function createIn(wrapper) {
-
-            var container = document.querySelector(wrapper); // Контейнер для вставки кнопки
-            var arr = this.array;
-
-            console.log(arr);
-
-            // Создаем select
-            var select = document.createElement('select');
-            // Обходим в цикле массив
-            for (var i = 0; i < arr.length; i++) {
-                // Создаем option
-                var option = new Option(arr[i].value, arr[i].value, arr[i].selected, arr[i].selected);
-                console.log(arr[i].value);
-                // Добавляем каждый option в select
-                select.appendChild(option);
-            }
-            // Добавляем select с options в блок .js-btn-block
-            container.appendChild(select);
-        }
-    }]);
-
-    return Select;
+  return Select;
 }();
 
 exports.default = Select;
@@ -198,9 +193,6 @@ module.exports = __webpack_require__.p + "../index.html";
 "use strict";
 
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; // Импортируем html
-// Импортируем базовые стили
-
 __webpack_require__(3);
 
 __webpack_require__(2);
@@ -216,14 +208,22 @@ var _select2 = _interopRequireDefault(_select);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Импортируем кнопку со стилями
+// Импортируем html
+var button = new _button2.default('Кнопка'); // Импортируем базовые стили
 
-var button = new _button2.default('Кнопка');
+/*------------------------------------*\
+  #BUTTON
+\*------------------------------------*/
+
 button.createIn('.container'); // Создаем кнопку внутри контейнера с классом .container
 button.counter(1); // Запускаем скрипт подсчета кол-ва кликов по кнопке. Отсчет начинаем с 1.
 
-// Импортируем select со стилями
 
-// Создадим массив из объектов для описания опций создаваемого селекта
+/*------------------------------------*\
+  #SELECT
+\*------------------------------------*/
+
+// Импортируем select со стилями
 var arrSelectOptions = [{
   value: 'Опция 1',
   selected: false
@@ -237,7 +237,6 @@ var arrSelectOptions = [{
   value: 'Опция 4',
   selected: false
 }];
-console.log(typeof arrSelectOptions === 'undefined' ? 'undefined' : _typeof(arrSelectOptions));
 var select = new _select2.default(arrSelectOptions);
 select.createIn('.js-select'); // Создаем select внутри контейнера с классом .js-select
 
