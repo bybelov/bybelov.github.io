@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -79,7 +79,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-__webpack_require__(4);
+__webpack_require__(5);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -125,43 +125,130 @@ exports.default = Button;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "../index.html";
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(2);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
 
-__webpack_require__(1);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+__webpack_require__(6);
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+// Импортируем стили select
+
+var Select = function () {
+    // Разрешаем экспорт класса select
+    function Select(array) {
+        _classCallCheck(this, Select);
+
+        this.array = array;
+    }
+
+    _createClass(Select, [{
+        key: 'createIn',
+        value: function createIn(wrapper) {
+
+            var container = document.querySelector(wrapper); // Контейнер для вставки кнопки
+            var arr = this.array;
+
+            console.log(arr);
+
+            // Создаем select
+            var select = document.createElement('select');
+            // Обходим в цикле массив
+            for (var i = 0; i < arr.length; i++) {
+                // Создаем option
+                var option = new Option(arr[i].value, arr[i].value, arr[i].selected, arr[i].selected);
+                console.log(arr[i].value);
+                // Добавляем каждый option в select
+                select.appendChild(option);
+            }
+            // Добавляем select с options в блок .js-btn-block
+            container.appendChild(select);
+        }
+    }]);
+
+    return Select;
+}();
+
+exports.default = Select;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "../index.html";
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; // Импортируем html
+// Импортируем базовые стили
+
+__webpack_require__(3);
+
+__webpack_require__(2);
 
 var _button = __webpack_require__(0);
 
 var _button2 = _interopRequireDefault(_button);
 
+var _select = __webpack_require__(1);
+
+var _select2 = _interopRequireDefault(_select);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // Импортируем кнопку со стилями
 
-// Импортируем html
-var button = new _button2.default('Кнопка'); // Импортируем базовые стили
-
+var button = new _button2.default('Кнопка');
 button.createIn('.container'); // Создаем кнопку внутри контейнера с классом .container
 button.counter(1); // Запускаем скрипт подсчета кол-ва кликов по кнопке. Отсчет начинаем с 1.
 
+// Импортируем select со стилями
+
+// Создадим массив из объектов для описания опций создаваемого селекта
+var arrSelectOptions = [{
+  value: 'Опция 1',
+  selected: false
+}, {
+  value: 'Опция 2',
+  selected: false
+}, {
+  value: 'Опция 3',
+  selected: true
+}, {
+  value: 'Опция 4',
+  selected: false
+}];
+console.log(typeof arrSelectOptions === 'undefined' ? 'undefined' : _typeof(arrSelectOptions));
+var select = new _select2.default(arrSelectOptions);
+select.createIn('.js-select'); // Создаем select внутри контейнера с классом .js-select
+
 /***/ }),
-/* 4 */
+/* 5 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
