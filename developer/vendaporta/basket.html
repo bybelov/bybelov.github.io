@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Корзина</title>
+  <meta name="Keywords" content='Корзина'>
+  <meta name="Description" content='Корзина'>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="css/fonts.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
+  <!-- <link rel="stylesheet" href="css/main.min.css" /> -->
+  
+  <script src="js/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+  <!-- <script src="js/main.min.js"></script> -->
+  <script src="js/init.js"></script>
+</head>
+
+<body>
+  <div class="page__wrapper">
+
+    <header class="header">
+      <div class="container">
+        <div class="l-header">
+          <div class="l-header__item">
+            <div class="header__logo">
+              <a href="/"><img src="images/logo.png" alt=""></a>
+            </div>
+          </div>
+          <div class="l-header__item">
+            <div class="header__phone">
+              <p><a href="tel:74955069848" class="phone">7 (495) 506-98-48</a></p>
+              <p><a href="" class="phone-link" data-toggle="modal" data-target="#modal-callback"><span>перезвоните мне</span></a></p>
+            </div>
+          </div>
+          <div class="l-header__item">
+            <div class="header__search">
+              <div class="search">
+                  <form action="">
+                      <div class="form-group">
+                          <input type="text" class="form-control" value="" placeholder="Поиск...">
+                          <button type="submit" class="btn-search"><i class="i-search"></i></button>
+                          <div class="search-result">
+                              <!-- добавляем класс .open когда нужно отобразить результаты -->
+                              <ul>
+                                <li><a href=""><b>Двери</b> торнадо</a></li>
+                                <li><a href="">Межкомнатные <b>двери</b></a></li>
+                                <li><a href="">Входные <b>двери</b></a></li>
+                                <li><a href="">Фурнитура для <b>двер</b>ей</a></li>
+                              </ul>
+                              <!-- все результаты -->
+                              <div class="search-result__all">
+                                  Всего 45 результатов по запросу «<a href="/search/?q=">Двери</a>»
+                              </div>
+                          </div>
+                          <script type="text/javascript">
+                              $(document).ready(function() {
+                                  $("body").click(function(event) {
+                                      if ($(event.target).closest(".search").length === 0) {
+                                          $('.search-result').removeClass('open');
+                                      }
+                                  });
+                                  $('.search .form-control').focus(function() {
+                                      $(this).parent().find('.search-result').addClass('open');
+                                  });
+                              });
+                          </script>
+                      </div>
+                  </form>
+              </div>
+            </div>
+          </div>
+          <div class="l-header__item">
+            <div class="header__cart">
+              <div class="cart">
+                <a href="" class="cart__link">
+                  <i class="i-cart"></i>
+                  <p><span>товаров:</span> <i class="cart__counter">0</i> <span>шт</span></p>
+                  <p><span>сумма:</span> <i class="cart__summ">0</i> <span>руб</span></p>
+                </a>
+              </div>
+              <a href="compare.html" class="compare-link" title="сравнение"><span>сравнение</span></a>
+            </div>
+            <a href="#menu" class="hamburger hamburger--slider">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar__inner">
+                <ul class="navbar-nav">
+                    <li>
+                      <a href="" title=""><span>Межкомнатные двери</span></a>
+                      <ul>
+                        <li>
+                          <a href=""><span>Двери 1</span></a>
+                          <ul>
+                            <li class="is-active"><a href=""><span>Двери 1.1</span></a></li>
+                            <li>
+                              <a href=""><span>Двери 1.2</span></a>
+                              <ul>
+                                <li><a href=""><span>Двери 1.2.1</span></a></li>
+                                <li><a href=""><span>Двери 1.2.2</span></a></li>
+                                <li><a href=""><span>Двери 1.2.3</span></a></li>
+                              </ul>
+                            </li>
+                            <li><a href=""><span>Двери 1.3</span></a></li>
+                          </ul>
+                        </li>
+                        <li><a href=""><span>Двери 2</span></a></li>
+                        <li><a href=""><span>Двери 3</span></a></li>
+                      </ul>
+                    </li>
+                    <li><a href="" title=""><span>Входные двери</span></a></li>
+                    <li>
+                      <a href="" title=""><span>Фурнитура</span></a>
+                      <ul>
+                        <li><a href=""><span>Фурнитура 1</span></a></li>
+                        <li><a href=""><span>Фурнитура 2</span></a></li>
+                        <li><a href=""><span>Фурнитура 3</span></a></li>
+                        <li><a href=""><span>Фурнитура 4</span></a></li>
+                      </ul>
+                    </li>
+                    <li><a href="" title=""><span>Гарантия</span></a></li>
+                    <li><a href="" title=""><span>Акции</span></a></li>
+                    <li>
+                      <a href="" title=""><span>Сервис</span></a>
+                      <ul>
+                        <li><a href=""><span>Сервис 1</span></a></li>
+                        <li><a href=""><span>Сервис 2</span></a></li>
+                        <li><a href=""><span>Сервис 3</span></a></li>
+                      </ul>
+                    </li>
+                    <li><a href="" title=""><span>Контакты</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main">
+      <div class="container">
+
+        <ul class="breadcrumb">
+          <li><a href="/index-home.html"><span>Главная</span></a></li>
+          <li><span>Корзина</span></li>
+        </ul>
+        <div class="title-page">
+          <h1>Корзина</h1>
+        </div>
+
+        <div class="main-content">
+
+          <div class="basket-order">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th class="td-name">Наименование</th>
+                  <th class="td-price">Цена</th>
+                  <th class="td-number">Количество</th>
+                  <th class="td-sum">Сумма</th>
+                  <th class="td-doing"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="td-name">
+                    <div class="basket-order__title-wrapper">
+                      <div class="basket-order__img">
+                        <a href=""><img src="upload/detail-b-thumb-1.jpg" alt=""></a>
+                      </div>
+                      <div class="basket-order__title">
+                        <a href="" class="title">Металлическая дверь Сенатор</a>
+                        <p>Краткое описание товара Краткое описание товара Краткое описание товара</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="td-price">
+                    <div class="price__wrapper">
+                      <div class="price">32 990 <span class="rouble">руб</span></div>
+                    </div>
+                  </td>
+                  <td class="td-number">
+                    <div class="quantity">
+                      <a href="#" class="quantity__minus"><i class="icon-minus"></i></a>
+                      <input type="text" class="form-control" value="1">
+                      <a href="#" class="quantity__plus"><i class="icon-plus"></i></a>
+                    </div>
+                  </td>
+                  <td class="td-sum">
+                    <span class="price">32 990 <span class="rouble">руб</span></span>
+                  </td>
+                  <td class="td-doing">
+                    <div class="basket-order__manage">
+                      <a class="delete" href="#" title="Удалить">
+                        <i class="icon-delete"></i>
+                        <span>Удалить</span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-name">
+                    <div class="basket-order__title-wrapper">
+                      <div class="basket-order__img">
+                        <a href="">
+                          <div class="no-photo"></div>
+                        </a>
+                      </div>
+                      <div class="basket-order__title">
+                        <a href="">Металлическая дверь</a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="td-price">
+                    <div class="price__wrapper">
+                      <div class="price">156 000 <span class="rouble">руб</span></div>
+                      <div class="price-old">165 000</div>
+                    </div>
+                  </td>
+                  <td class="td-number">
+                    <div class="quantity">
+                      <a href="#" class="quantity__minus"><i class="icon-minus"></i></a>
+                      <input type="text" class="form-control" value="1">
+                      <a href="#" class="quantity__plus"><i class="icon-plus"></i></a>
+                    </div>
+                  </td>
+                  <td class="td-sum">
+                    <div class="price">32 990 <span class="rouble">руб</span></div>
+                  </td>
+                  <td class="td-doing">
+                    <div class="basket-order__manage">
+                      <a class="delete" href="#" title="Удалить">
+                        <i class="icon-delete"></i>
+                        <span>Удалить</span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="td-name">
+                    <div class="basket-order__title-wrapper">
+                      <div class="basket-order__img">
+                        <a href=""><img src="upload/component-1.png" alt=""></a>
+                      </div>
+                      <div class="basket-order__title">
+                        <a href="">Розетка</a>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="td-price">
+                    <div class="price__wrapper">
+                      <div class="price">1 990 <span class="rouble">руб</span></div>
+                      <div class="price-old">2 122</div>
+                    </div>
+                  </td>
+                  <td class="td-number">
+                    <div class="quantity">
+                      <a href="#" class="quantity__minus"><i class="icon-minus"></i></a>
+                      <input type="text" class="form-control" value="1">
+                      <a href="#" class="quantity__plus"><i class="icon-plus"></i></a>
+                    </div>
+                  </td>
+                  <td class="td-sum">
+                    <div class="price">1 990 <span class="rouble">руб</span></div>
+                  </td>
+                  <td class="td-doing">
+                    <div class="basket-order__manage">
+                      <a class="delete" href="#" title="Удалить">
+                        <i class="icon-delete"></i>
+                        <span>Удалить</span>
+                      </a>
+                    </div>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+
+            <div class="basket-total">
+              <div class="row">
+                <div class="col-xs-6">
+                  <div class="basket-total__title">Итого:</div>
+                </div>
+                <div class="col-xs-6">
+                  <div class="basket-total__price">
+                    <div class="price">36 970 <span class="rouble">руб</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BEGIN order-form -->
+            <div class="order-form">
+              <form action="">
+                <div class="row">
+                  <div class="col-md-9">
+                    <div class="row">
+                      <div class="col-xxs-12 col-xs-6 col-sm-4">
+                        <div class="form-group">
+                          <input type="text" placeholder="Ваше имя" class="form-control form-control--lg">
+                        </div>
+                      </div>
+                      <div class="col-xxs-12 col-xs-6 col-sm-4">
+                        <div class="form-group">
+                          <input type="text" placeholder="Номер телефона" class="form-control form-control--lg">
+                        </div>
+                      </div>
+                      <div class="col-xxs-12 col-xs-12 col-sm-4">
+                        <div class="form-group">
+                          <input type="text" placeholder="Ваш e-mail" class="form-control form-control--lg">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-3 text-center">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-outline btn-lg">Оформить заказ</button>
+                    </div>
+                  </div>
+                </div>
+
+
+              </form>
+              <div class="form-group">
+	              <div class="note text-center">Нажимая кнопку «вызвать», вы даёте согласие на <a href="">обработку персональных данных</a></div>
+	            </div>
+            </div>
+            <!-- END order-form -->
+
+
+          </div>
+
+        </div>
+        <div class="clearfix"></div>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+    
+          <div class="row">
+            <div class="col-sm-4 col-xs-6 col-xxs-12">
+              <div class="footer__title"><a href="">Продукция</a></div>
+              <ul class="f-menu">
+                <li class="f-menu__item"><a href="">межкомнатные двери</a></li>
+                <li class="f-menu__item"><a href="">входные двери</a></li>
+                <li class="f-menu__item"><a href="">фурнитура</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-4 col-xs-6 col-xxs-12">
+              <div class="footer__title"><a href="">Сервис</a></div>
+              <ul class="f-menu">
+                <li class="f-menu__item"><a href="">оплата и доставка</a></li>
+                <li class="f-menu__item"><a href="">монтаж дверей</a></li>
+                <li class="f-menu__item"><a href="">вызов замерщика</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-4 col-xs-12">
+              <div class="footer__title"><a href="">Контакты</a></div>
+              <p><a href="tel:74955069848">7 (495) 506-98-48</a></p>
+              <p>г. Реутов, ул. Фабричная 8В</p>
+              <p><a href="mailto:service@dveriregionov.ru">service@dveriregionov.ru</a></p>
+            </div>
+          </div>
+    
+          <div class="copyright">
+            © 2017. Фабрика VendoPorta - продажа межкомнатных дверей оптом и в розницу
+          </div>
+    
+        </div>
+      </div>
+    </footer>
+    <div class="modal fade" id="modal-callback" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span class="icon-delete"></span></button>
+                    <h4 class="modal-title">
+                        <span>Обратный звонок</span>
+                    </h4>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="form-group has-error">
+                            <label for="field-login">Ваше имя <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="field-login" placeholder="Алексей">
+                            <span class="form-error">Вы не указали свое имя</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="field-phone">Ваш телефон <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control tel" id="field-phone" placeholder="+7 (926) 321-50-50">
+                        </div>
+                        <div class="form-group form-group--submit text-center">
+                            <input type="submit" class="btn btn-primary" value="Заказать звонок">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
