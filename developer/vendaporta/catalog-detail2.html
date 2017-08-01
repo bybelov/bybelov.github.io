@@ -166,11 +166,48 @@
               <div class="col-sm-5">
 
                 <div class="catalog-detail__img">
-                  <a href="upload/detail-2.jpg" class="popup js-detail-picture">
-									<img src="upload/detail-2.jpg" alt="">
-								</a>
-                </div>
-
+                  <div class="js-slider flexslider flexslider-full">
+    								<ul class="slides popup-gallery">
+    									<li><a href="upload/detail-d-1.jpg"><img src="upload/detail-2.jpg" alt=""></a></li>
+    									<li><a href="upload/detail-b-1.jpg"><img src="upload/detail-b-1.jpg" alt=""></a></li>
+    									<li><a href="upload/detail-b-2.jpg"><img src="upload/detail-b-2.jpg" alt=""></a></li>
+    									<li><a href="upload/detail-b-3.jpg"><img src="upload/detail-b-3.jpg" alt=""></a></li>
+    									<li><a href="upload/detail-b-3.jpg"><img src="upload/detail-b-3.jpg" alt=""></a></li>
+    								</ul>
+    							</div>
+    							<div class="js-slider-carousel flexslider flexslider-thumb">
+    								<ul class="slides">
+    									<li><span><img src="upload/detail-d-thumb-1.jpg" /></span></li>
+    									<li><span><img src="upload/detail-b-thumb-1.jpg" /></span></li>
+    									<li><span><img src="upload/detail-b-thumb-2.jpg" /></span></li>
+    									<li><span><img src="upload/detail-b-thumb-3.jpg" /></span></li>
+    									<li><span><img src="upload/detail-b-thumb-3.jpg" /></span></li>
+    								</ul>
+    							</div>
+                    <script>
+                    $(document).ready(function() {
+                    	$('.js-slider-carousel').flexslider({
+                    		animation: "slide",
+                    		controlNav: false,
+                    		animationLoop: false,
+                    		slideshow: false,
+                    		itemWidth: 100,
+                    		minItems: 2,
+                    		maxItems: 5,
+                    		itemMargin: 10,
+                    		asNavFor: '.js-slider'
+                    	});
+                    	$('.js-slider').flexslider({
+                    		animation: "fade",
+                    		controlNav: false,
+                    		animationLoop: false,
+                    		slideshow: false,
+                        smoothHeight: true,
+                    		sync: ".js-slider-carousel"
+                    	});
+                    });
+                    </script>
+                </div><!-- end catalog-detail__img -->
               </div>
               <div class="col-sm-7">
                 <div class="catalog-detail__body">
@@ -237,7 +274,7 @@
                       <div class="param-list__item" data-value="var3">
                         <span><img src="upload/detail-b-thumb-3.jpg" alt=""></span>
                       </div>
-                      <div class="param-list__item is-active" data-value="var1">
+                      <div class="param-list__item" data-value="var1">
                         <span><img src="upload/detail-b-thumb-1.jpg" alt=""></span>
                       </div>
                     </div>
@@ -248,7 +285,7 @@
                   <div class="param-list">
                     <div class="param-list__title">Цвет внутренней отделки</div>
                     <div class="param-list__inner js-param owl-carousel">
-                      <div class="param-list__item is-active" data-value="brown" style="background-color: #834d18">
+                      <div class="param-list__item" data-value="brown" style="background-color: #834d18">
                         <span></span>
                       </div>
                       <div class="param-list__item" data-value="white" style="background-color: #fffbf8">
@@ -266,7 +303,7 @@
                       <div class="param-list__item" data-value="black" style="background-color: #005773;">
                         <span></span>
                       </div>
-                      <div class="param-list__item is-active" data-value="brown" style="background-color: #008a5c">
+                      <div class="param-list__item" data-value="brown" style="background-color: #008a5c">
                         <span></span>
                       </div>
                       <div class="param-list__item" data-value="white" style="background-color: #d25a00">
@@ -292,7 +329,7 @@
                       <div class="param-list__item" data-value="var3">
                         <span><img src="upload/detail-b-thumb-3.jpg" alt=""></span>
                       </div>
-                      <div class="param-list__item is-active" data-value="var1">
+                      <div class="param-list__item" data-value="var1">
                         <span><img src="upload/detail-b-thumb-1.jpg" alt=""></span>
                       </div>
                       <div class="param-list__item" data-value="var2">
@@ -301,7 +338,7 @@
                       <div class="param-list__item" data-value="var3">
                         <span><img src="upload/detail-b-thumb-3.jpg" alt=""></span>
                       </div>
-                      <div class="param-list__item is-active" data-value="var1">
+                      <div class="param-list__item" data-value="var1">
                         <span><img src="upload/detail-b-thumb-1.jpg" alt=""></span>
                       </div>
                       <div class="param-list__item" data-value="var2">
@@ -310,7 +347,7 @@
                       <div class="param-list__item" data-value="var3">
                         <span><img src="upload/detail-b-thumb-3.jpg" alt=""></span>
                       </div>
-                      <div class="param-list__item is-active" data-value="var1">
+                      <div class="param-list__item" data-value="var1">
                         <span><img src="upload/detail-b-thumb-1.jpg" alt=""></span>
                       </div>
                       <div class="param-list__item" data-value="var2">

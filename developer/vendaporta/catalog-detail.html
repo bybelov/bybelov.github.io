@@ -166,10 +166,44 @@
               <div class="col-sm-5">
 
                 <div class="catalog-detail__img">
-                  <a href="upload/detail-b-1.jpg" class="popup js-detail-picture">
-									<img src="upload/detail-b-1.jpg" alt="">
-								</a>
-                </div>
+                  <div class="js-slider flexslider flexslider-full">
+    								<ul class="slides popup-gallery">
+    									<li><a href="upload/detail-b-1.jpg"><img src="upload/detail-b-1.jpg" alt=""></a></li>
+    								</ul>
+    							</div>
+    							<!-- <div class="js-slider-carousel flexslider flexslider-thumb">
+    								<ul class="slides">
+    									<li><span><img src="upload/detail-d-thumb-1.jpg" /></span></li>
+    									<li><span><img src="upload/detail-b-thumb-1.jpg" /></span></li>
+    									<li><span><img src="upload/detail-b-thumb-2.jpg" /></span></li>
+    									<li><span><img src="upload/detail-b-thumb-3.jpg" /></span></li>
+    									<li><span><img src="upload/detail-b-thumb-3.jpg" /></span></li>
+    								</ul>
+    							</div> -->
+                    <script>
+                    $(document).ready(function() {
+                    	$('.js-slider-carousel').flexslider({
+                    		animation: "slide",
+                    		controlNav: false,
+                    		animationLoop: false,
+                    		slideshow: false,
+                    		itemWidth: 100,
+                    		minItems: 2,
+                    		maxItems: 5,
+                    		itemMargin: 10,
+                    		asNavFor: '.js-slider'
+                    	});
+                    	$('.js-slider').flexslider({
+                    		animation: "fade",
+                    		controlNav: false,
+                    		animationLoop: false,
+                    		slideshow: false,
+                        smoothHeight: true,
+                    		sync: ".js-slider-carousel"
+                    	});
+                    });
+                    </script>
+                </div><!-- end catalog-detail__img -->
 
               </div>
               <div class="col-sm-7">
