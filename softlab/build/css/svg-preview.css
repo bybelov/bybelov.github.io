@@ -1,0 +1,50 @@
+body > svg {
+  height: 0;
+  width: 0;
+  position: absolute;
+  visibility: hidden; }
+
+.svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 1em;
+  height: 1em;
+  width: 1em;
+  fill: inherit;
+  stroke: inherit; }
+
+.icon-cart {
+  width: 1em; }
+
+.icon-check {
+  width: 1em; }
+
+.icon-chevron-down {
+  width: 1em; }
+
+.icon-chevron-left {
+  width: 1em; }
+
+.icon-chevron-right {
+  width: 1em; }
+
+.icon-chevron-up {
+  width: 1em; }
+
+.icon-close {
+  width: 1em; }
+
+.icon-facebook {
+  width: 1em; }
+
+.icon-minus {
+  width: 1em; }
+
+.icon-plus {
+  width: 1em; }
+
+.icon-twitter {
+  width: 1em; }
+
+.icon-vk {
+  width: 1em; }
