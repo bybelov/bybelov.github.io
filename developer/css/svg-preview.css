@@ -14,6 +14,9 @@ body > svg {
   fill: inherit;
   stroke: inherit; }
 
+.icon-branding {
+  width: 1em; }
+
 .icon-check {
   width: 1em; }
 
@@ -44,8 +47,11 @@ body > svg {
 .icon-minus {
   width: 1em; }
 
+.icon-mobile {
+  width: 1em; }
+
 .icon-motion {
-  width: 1.04348em; }
+  width: 1em; }
 
 .icon-ok {
   width: 0.64706em; }
@@ -57,6 +63,9 @@ body > svg {
   width: 0.66667em; }
 
 .icon-twitter {
+  width: 1em; }
+
+.icon-ux {
   width: 1em; }
 
 .icon-vk {
