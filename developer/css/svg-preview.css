@@ -38,8 +38,14 @@ body > svg {
 .icon-facebook {
   width: 0.52941em; }
 
+.icon-logo {
+  width: 5.86667em; }
+
 .icon-logo-circle {
   width: 1.01563em; }
+
+.icon-logo-light {
+  width: 5.86667em; }
 
 .icon-logo-text {
   width: 5.86667em; }
@@ -52,6 +58,9 @@ body > svg {
 
 .icon-motion {
   width: 1em; }
+
+.icon-mouse {
+  width: 0.70968em; }
 
 .icon-ok {
   width: 0.64706em; }
