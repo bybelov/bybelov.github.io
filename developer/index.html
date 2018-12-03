@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" class="no-js">
   <head>
     <meta charset="utf-8">
     <title>Main page</title>
@@ -139,7 +139,7 @@
           </div>
           <div class="slider-footer">
             <div class="container">
-              <div class="js-slider-scroll slider-scroll">
+              <div class="slider-scroll" data-scrollTo="#mainContent">
                 <svg class="svg-icon icon-mouse">
                   <use xlink:href="#mouse"></use>
                 </svg>
@@ -161,7 +161,7 @@
             </div>
           </div>
         </div>
-        <div class="main__content">
+        <div id="mainContent" class="main__content">
           <div class="lines">
             <div class="container">
               <div class="line"></div>
@@ -249,7 +249,12 @@
                   <div class="award">
                     <div class="award__title">Награды</div>
                     <div class="award__body">
-                      <div class="award__count"><span>12</span></div>
+                      <div class="award__count">
+                        <svg class="svg-icon icon-winner">
+                          <use xlink:href="#winner"></use>
+                        </svg>
+                        <span>12</span>
+                      </div>
                       <div class="award__picture">
                         <img src="images/combined-shape.png" srcset="images/combined-shape@2x.png 2x" srcset="images/combined-shape@3x.png 3x" alt="Site of the Day">
                       </div>
