@@ -1,0 +1,539 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+	<title>SVG sprites</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link href="css/svg-preview.css" rel="stylesheet" type="text/css">
+	<style>
+		.container {
+			max-width: 1200px;
+			padding-left: 15px;
+			padding-right: 15px;
+			margin: 0 auto;
+		}
+
+		.ui-block {
+			margin-bottom: 1rem;
+		}
+
+		.ui-box-svg {
+			position: relative;
+			background: #ccc url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;
+		}
+
+		.ui-box-svg__item {
+			padding: 2em 0 0;
+			text-align: center;
+		}
+
+		.ui-box-svg__item .svg-icon {
+			font-size: 3em;
+		}
+
+		.ui-box-svg__name pre {
+			font-size: 12px;
+			border-radius: 0;
+			display: block;
+			padding: 0 10px;
+			white-space: normal;
+			word-break: break-all;
+			word-wrap: break-word;
+			color: #333;
+			background-color: #f5f5f5;
+		}
+
+		.ui-row {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			margin-left: -15px;
+			margin-right: -15px;
+		}
+
+		.ui-col-3 {
+			width: calc(25% - 30px);
+		}
+
+		.ui-col-3,
+		.ui-col-6 {
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			margin-left: 15px;
+			margin-right: 15px;
+			word-wrap: break-word;
+			width: calc(33.33% - 30px);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="page">
+		<header class="header">
+			<div class="container">
+				<div class="header-inner">
+					<h2>SVG sprites</h2>
+				</div>
+			</div>
+		</header>
+		<main class="main">
+			<div class="container">
+				<div class="ui-block">
+					<div class="ui-row">
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="analitycs">
+									<!-- analitycs -->
+									<svg class="svg-icon icon-analitycs">
+										<use xlink:href="#analitycs"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-analitycs"&gt;&lt;use xlink:href="#analitycs"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="branding">
+									<!-- branding -->
+									<svg class="svg-icon icon-branding">
+										<use xlink:href="#branding"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-branding"&gt;&lt;use xlink:href="#branding"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="check">
+									<!-- check -->
+									<svg class="svg-icon icon-check">
+										<use xlink:href="#check"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-check"&gt;&lt;use xlink:href="#check"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="chevron-down">
+									<!-- chevron-down -->
+									<svg class="svg-icon icon-chevron-down">
+										<use xlink:href="#chevron-down"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-chevron-down"&gt;&lt;use xlink:href="#chevron-down"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="chevron-left">
+									<!-- chevron-left -->
+									<svg class="svg-icon icon-chevron-left">
+										<use xlink:href="#chevron-left"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-chevron-left"&gt;&lt;use xlink:href="#chevron-left"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="chevron-right">
+									<!-- chevron-right -->
+									<svg class="svg-icon icon-chevron-right">
+										<use xlink:href="#chevron-right"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-chevron-right"&gt;&lt;use xlink:href="#chevron-right"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="chevron-up">
+									<!-- chevron-up -->
+									<svg class="svg-icon icon-chevron-up">
+										<use xlink:href="#chevron-up"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-chevron-up"&gt;&lt;use xlink:href="#chevron-up"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="close">
+									<!-- close -->
+									<svg class="svg-icon icon-close">
+										<use xlink:href="#close"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-close"&gt;&lt;use xlink:href="#close"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="design">
+									<!-- design -->
+									<svg class="svg-icon icon-design">
+										<use xlink:href="#design"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-design"&gt;&lt;use xlink:href="#design"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="facebook">
+									<!-- facebook -->
+									<svg class="svg-icon icon-facebook">
+										<use xlink:href="#facebook"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-facebook"&gt;&lt;use xlink:href="#facebook"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="html">
+									<!-- html -->
+									<svg class="svg-icon icon-html">
+										<use xlink:href="#html"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-html"&gt;&lt;use xlink:href="#html"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="logo">
+									<!-- logo -->
+									<svg class="svg-icon icon-logo">
+										<use xlink:href="#logo"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-logo"&gt;&lt;use xlink:href="#logo"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="logo-circle">
+									<!-- logo-circle -->
+									<svg class="svg-icon icon-logo-circle">
+										<use xlink:href="#logo-circle"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-logo-circle"&gt;&lt;use xlink:href="#logo-circle"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="logo-light">
+									<!-- logo-light -->
+									<svg class="svg-icon icon-logo-light">
+										<use xlink:href="#logo-light"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-logo-light"&gt;&lt;use xlink:href="#logo-light"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="logo-text">
+									<!-- logo-text -->
+									<svg class="svg-icon icon-logo-text">
+										<use xlink:href="#logo-text"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-logo-text"&gt;&lt;use xlink:href="#logo-text"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="minus">
+									<!-- minus -->
+									<svg class="svg-icon icon-minus">
+										<use xlink:href="#minus"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-minus"&gt;&lt;use xlink:href="#minus"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="mobile">
+									<!-- mobile -->
+									<svg class="svg-icon icon-mobile">
+										<use xlink:href="#mobile"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-mobile"&gt;&lt;use xlink:href="#mobile"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="motion">
+									<!-- motion -->
+									<svg class="svg-icon icon-motion">
+										<use xlink:href="#motion"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-motion"&gt;&lt;use xlink:href="#motion"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="mouse">
+									<!-- mouse -->
+									<svg class="svg-icon icon-mouse">
+										<use xlink:href="#mouse"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-mouse"&gt;&lt;use xlink:href="#mouse"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="ok">
+									<!-- ok -->
+									<svg class="svg-icon icon-ok">
+										<use xlink:href="#ok"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-ok"&gt;&lt;use xlink:href="#ok"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="plus">
+									<!-- plus -->
+									<svg class="svg-icon icon-plus">
+										<use xlink:href="#plus"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-plus"&gt;&lt;use xlink:href="#plus"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="programming">
+									<!-- programming -->
+									<svg class="svg-icon icon-programming">
+										<use xlink:href="#programming"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-programming"&gt;&lt;use xlink:href="#programming"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="prototype">
+									<!-- prototype -->
+									<svg class="svg-icon icon-prototype">
+										<use xlink:href="#prototype"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-prototype"&gt;&lt;use xlink:href="#prototype"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="scroll">
+									<!-- scroll -->
+									<svg class="svg-icon icon-scroll">
+										<use xlink:href="#scroll"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-scroll"&gt;&lt;use xlink:href="#scroll"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="twitter">
+									<!-- twitter -->
+									<svg class="svg-icon icon-twitter">
+										<use xlink:href="#twitter"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-twitter"&gt;&lt;use xlink:href="#twitter"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="tz">
+									<!-- tz -->
+									<svg class="svg-icon icon-tz">
+										<use xlink:href="#tz"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-tz"&gt;&lt;use xlink:href="#tz"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="ux">
+									<!-- ux -->
+									<svg class="svg-icon icon-ux">
+										<use xlink:href="#ux"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-ux"&gt;&lt;use xlink:href="#ux"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="vk">
+									<!-- vk -->
+									<svg class="svg-icon icon-vk">
+										<use xlink:href="#vk"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-vk"&gt;&lt;use xlink:href="#vk"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+						<div class="ui-col-3">
+							<div class="ui-box-svg">
+								<div class="ui-box-svg__item" title="winner">
+									<!-- winner -->
+									<svg class="svg-icon icon-winner">
+										<use xlink:href="#winner"></use>
+									</svg>
+								</div>
+								<div class="ui-box-svg__item">
+									<span class="ui-box-svg__name">
+										<pre><code>&lt;svg class="svg-icon icon-winner"&gt;&lt;use xlink:href="#winner"&gt;&lt;/use&gt;&lt;/svg&gt;</code></pre>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="footer">
+			<div class="container">
+				<p><small>Generated at Tue, 04 Dec 2018 18:16:15 GMT</small></p>
+			</div>
+		</footer>
+	</div>
+	<script src="js/vendor.js"></script>
+	<script src="js/app.js"></script>
+	<script>
+		loadSVG('images/svg-sprite.svg', 1)
+	</script>
+</body>
+
+</html>

@@ -2,7 +2,7 @@
 <html lang="ru" class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>Сайты</title>
+    <title>Main page</title>
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="format-detection" content="telephone=no">
@@ -19,7 +19,7 @@
     <script src="js/vendor.js"></script>
     <script src="js/app.js"></script>
   </head>
-  <body class="header--sticky">
+  <body class="home">
     <svg class="svg-gradient" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="logo-gradient" x1="0%" y1="100%" y2="0%">
@@ -45,10 +45,10 @@
             </a>
             <nav class="menu" role="navigation">
               <ul class="menu__inner">
-                <li class="menu-item">
+                <li class="menu-item active">
                   <a href="main-page.html" class="menu-item__link"> Студия </a>
                 </li>
-                <li class="menu-item active">
+                <li class="menu-item">
                   <a href="sites.html" class="menu-item__link"> Сайты </a>
                 </li>
                 <li class="menu-item">
@@ -65,7 +65,7 @@
       </header>
       <!-- begin main -->
       <main class="main" role="main">
-        <div class="page-intro" style="background-color: #edf2f5">
+        <div class="swiper-container slider js-slider">
           <div class="lines">
             <div class="container">
               <div class="line"></div>
@@ -102,9 +102,66 @@
               </div>
             </div>
           </div>
-          <img class="page-intro__bg" src="images/demo/mockup.png" srcset="images/demo/mockup@2x.png 2x" srcset="images/demo/mockup@3x.png 3x" alt="">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide gradient-1" data-title="Студия">
+              <div id="container"></div>
+              <div class="slider__item">
+                <div class="container">
+                  <div class="slider__title"> Softlab — студия<br>креативных решений </div>
+                  <div class="js-slider-pagination swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide gradient-1" data-title="Сайты">
+              <div class="slider__item">
+                <div class="container">
+                  <div class="slider__title"> Сайты </div>
+                  <div class="js-slider-pagination swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide gradient-1" data-title="Приложения">
+              <div class="slider__item">
+                <div class="container">
+                  <div class="slider__title"> Приложения </div>
+                  <div class="js-slider-pagination swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide gradient-1" data-title="Презентации">
+              <div class="slider__item">
+                <div class="container">
+                  <div class="slider__title"> Презентации </div>
+                  <div class="js-slider-pagination swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-footer">
+            <div class="container">
+              <div class="slider-scroll" data-scrollTo="#mainContent">
+                <svg class="svg-icon icon-mouse">
+                  <use xlink:href="#mouse"></use>
+                </svg>
+              </div>
+              <div class="social-link social-link--light">
+                <a href="#" class="social-link__item"><svg class="svg-icon icon-vk">
+                    <use xlink:href="#vk"></use>
+                  </svg>
+                </a>
+                <a href="#" class="social-link__item"><svg class="svg-icon icon-facebook">
+                    <use xlink:href="#facebook"></use>
+                  </svg>
+                </a>
+                <a href="#" class="social-link__item"><svg class="svg-icon icon-ok">
+                    <use xlink:href="#ok"></use>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="main__content">
+        <div id="mainContent" class="main__content">
           <div class="lines">
             <div class="container">
               <div class="line"></div>
@@ -171,52 +228,101 @@
               </div>
             </div>
           </div>
-          <section class="section">
+          <section class="section intro">
             <div class="container">
-              <h1><span class="animate-to-top">Создаем сайты</span></h1>
-              <div class="sites">
-                <div class="sites__item">
+              <h1><span class="animate-to-top">Развиваем ваши проекты в digital среде</span></h1>
+              <div class="row">
+                <div class="col">
+                  <ul class="list-intro animate-to-right">
+                    <li>Создаем сайты, магазины, личные кабинеты</li>
+                    <li>Разрабатываем приложения для AppStore и GooglePlay</li>
+                    <li>Производим 2D и 3D видео-презентации</li>
+                  </ul>
+                </div>
+                <div class="col">
+                  <p class="lead"><span class="animate-to-right">Проектируем и разрабатываем дизайн сайтов и мобильных приложений для эффективного продвижения ваших продуктов</span></p>
                   <div class="animate-to-right">
-                    <h4 class="sites__title">Landing page</h4>
-                    <div class="sites__desc">Одностраничный сайт о продукте или услуге. Подходит для проведения рекламных кампаний.</div>
-                    <div class="sites__price">от 100 000 <span class='rouble'>i</span> / от 2 недель</div>
+                    <p>Мы абсолютно убеждены, что красивый, простой и удобный интерфейс – это один из наиболее важных аспектов качественного ПО. Именно по-этому основная услуга компании - создание дизайна и юзабилити. Мы не просто создаем сайты и мобильные приложения, наша стратегия — быть лучшими в создании умного дизайна.</p>
                   </div>
                 </div>
-                <div class="sites__item">
-                  <div class="animate-to-right">
-                    <h4 class="sites__title">Промо-сайт</h4>
-                    <div class="sites__desc">Промо-сайт это эффектная презентация услуги или товара, целью которой является заинтересовать посетителей.</div>
-                    <div class="sites__price">от 200 000 ₽ / от 1 месяца</div>
-                  </div>
-                </div>
-                <div class="sites__item">
-                  <div class="animate-to-right">
-                    <h4 class="sites__title">Корпоративный сайт</h4>
-                    <div class="sites__desc">Корпоративный сайт обычно состоит из 3-5 страниц (Главная, О компании, Услуги, Контакты) и служит визитной карточкой вашей компании в интернете.</div>
-                    <div class="sites__price">от 200 000 ₽ / от 2 месяцев</div>
-                  </div>
-                </div>
-                <div class="sites__item">
-                  <div class="animate-to-right">
-                    <h4 class="sites__title">Интернет-магазин</h4>
-                    <div class="sites__desc">Многостраничный сайт для продажи товаров/услуг вашей компании. К типовым страницам Корпоративного сайта добавляются еще 5 (Каталог, Страница товара, Сравнение, Корзина, Оформление заказа).</div>
-                    <div class="sites__price">от 500 000 ₽ / от 2 месяцев</div>
-                  </div>
-                </div>
-                <div class="sites__item">
-                  <div class="animate-to-right">
-                    <h4 class="sites__title">Личный кабинет</h4>
-                    <div class="sites__desc">Кабинет необходим компаниям для взаимодействия с клиентами. Например, заказывать услуги и отслеживать их статус, пополнять баланс, бронировать билеты и т.д.</div>
-                    <div class="sites__price">от 1 250 000 ₽ / от 6 месяцев</div>
+                <div class="col">
+                  <div class="award animate-to-right">
+                    <div class="award__title">Награды</div>
+                    <div class="award__body">
+                      <div class="award__count">
+                        <svg class="svg-icon icon-winner">
+                          <use xlink:href="#winner"></use>
+                        </svg>
+                        <span>12</span>
+                      </div>
+                      <div class="award__picture">
+                        <img src="images/combined-shape.png" srcset="images/combined-shape@2x.png 2x" srcset="images/combined-shape@3x.png 3x" alt="Site of the Day">
+                      </div>
+                      <div class="award__nomination">Site of the Day</div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
+          <div class="awards">
+            <div class="container">
+              <div class="swiper-container js-awards">
+                <div class="swiper-wrapper">
+                  <div class="awards__item swiper-slide">
+                    <div class="awards__picture">
+                      <img src="images/demo/runet.png" srcset="images/demo/runet@2x.png 2x" srcset="images/demo/runet@3x.png 3x" alt="23 место в группе&lt;br&gt;Дизайн-студии">
+                    </div>
+                    <div class="awards__title">23 место в группе<br>Дизайн-студии</div>
+                  </div>
+                  <div class="awards__item swiper-slide">
+                    <div class="awards__picture">
+                      <img src="images/demo/cssdesignawards.png" srcset="images/demo/cssdesignawards@2x.png 2x" srcset="images/demo/cssdesignawards@3x.png 3x" alt="7 наград">
+                    </div>
+                    <div class="awards__title">7 наград</div>
+                  </div>
+                  <div class="awards__item swiper-slide">
+                    <div class="awards__picture">
+                      <img src="images/demo/ruward.png" srcset="images/demo/ruward@2x.png 2x" srcset="images/demo/ruward@3x.png 3x" alt="Digital Design&amp;Creative&lt;br&gt;52 место">
+                    </div>
+                    <div class="awards__title">Digital Design&Creative<br>52 место</div>
+                  </div>
+                  <div class="awards__item swiper-slide">
+                    <div class="awards__picture">
+                      <img src="images/demo/gold-site.png" srcset="images/demo/gold-site@2x.png 2x" srcset="images/demo/gold-site@3x.png 3x" alt="4 золота, 1 серебро и&lt;br&gt;3 бронзы в 2018 году">
+                    </div>
+                    <div class="awards__title">4 золота, 1 серебро и<br>3 бронзы в 2018 году</div>
+                  </div>
+                  <div class="awards__item swiper-slide">
+                    <div class="awards__picture">
+                      <img src="images/demo/gold-app.png" srcset="images/demo/gold-app@2x.png 2x" srcset="images/demo/gold-app@3x.png 3x" alt="2 золота и 1 серебро&lt;br&gt;в 2018 году">
+                    </div>
+                    <div class="awards__title">2 золота и 1 серебро<br>в 2018 году</div>
+                  </div>
+                  <div class="awards__item swiper-slide">
+                    <div class="awards__picture">
+                      <img src="images/demo/runet.png" srcset="images/demo/runet@2x.png 2x" srcset="images/demo/runet@3x.png 3x" alt="23 место в группе&lt;br&gt;Дизайн-студии">
+                    </div>
+                    <div class="awards__title">23 место в группе<br>Дизайн-студии</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           <section class="section">
             <div class="container">
               <h2 class="section__title"><span class="animate-to-top">Кейсы</span></h2>
               <div class="cases">
+                <div class="cases__item ">
+                  <div class="case animate-to-right">
+                    <a href="#" class="case__link">
+                      <h4 class="case__title text-dark">Инкаробанк</h4>
+                      <div class="case__picture">
+                        <img src="images/demo/group-1.jpg" srcset="images/demo/group-1@2x.jpg 2x" srcset="images/demo/group-1@3x.jpg 3x" alt="">
+                      </div>
+                    </a>
+                  </div>
+                </div>
                 <div class="cases__item ">
                   <div class="case animate-to-right">
                     <a href="#" class="case__link">
@@ -230,19 +336,9 @@
                 <div class="cases__item ">
                   <div class="case animate-to-right">
                     <a href="#" class="case__link">
-                      <h4 class="case__title ">Софттест.<br>Тестирование сервисов,<br>приложений и ПО</h4>
+                      <h4 class="case__title ">Мгновенные переводы<br>по всему миру от ChequePay</h4>
                       <div class="case__picture">
-                        <img src="images/demo/group-7.jpg" srcset="images/demo/group-7@2x.jpg 2x" srcset="images/demo/group-7@3x.jpg 3x" alt="">
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="cases__item ">
-                  <div class="case animate-to-right">
-                    <a href="#" class="case__link">
-                      <h4 class="case__title text-dark">Online банк Hive</h4>
-                      <div class="case__picture">
-                        <img src="images/demo/group-5.jpg" srcset="images/demo/group-5@2x.jpg 2x" srcset="images/demo/group-5@3x.jpg 3x" alt="">
+                        <img src="images/demo/group-3.jpg" srcset="images/demo/group-3@2x.jpg 2x" srcset="images/demo/group-3@3x.jpg 3x" alt="">
                       </div>
                     </a>
                   </div>
@@ -260,383 +356,62 @@
                 <div class="cases__item ">
                   <div class="case animate-to-right">
                     <a href="#" class="case__link">
-                      <h4 class="case__title ">Мгновенные переводы<br>по всему миру от ChequePay</h4>
+                      <h4 class="case__title text-dark">Online банк Hive</h4>
                       <div class="case__picture">
-                        <img src="images/demo/group-3.jpg" srcset="images/demo/group-3@2x.jpg 2x" srcset="images/demo/group-3@3x.jpg 3x" alt="">
+                        <img src="images/demo/group-5.jpg" srcset="images/demo/group-5@2x.jpg 2x" srcset="images/demo/group-5@3x.jpg 3x" alt="">
                       </div>
                     </a>
                   </div>
                 </div>
-              </div>
-            </div>
-          </section>
-          <section class="section">
-            <div class="container">
-              <h2><span class="animate-to-top">Этапы создания</span></h2>
-              <div class="stage">
-                <div class="stage__item">
-                  <div class="animate-to-right">
-                    <div class="stage__header">
-                      <div class="stage__icon animate-svg">
-                        <svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'>
-                          <g stroke-width='2' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'>
-                            <path d='M40.84 33.03h7.82a1.56 1.56 0 0 0 0-3.12h-7.82M11.16 29.9H4.13l-1.57 1.57 1.57 1.56h7.03' stroke='#FF1DB0' />
-                            <path d='M50.22 47.1H30.69l-1.56.77h-6.25l-1.57-.78H1.78v2.35c0 .43.35.78.78.78h46.88c.43 0 .78-.35.78-.78v-2.35zM3.34 27.56v-8.6c0-.85.7-1.55 1.57-1.55h3.68M3.34 47.1V35.36' stroke='#885AFA' />
-                            <path stroke='#885AFA' d='M8.6 20.53H6.46v7.03M48.66 27.56v-8.6c0-.85-.7-1.55-1.57-1.55h-3.68M48.66 47.1V35.36M40.84 40.63V5.77H11.16v34.84' />
-                            <path stroke='#885AFA' d='M6.47 35.38v8.59h39.06v-8.6M45.53 27.56v-7.03h-2.12' />
-                            <path stroke='#FF1DB0' d='M16.63 28.1h4.68v-4.7h-4.68zM16.63 36.9h4.68v-4.68h-4.68zM16.63 19.28h4.68V14.6h-4.68zM24.66 15.38h11.5' />
-                            <path d='M11.16 8.9h12.97M28.69 8.9h.56M31.81 8.9h.57M34.94 8.9h.56' stroke='#885AFA' />
-                            <path d='M24.66 18.5h11.5M24.66 24.19h11.5M24.66 27.31h11.5M24.66 33h11.5M24.66 36.13h11.5' stroke='#FF1DB0' />
-                          </g>
-                        </svg>
+                <div class="cases__item ">
+                  <div class="case animate-to-right">
+                    <a href="#" class="case__link">
+                      <h4 class="case__title ">Электронный кошелек</h4>
+                      <div class="case__picture">
+                        <img src="images/demo/group-6.jpg" srcset="images/demo/group-6@2x.jpg 2x" srcset="images/demo/group-6@3x.jpg 3x" alt="">
                       </div>
-                      <div class="stage__name">
-                        <span class="stage__number">#01</span>
-                        <h4 class="stage__title">Аналитика</h4>
-                      </div>
-                      <div class="stage__decor">
-                        <div class="step">
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="stage__desc"> Собираем данные о компании, целевой аудитории, конкурентах. Анализируем и выдвигаем гипотезы. </div>
+                    </a>
                   </div>
                 </div>
-                <div class="stage__item">
-                  <div class="animate-to-right">
-                    <div class="stage__header">
-                      <div class="stage__icon animate-svg">
-                        <svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'>
-                          <g stroke-width='2' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'>
-                            <path stroke='#885AFA' d='M45.6 47V4h-39' />
-                            <path stroke='#885AFA' d='M49.6 44V1h-39' />
-                            <path stroke='#885AFA' d='M2.6 50h39V7h-39z' />
-                            <path stroke='#885AFA' d='M17 17h4v-4h-4zM17 29h4v-4h-4zM17 41h4v-4h-4zM25 17h4v-4h-4zM25 29h4v-4h-4zM25 41h4v-4h-4zM33 17h4v-4h-4zM33 29h4v-4h-4zM33 41h4v-4h-4z' />
-                            <path d='M17 20h4M17 32.06h4M17 44.18h4M25 20h4M25 32.06h4M25 44.18h4M33 20h4M33 32.06h4M33 44.18h4M7 13h4M7 25h3M7 37h4M7 16h4M7 28h2M7 40h3M7 19h3M7 31h1M7 43h4' stroke='#FF1DB0' />
-                          </g>
-                        </svg>
+                <div class="cases__item ">
+                  <div class="case animate-to-right">
+                    <a href="#" class="case__link">
+                      <h4 class="case__title ">Софттест.<br>Тестирование сервисов,<br>приложений и ПО</h4>
+                      <div class="case__picture">
+                        <img src="images/demo/group-7.jpg" srcset="images/demo/group-7@2x.jpg 2x" srcset="images/demo/group-7@3x.jpg 3x" alt="">
                       </div>
-                      <div class="stage__name">
-                        <span class="stage__number">#02</span>
-                        <h4 class="stage__title">Прототипирование</h4>
-                      </div>
-                      <div class="stage__decor">
-                        <div class="step">
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="stage__desc"> Продумываем пользовательские сценарии и создаем карту сайта. Разрабатываем кликабельные прототипы. </div>
+                    </a>
                   </div>
                 </div>
-                <div class="stage__item">
-                  <div class="animate-to-right">
-                    <div class="stage__header">
-                      <div class="stage__icon animate-svg">
-                        <svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'>
-                          <g stroke-width='2' fill='none' fill-rule='evenodd' stroke-linecap='round' stroke-linejoin='round'>
-                            <path stroke='#FF1DB0' d='M29.19 6.48l3.8 1.02 2.86-2.95 3.8 2.2-1.13 3.94 2.79 2.8 3.95-1.14 2.19 3.8L44.5 19l1.02 3.81 3.98 1v4.38l-3.98 1-1.02 3.8 2.95 2.86-2.2 3.8-3.94-1.13-2.8 2.79 1.14 3.95-3.8 2.19L33 44.5l-3.81 1.02' />
-                            <path d='M29.19 37.03A11.24 11.24 0 0 0 26 14.81' stroke='#885AFA' />
-                            <path d='M26 29.95a4.09 4.09 0 0 0 3.3-7.34M5.57 16.8H2.5M5.57 12.72H2.5' stroke='#FF1DB0' />
-                            <path d='M2.5 6.59h8.17' stroke='#885AFA' />
-                            <path d='M13.74 16.8h-3.07M13.74 12.72h-3.07' stroke='#FF1DB0' />
-                            <path d='M10.67 6.59h8.18M14.76 29.1v2.05M14.76 34.2v2.04' stroke='#885AFA' />
-                            <path d='M14.76 39.28v2.05M6.59 29.1v2.05M6.59 34.2v2.04' stroke='#FF1DB0' />
-                            <path d='M6.59 39.28v2.05' stroke='#885AFA' />
-                            <path d='M21.91 16.8h-3.06M21.91 12.72h-3.06' stroke='#FF1DB0' />
-                            <path stroke='#885AFA' d='M2.5 49.5h8.17V20.9H2.5zM10.67 49.5h8.18V20.9h-8.18zM2.5 20.9h8.17V2.5H2.5zM10.67 20.9h8.18V2.5h-8.18zM18.85 49.5H26v-47h-7.15z' />
-                          </g>
-                        </svg>
+                <div class="cases__item ">
+                  <div class="case animate-to-right">
+                    <a href="#" class="case__link">
+                      <h4 class="case__title ">Удобный мобильный банк</h4>
+                      <div class="case__picture">
+                        <img src="images/demo/group-8.jpg" srcset="images/demo/group-8@2x.jpg 2x" srcset="images/demo/group-8@3x.jpg 3x" alt="">
                       </div>
-                      <div class="stage__name">
-                        <span class="stage__number">#03</span>
-                        <h4 class="stage__title">Техническое задание</h4>
-                      </div>
-                      <div class="stage__decor">
-                        <div class="step">
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                        </div>
-                        <div class="step step--vertical">
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="stage__desc"> Технический писатель оформляет предъявленные требования к сайту, задуманный функционал страниц и разработанный прототип в единый документ, на основе которого будет вестись разработка. </div>
+                    </a>
                   </div>
                 </div>
-                <div class="stage__item">
-                  <div class="animate-to-right">
-                    <div class="stage__header">
-                      <div class="stage__icon animate-svg">
-                        <svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'>
-                          <g stroke-width='2' fill='none' fill-rule='evenodd' stroke-linejoin='round'>
-                            <path stroke='#885AFA' stroke-linecap='round' d='M18.3 45.24H2.93V31.78' />
-                            <path d='M23.12 46.68h1.92M26.96 46.68h1.92' stroke='#885AFA' />
-                            <path d='M31.77 46.68h6.73' stroke='#FF1DB0' stroke-linecap='round' />
-                            <path d='M40.42 46.68h1.93M44.27 46.68h1.92M23.12 41.88h1.92M26.96 41.88h1.92M31.77 41.88h1.92M35.62 41.88h1.92M40.42 41.88h1.93M44.27 41.88h1.92M27.03 37.55h21.8c1.2 0 2.17 1 2.17 2.24v8.98C51 50 50.02 51 48.82 51H20.5c-1.2 0-2.18-1-2.18-2.24v-8.98c0-1.24.97-2.24 2.18-2.24h4.36' stroke='#885AFA' />
-                            <path d='M40.15 38.51V24.77a2.73 2.73 0 0 1 2.71-2.74c1.5 0 2.72 1.23 2.72 2.74v7.7a2.73 2.73 0 0 0 2.7 2.74c1.5 0 2.72-1.23 2.72-2.74V7.74H29.85' stroke='#885AFA' />
-                            <path stroke='#FF1DB0' d='M13.9 4.58L15.18 1h4.35l1.27 3.57 3.16 1.3 3.42-1.62 3.07 3.07-1.63 3.42 1.31 3.17 3.57 1.26v4.35l-3.57 1.27-1.3 3.16 1.62 3.42-3.07 3.07-3.42-1.63-3.16 1.31-1.27 3.57h-4.35l-1.26-3.57-3.17-1.3-3.42 1.62-3.07-3.07 1.63-3.42-1.31-3.16L1 19.53v-4.35l3.57-1.26 1.3-3.17-1.62-3.42 3.07-3.07 3.42 1.63z' />
-                            <path d='M17.35 13.51a3.85 3.85 0 1 1 0 7.7 3.85 3.85 0 0 1 0-7.7z' stroke='#885AFA' />
-                            <path d='M35.62 12.07H51' stroke='#885AFA' stroke-linecap='round' />
-                          </g>
-                        </svg>
+                <div class="cases__item ">
+                  <div class="case animate-to-right">
+                    <a href="#" class="case__link">
+                      <h4 class="case__title ">Intellect Banking</h4>
+                      <div class="case__picture">
+                        <img src="images/demo/group-9.jpg" srcset="images/demo/group-9@2x.jpg 2x" srcset="images/demo/group-9@3x.jpg 3x" alt="">
                       </div>
-                      <div class="stage__name">
-                        <span class="stage__number">#06</span>
-                        <h4 class="stage__title">Программирование</h4>
-                      </div>
-                      <div class="stage__decor">
-                        <div class="step">
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="stage__desc"> Создаем дизайн-концепцию сайта, учитывая фирменный стиль компании. Отрисовываем типовые страницы сайта, версии для платшета и телефона. </div>
+                    </a>
                   </div>
                 </div>
-                <div class="stage__item">
-                  <div class="animate-to-right">
-                    <div class="stage__header">
-                      <div class="stage__icon animate-svg">
-                        <svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'>
-                          <g fill='none' fill-rule='evenodd'>
-                            <path d='M2 33V5c0-1.1.9-2 2-2h42a2 2 0 0 1 2 2v12' stroke='#885AFA' stroke-width='2' />
-                            <path stroke='#885AFA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M7 13h4V9H7zM7 25h4v-4H7zM23 13h4V9h-4zM23 25h4v-4h-4zM15 13h4V9h-4zM15 25h4v-4h-4zM31 13h4V9h-4zM39 13h4V9h-4zM7 16h4M7 28h4M23 16h4M23 28h4M15 16h4M15 28h4M31 16h4M39 16h4' />
-                            <path d='M29 38H4a2 2 0 0 1-2-2v-3h27M20 38v1l-1 5v1M16 45h13' stroke='#885AFA' stroke-width='2' />
-                            <path d='M31 21c0-1.1.9-2 2-2h15a2 2 0 0 1 2 2v26a2 2 0 0 1-2 2H33a2 2 0 0 1-2-2V21z' stroke='#FF1DB0' stroke-width='2' />
-                            <path d='M41.5 45.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0' stroke='#885AFA' />
-                            <path d='M36.5 20v1a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-1' stroke='#FF1DB0' stroke-width='2' />
-                            <path stroke='#885AFA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M35 29h4v-4h-4zM35 39h4v-4h-4zM42 29h4v-4h-4zM42 39h4v-4h-4zM35 32h4M35 42h4M42 32h4M42 42h4' />
-                          </g>
-                        </svg>
+                <div class="cases__item cases__item--size2x">
+                  <div class="case animate-to-right">
+                    <a href="#" class="case__link">
+                      <h4 class="case__title text-dark">Больше, чем Финтех. Русофт</h4>
+                      <div class="case__picture">
+                        <img src="images/demo/group-10.jpg" srcset="images/demo/group-10@2x.jpg 2x" srcset="images/demo/group-10@3x.jpg 3x" alt="">
                       </div>
-                      <div class="stage__name">
-                        <span class="stage__number">#05</span>
-                        <h4 class="stage__title">Адаптивная верстка</h4>
-                      </div>
-                      <div class="stage__decor">
-                        <div class="step">
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="stage__desc"> Утвержденный дизайн переводим в код и анимируем необходимые элементы. Используемые технологии: HTML5, CSS3, jQuery, React.js, Git </div>
+                    </a>
                   </div>
-                </div>
-                <div class="stage__item">
-                  <div class="animate-to-right">
-                    <div class="stage__header">
-                      <div class="stage__icon animate-svg">
-                        <svg viewBox='0 0 52 52' xmlns='http://www.w3.org/2000/svg'>
-                          <g stroke-width='2' fill='none' fill-rule='evenodd'>
-                            <path d='M16 36H3v3c0 1.1.9 2 2 2h16' stroke='#885AFA' stroke-linecap='round' stroke-linejoin='round' />
-                            <path stroke='#FF1DB0' stroke-linecap='round' stroke-linejoin='round' d='M37 32v-9.34L41 12l4 10.66V32' />
-                            <path d='M49 33V6a2 2 0 0 0-2-2h-3M36 36h13v3a2 2 0 0 1-2 2H34M8 4H5a2 2 0 0 0-2 2v30' stroke='#885AFA' stroke-linecap='round' stroke-linejoin='round' />
-                            <path d='M26 19V5' stroke='#FF1DB0' stroke-linecap='round' stroke-linejoin='round' />
-                            <path d='M27 18.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0' stroke='#885AFA' />
-                            <path d='M28 5c0 2.08.37 3.63 1.1 5.54l3.1 8.25c1.72 4.6.6 9.92-2.78 13.21M24 5c0 2.08-.34 3.63-1.06 5.54L19.8 18.8A12.42 12.42 0 0 0 22.61 32' stroke='#FF1DB0' stroke-linecap='round' stroke-linejoin='round' />
-                            <path d='M15 4h9M15 4a2 2 0 1 1-4 0 2 2 0 0 1 4 0zM28 4h9M37 4a2 2 0 1 0 4 0 2 2 0 0 0-4 0z' stroke='#885AFA' stroke-linecap='round' stroke-linejoin='round' />
-                            <path stroke='#FF1DB0' stroke-linecap='round' stroke-linejoin='round' d='M24 5V2h4v3M21 36.63V48M31 36v12M19 32h14' />
-                            <path d='M19 36h14M6 48h40' stroke='#885AFA' stroke-linecap='round' stroke-linejoin='round' />
-                            <path d='M37 22.66h8M7 32V10h8v22M10 16h5M12 20h3M12 24h3M12 28h3M10 32h5M24 6h4' stroke='#FF1DB0' stroke-linecap='round' stroke-linejoin='round' />
-                          </g>
-                        </svg>
-                      </div>
-                      <div class="stage__name">
-                        <span class="stage__number">#04</span>
-                        <h4 class="stage__title">Адаптивный дизайн</h4>
-                      </div>
-                      <div class="stage__decor">
-                        <div class="step">
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                          <span class="step__item"></span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="stage__desc"> Для удобства модерирования, переносим верстку на Систему управления сайтом(CMS). Пишем необходимый функционал, тестируем и переносим сайт на боевой хостинг. </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="section work">
-            <div class="container">
-              <h2><span class="animate-to-top">Как начать работы?</span></h2>
-              <div class="row">
-                <div class="col">
-                  <div class="animate-to-right">
-                    <div class="lead"> Имиджевые и продающие, информационные и многостраничные, адаптивные и кроссбраузерные, а так же очень удобные для клиентов и прибыльные для бизнеса. </div>
-                    <p>Секрет успешного сайта не только в красивой картинке. Перед началом работ определите цель создания сайта: предоставление информации, продажа товаров или рекламная кампания? Затем опишите чем ваш продукт или услуга отличается от предложений конкурентов.</p>
-                    <p>Вы знаете кто ваша целевая аудитория (ЦА), ее потребности? Необходимо учесть географию аудитории, возраст, пол и социальный статус. Мы собираем все данные о компании и аудитории, анализируем, группируем и строим пользовательские сценарии. Создаем прототипы сайта, заполняем их грамотным контентом и описываем функционал в техническом задании. Паралелльно идет работа над дизайн-концептом, базирующемся на фирменном стиле компании.</p>
-                    <p>Утвержденные типовые страницы прототипа оформляем в соответствии с дизайн-концепцией. Далее проект отправляется в верстку, а затем на программирование. Созданные в Софтлаб сайты отлично отображаются во всех современных браузерах на всех экранах смартфонов, планшетов, ноутбуков и компьютеров.</p>
-                  </div>
-                </div>
-                <div class="col">
-                  <div class="callback-form animate-to-right">
-                    <h3>Заполните бриф и отправьте нам для оценки работ</h3>
-                    <ul class="list-icon">
-                      <li>
-                        <a href="file.pdf">
-                          <svg class="list-icon__icon svg-icon icon-prototype">
-                            <use xlink:href="#prototype"></use>
-                          </svg>
-                          <span class="list-icon__title">Скачать бриф (1мб)</span>
-                        </a>
-                      </li>
-                    </ul>
-                    <form action="" id="brief">
-                      <div class="form-group">
-                        <div class="text-field">
-                          <input id="b-name" type="text" name="name">
-                          <label for="b-name">Имя</label>
-                          <span class="form-group__bar"></span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="text-field">
-                          <input id="b-email" type="text" name="email">
-                          <label for="b-email">E-mail</label>
-                          <span class="form-group__bar"></span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="text-field">
-                          <input id="b-phone" class="tel" type="text" name="phone">
-                          <label for="b-phone">Телефон</label>
-                          <span class="form-group__bar"></span>
-                        </div>
-                      </div>
-                      <div class="form__group">
-                        <div class="text-field text-field--file">
-                          <div class="btn">
-                            <span>Прикрепить</span>
-                            <input type="file" name="file-1" id="file-1" class="file-input">
-                          </div>
-                          <label for="file-1" class="file-label">
-                            <input type="text" class="file-name" placeholder="Прикрепите файл" readonly>
-                            <span class="form-group__bar"></span>
-                          </label>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="checkbox" for="privacy">
-                          <input type="checkbox" class="checkbox__input" name="privacy" id="privacy">
-                          <span class="checkbox__label">Ознакомлен и согласен с политикой обработки персональных данных</span>
-                        </label>
-                      </div>
-                      <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Отправить</button>
-                      </div>
-                    </form>
-                  </div>
-                  <script> $(document).ready(function(){
-
-      $("#brief").validate( {
-        rules: {
-          phone: {
-            requiredphone: true,
-            minlengthphone: true
-          },
-          name: {
-            required: true
-          },
-          email: {
-            required: true,
-            email: true
-          },
-          privacy: "required",
-        },
-        messages: {
-          phone:{
-            required: "Укажите номер телефона"
-          },
-          name: {
-            required: "Введите ваше имя"
-          },
-          email: "Введите корректный email адрес",
-          privacy: "Примите соглашение"
-        },
-        errorElement: "span",
-        errorPlacement: function ( error, element ) {
-          error.addClass("form-text");
-          if ( element.prop( "type" ) === "checkbox") {
-            error.insertAfter( element.parent( ".checkbox" ) );
-          }
-          else if( element.prop("type") === "radio"){
-            error.insertAfter( element.parent( ".radio" ) );
-          } else {
-            error.insertAfter( element.parent( ".text-field" ) );
-          }
-    
-        },
-        highlight: function ( element, errorClass, validClass ) {
-          $( element ).parents( ".form-group" ).addClass( "has-error" ).removeClass( "has-success" );
-        },
-        unhighlight: function (element, errorClass, validClass) {
-          $( element ).parents( ".form-group" ).addClass( "has-success" ).removeClass( "has-error" );
-        },
-      });
-    });
-  </script>
                 </div>
               </div>
             </div>
