@@ -103,35 +103,68 @@
             </div>
           </div>
           <div class="swiper-wrapper">
-            <div class="swiper-slide gradient-1" data-title="Студия">
+            <div class="swiper-slide" data-title="Студия" data-video="video-1" data-theme="">
               <div id="container"></div>
-              <div class="slider__item">
+              <div class="slider__item video-1">
                 <div class="container">
                   <div class="slider__title"> Softlab — студия<br>креативных решений </div>
                   <div class="js-slider-pagination swiper-pagination"></div>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide gradient-1" data-title="Сайты">
-              <div class="slider__item">
+            <div class="swiper-slide" style="background: #464d53" data-title="Сайты" data-video="video-2" data-theme="">
+              <div class="slider__item video-2">
                 <div class="container">
-                  <div class="slider__title"> Сайты </div>
+                  <div class="slider__title"> Создаем сайты,<br>ориентированные<br>на пользователей <a href="/sites.html" class="slider__link">
+                      <svg class="svg-icon icon-back">
+                        <use xlink:href="#back"></use>
+                      </svg>
+                    </a>
+                  </div>
                   <div class="js-slider-pagination swiper-pagination"></div>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide gradient-1" data-title="Приложения">
-              <div class="slider__item">
+            <div class="swiper-slide" style="background: #edf2f5" data-title="Приложения" data-video="video-3" data-theme="light">
+              <div class="slider__item video-3">
                 <div class="container">
-                  <div class="slider__title"> Приложения </div>
+                  <div class="slider__title"> Разрабатываем<br>приложения<br>финтех сегмента <a href="#app" class="slider__link">
+                      <svg class="svg-icon icon-back">
+                        <use xlink:href="#back"></use>
+                      </svg>
+                    </a>
+                  </div>
                   <div class="js-slider-pagination swiper-pagination"></div>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide gradient-1" data-title="Презентации">
-              <div class="slider__item">
+            <div class="swiper-slide" style="background: #464d53" data-title="Презентации" data-video="video-4" data-theme="">
+              <div class="slider__item video-4">
+                <div id="video-4" class="js-bg-video player" data-property="{videoURL:'276219169',containment:'.video-4', showControls:false, fadeTime:1000, autoPlay:true, loop:true, vol:20, mute:true, startAt:0, opacity:1, addRaster:true, stopMovieOnBlur: true}"></div>
+                <script> $(document).ready(function(){
+              var myPlayer = $("#video-4").vimeo_player({mobileFallbackImage:"/images/demo/video-fallback.jpg"});
+            });
+          </script>
                 <div class="container">
-                  <div class="slider__title"> Презентации </div>
+                  <div class="slider__title"> Производим<br>потрясающие<br>презентации <a href="#video" class="slider__link">
+                      <svg class="svg-icon icon-back">
+                        <use xlink:href="#back"></use>
+                      </svg>
+                    </a>
+                  </div>
+                  <div class="js-slider-pagination swiper-pagination"></div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide" style="background: #464d53" data-title="Брендинг" data-video="video-5" data-theme="">
+              <div class="slider__item video-5">
+                <div class="container">
+                  <div class="slider__title"> Брендинг <a href="#branding" class="slider__link">
+                      <svg class="svg-icon icon-back">
+                        <use xlink:href="#back"></use>
+                      </svg>
+                    </a>
+                  </div>
                   <div class="js-slider-pagination swiper-pagination"></div>
                 </div>
               </div>
