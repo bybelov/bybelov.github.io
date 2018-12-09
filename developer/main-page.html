@@ -20,14 +20,6 @@
     <script src="js/app.js"></script>
   </head>
   <body class="home">
-    <svg class="svg-gradient" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="logo-gradient" x1="0%" y1="100%" y2="0%">
-          <stop offset="0%" stop-color="#835EFF" />
-          <stop offset="100%" stop-color="#FF008D" />
-        </linearGradient>
-      </defs>
-    </svg>
     <!-- BEGIN page -->
     <div class="page">
       <header class="header" role="banner">
@@ -103,17 +95,22 @@
             </div>
           </div>
           <div class="swiper-wrapper">
-            <div class="swiper-slide" data-title="Студия" data-video="video-1" data-theme="">
+            <div class="swiper-slide" data-title="Студия" data-theme="">
               <div id="container"></div>
-              <div class="slider__item video-1">
+              <div class="slider__item">
                 <div class="container">
                   <div class="slider__title"> Softlab — студия<br>креативных решений </div>
                   <div class="js-slider-pagination swiper-pagination"></div>
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" style="background: #464d53" data-title="Сайты" data-video="video-2" data-theme="">
-              <div class="slider__item video-2">
+            <div class="swiper-slide" data-title="Сайты" data-theme="" style="background: #464d53">
+              <div class="slider__item">
+                <div class="slider__bg">
+                  <div class="slider__picture-wrapper">
+                    <img class="slider__picture" src="images/demo/slider/site-clay.png" srcset="images/demo/slider/site-clay@2x.png 2x" alt="">
+                  </div>
+                </div>
                 <div class="container">
                   <div class="slider__title"> Создаем сайты,<br>ориентированные<br>на пользователей <a href="/sites.html" class="slider__link">
                       <svg class="svg-icon icon-back">
@@ -125,8 +122,13 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" style="background: #edf2f5" data-title="Приложения" data-video="video-3" data-theme="light">
-              <div class="slider__item video-3">
+            <div class="swiper-slide" data-title="Приложения" data-theme="light" style="background: #edf2f5">
+              <div class="slider__item">
+                <div class="slider__bg">
+                  <div class="slider__picture-wrapper">
+                    <img class="slider__picture" src="images/demo/slider/app-clay.png" srcset="images/demo/slider/app-clay@2x.png 2x" alt="">
+                  </div>
+                </div>
                 <div class="container">
                   <div class="slider__title"> Разрабатываем<br>приложения<br>финтех сегмента <a href="#app" class="slider__link">
                       <svg class="svg-icon icon-back">
@@ -138,13 +140,8 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" style="background: #464d53" data-title="Презентации" data-video="video-4" data-theme="">
-              <div class="slider__item video-4">
-                <div id="video-4" class="js-bg-video player" data-property="{videoURL:'276219169',containment:'.video-4', showControls:false, fadeTime:1000, autoPlay:true, loop:true, vol:20, mute:true, startAt:0, opacity:1, addRaster:true, stopMovieOnBlur: true}"></div>
-                <script> $(document).ready(function(){
-              var myPlayer = $("#video-4").vimeo_player({mobileFallbackImage:"/images/demo/video-fallback.jpg"});
-            });
-          </script>
+            <div class="swiper-slide" data-video="276219169" data-videofallbackimage="/images/demo/video-fallback.jpg" data-title="Презентации" data-theme="" style="background-image: url(/images/demo/video-fallback.jpg)">
+              <div class="slider__item" id="vimeoVideo-4" data-property="{videoURL:'276219169',containment:'self', showControls:false, fadeTime:100, autoPlay:true, loop:true, vol:0, mute:true, startAt:0, opacity:1, addRaster:true, stopMovieOnBlur: false}">
                 <div class="container">
                   <div class="slider__title"> Производим<br>потрясающие<br>презентации <a href="#video" class="slider__link">
                       <svg class="svg-icon icon-back">
@@ -156,8 +153,8 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide" style="background: #464d53" data-title="Брендинг" data-video="video-5" data-theme="">
-              <div class="slider__item video-5">
+            <div class="swiper-slide" data-title="Брендинг" data-theme="" style="background: #464d53">
+              <div class="slider__item">
                 <div class="container">
                   <div class="slider__title"> Брендинг <a href="#branding" class="slider__link">
                       <svg class="svg-icon icon-back">
@@ -304,39 +301,33 @@
                 <div class="swiper-wrapper">
                   <div class="awards__item swiper-slide">
                     <div class="awards__picture">
-                      <img src="images/demo/runet.png" srcset="images/demo/runet@2x.png 2x" srcset="images/demo/runet@3x.png 3x" alt="23 место в группе&lt;br&gt;Дизайн-студии">
+                      <span class="awards__number"> 16 </span>
                     </div>
-                    <div class="awards__title">23 место в группе<br>Дизайн-студии</div>
+                    <div class="awards__title">лет на рынке</div>
                   </div>
                   <div class="awards__item swiper-slide">
                     <div class="awards__picture">
-                      <img src="images/demo/cssdesignawards.png" srcset="images/demo/cssdesignawards@2x.png 2x" srcset="images/demo/cssdesignawards@3x.png 3x" alt="7 наград">
+                      <span class="awards__number"> 16 </span>
                     </div>
-                    <div class="awards__title">7 наград</div>
+                    <div class="awards__title">лет на рынке</div>
                   </div>
                   <div class="awards__item swiper-slide">
                     <div class="awards__picture">
-                      <img src="images/demo/ruward.png" srcset="images/demo/ruward@2x.png 2x" srcset="images/demo/ruward@3x.png 3x" alt="Digital Design&amp;Creative&lt;br&gt;52 место">
+                      <span class="awards__number"> 10 </span>
                     </div>
-                    <div class="awards__title">Digital Design&Creative<br>52 место</div>
+                    <div class="awards__title">комплексных решений и больше</div>
                   </div>
                   <div class="awards__item swiper-slide">
                     <div class="awards__picture">
-                      <img src="images/demo/gold-site.png" srcset="images/demo/gold-site@2x.png 2x" srcset="images/demo/gold-site@3x.png 3x" alt="4 золота, 1 серебро и&lt;br&gt;3 бронзы в 2018 году">
+                      <span class="awards__number"> 550 </span>
                     </div>
-                    <div class="awards__title">4 золота, 1 серебро и<br>3 бронзы в 2018 году</div>
+                    <div class="awards__title">и более успешных инсталляций</div>
                   </div>
                   <div class="awards__item swiper-slide">
                     <div class="awards__picture">
-                      <img src="images/demo/gold-app.png" srcset="images/demo/gold-app@2x.png 2x" srcset="images/demo/gold-app@3x.png 3x" alt="2 золота и 1 серебро&lt;br&gt;в 2018 году">
+                      <span class="awards__number"> 1000 </span>
                     </div>
-                    <div class="awards__title">2 золота и 1 серебро<br>в 2018 году</div>
-                  </div>
-                  <div class="awards__item swiper-slide">
-                    <div class="awards__picture">
-                      <img src="images/demo/runet.png" srcset="images/demo/runet@2x.png 2x" srcset="images/demo/runet@3x.png 3x" alt="23 место в группе&lt;br&gt;Дизайн-студии">
-                    </div>
-                    <div class="awards__title">23 место в группе<br>Дизайн-студии</div>
+                    <div class="awards__title">чашек выпитого кофе</div>
                   </div>
                 </div>
               </div>
@@ -496,6 +487,42 @@
       </footer>
       <div class="popup">
         <div class="popup__inner">
+          <div class="lines">
+            <div class="container">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="pluses">
+            <div class="container">
+              <div class="plus-row">
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+              </div>
+              <div class="plus-row">
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+              </div>
+              <div class="plus-row">
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+              </div>
+              <div class="plus-row">
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+              </div>
+            </div>
+          </div>
           <div class="popup__header">
             <div class="container">
               <a href="/" class="logo">
@@ -514,8 +541,26 @@
             <div class="container">
               <div class="popup__row">
                 <div class="popup__left">
-                  <p class="lead">Креативное пространство, сочетающее в себе популярные направления digital области — UX/UI, Event, HR и Обучение</p>
-                  <p class="mb-6">Знания – самый главный инвестиционный ресурс для реализации успешного будущего человека. Мы обладаем знаниями, обучаем и передаем опыт молодым специалистам, создавая кадровый резерв для развивающегося рынка digital-профессий.</p>
+                  <nav class="menu" role="navigation">
+                    <ul class="menu__inner">
+                      <li class="menu-item active">
+                        <a href="main-page.html" class="menu-item__link"> Студия </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="sites.html" class="menu-item__link"> Сайты </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="app-detail.html" class="menu-item__link"> Приложения </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="#" class="menu-item__link"> Презентации </a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <div class="popup__content">
+                    <p class="lead">Креативное пространство, сочетающее в себе популярные направления digital области — UX/UI, Event, HR и Обучение</p>
+                    <p>Знания – самый главный инвестиционный ресурс для реализации успешного будущего человека. Мы обладаем знаниями, обучаем и передаем опыт молодым специалистам, создавая кадровый резерв для развивающегося рынка digital-профессий.</p>
+                  </div>
                   <div class="features">
                     <div class="features__item">
                       <h3 class="features__title">Профессионализм</h3>
@@ -536,129 +581,12 @@
                   </div>
                 </div>
                 <div class="popup__right">
-                  <h3>Будем рады ответить Вам</h3>
-                  <div class="tabs">
-                    <ul class="tabs-nav">
-                      <li class="active"><a href="#tab1">Контакты</a></li>
-                      <li><a href="#tab2">Обратная связь</a></li>
-                    </ul>
-                    <div class="tab-content">
-                      <div id="tab1" class="tab-pane active">
-                        <div class="contacts">
-                          <div class="contacts__info"> +7 495 678 88 99 <br> Россия, Москва, улица Беговая, д. 3, стр. 1<br> info@softlab.ru </div>
-                          <div class="contacts__map">
-                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7b9ac1c8a188df8c2c7641c92ccba9bedb3d8b7c311834920d231c4846b2f9c5&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="tab2" class="tab-pane">
-                        <div class="callback-form">
-                          <form action="" id="callback2">
-                            <div class="form-group">
-                              <div class="text-field">
-                                <input id="f2-name" type="text" name="name">
-                                <label for="f2-name">Имя</label>
-                                <span class="form-group__bar"></span>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="text-field">
-                                <input id="f2-email" type="text" name="email">
-                                <label for="f2-email">E-mail</label>
-                                <span class="form-group__bar"></span>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="text-field">
-                                <input id="f2-phone" class="tel" type="text" name="phone">
-                                <label for="f2-phone">Телефон</label>
-                                <span class="form-group__bar"></span>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="text-field">
-                                <textarea name="message" id="f2-message" cols="30" rows="1"></textarea>
-                                <label for="f2-message">Сообщение</label>
-                                <span class="form-group__bar"></span>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label class="checkbox" for="privacy2">
-                                <input type="checkbox" class="checkbox__input" name="privacy" id="privacy2">
-                                <span class="checkbox__label">Ознакомлен и согласен с политикой обработки персональных данных</span>
-                              </label>
-                            </div>
-                            <div class="form-group">
-                              <button type="submit" class="btn btn-primary">Отправить</button>
-                            </div>
-                          </form>
-                        </div>
-                        <script>
-                          $(document).ready(function()
-                          {
-                            $("#callback2").validate(
-                            {
-                              rules:
-                              {
-                                phone:
-                                {
-                                  requiredphone: true,
-                                  minlengthphone: true
-                                },
-                                name:
-                                {
-                                  required: true
-                                },
-                                email:
-                                {
-                                  required: true,
-                                  email: true
-                                },
-                                privacy: "required",
-                              },
-                              messages:
-                              {
-                                phone:
-                                {
-                                  required: "Укажите номер телефона"
-                                },
-                                name:
-                                {
-                                  required: "Введите ваше имя"
-                                },
-                                email: "Введите корректный email адрес",
-                                privacy: "Примите соглашение"
-                              },
-                              errorElement: "span",
-                              errorPlacement: function(error, element)
-                              {
-                                error.addClass("form-text");
-                                if (element.prop("type") === "checkbox")
-                                {
-                                  error.insertAfter(element.parent(".checkbox"));
-                                }
-                                else if (element.prop("type") === "radio")
-                                {
-                                  error.insertAfter(element.parent(".radio"));
-                                }
-                                else
-                                {
-                                  error.insertAfter(element.parent(".text-field"));
-                                }
-                              },
-                              highlight: function(element, errorClass, validClass)
-                              {
-                                $(element).parents(".form-group").addClass("has-error").removeClass("has-success");
-                              },
-                              unhighlight: function(element, errorClass, validClass)
-                              {
-                                $(element).parents(".form-group").addClass("has-success").removeClass("has-error");
-                              },
-                            });
-                          });
-                        </script>
-                      </div>
-                    </div>
+                  <h3 class="contacts__title">Будем рады ответить Вам</h3>
+                  <div class="contacts__info">
+                    <p>+7 495 678 88 99 <br>Россия, Москва, улица Беговая, д.3, стр.1<br>info@softlab.ru</p>
+                  </div>
+                  <div class="contacts__map">
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7b9ac1c8a188df8c2c7641c92ccba9bedb3d8b7c311834920d231c4846b2f9c5&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
                   </div>
                 </div>
               </div>

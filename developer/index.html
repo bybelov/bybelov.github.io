@@ -20,14 +20,6 @@
     <script src="js/app.js"></script>
   </head>
   <body class="">
-    <svg class="svg-gradient" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="logo-gradient" x1="0%" y1="100%" y2="0%">
-          <stop offset="0%" stop-color="#835EFF" />
-          <stop offset="100%" stop-color="#FF008D" />
-        </linearGradient>
-      </defs>
-    </svg>
     <!-- BEGIN page -->
     <div class="page">
       <header class="header" role="banner">
@@ -127,6 +119,42 @@
       </footer>
       <div class="popup">
         <div class="popup__inner">
+          <div class="lines">
+            <div class="container">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </div>
+          <div class="pluses">
+            <div class="container">
+              <div class="plus-row">
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+              </div>
+              <div class="plus-row">
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+              </div>
+              <div class="plus-row">
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+              </div>
+              <div class="plus-row">
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+                <div class="plus"></div>
+              </div>
+            </div>
+          </div>
           <div class="popup__header">
             <div class="container">
               <a href="/" class="logo">
@@ -145,135 +173,36 @@
             <div class="container">
               <div class="popup__row">
                 <div class="popup__left">
-                  <p class="lead">Креативное пространство, сочетающее в себе популярные направления digital области — UX/UI, Event, HR и Обучение</p>
-                  <p class="mb-6">Знания – самый главный инвестиционный ресурс для реализации успешного будущего человека. Мы обладаем знаниями, обучаем и передаем опыт молодым специалистам, создавая кадровый резерв для развивающегося рынка digital-профессий.</p>
+                  <nav class="menu" role="navigation">
+                    <ul class="menu__inner">
+                      <li class="menu-item">
+                        <a href="main-page.html" class="menu-item__link"> Студия </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="sites.html" class="menu-item__link"> Сайты </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="app-detail.html" class="menu-item__link"> Приложения </a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="#" class="menu-item__link"> Презентации </a>
+                      </li>
+                    </ul>
+                  </nav>
+                  <div class="popup__content">
+                    <p class="lead">Креативное пространство, сочетающее в себе популярные направления digital области — UX/UI, Event, HR и Обучение</p>
+                    <p>Знания – самый главный инвестиционный ресурс для реализации успешного будущего человека. Мы обладаем знаниями, обучаем и передаем опыт молодым специалистам, создавая кадровый резерв для развивающегося рынка digital-профессий.</p>
+                  </div>
                   <div class="features">
                   </div>
                 </div>
                 <div class="popup__right">
-                  <h3>Будем рады ответить Вам</h3>
-                  <div class="tabs">
-                    <ul class="tabs-nav">
-                      <li class="active"><a href="#tab1">Контакты</a></li>
-                      <li><a href="#tab2">Обратная связь</a></li>
-                    </ul>
-                    <div class="tab-content">
-                      <div id="tab1" class="tab-pane active">
-                        <div class="contacts">
-                          <div class="contacts__info"> +7 495 678 88 99 <br> Россия, Москва, улица Беговая, д. 3, стр. 1<br> info@softlab.ru </div>
-                          <div class="contacts__map">
-                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7b9ac1c8a188df8c2c7641c92ccba9bedb3d8b7c311834920d231c4846b2f9c5&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
-                          </div>
-                        </div>
-                      </div>
-                      <div id="tab2" class="tab-pane">
-                        <div class="callback-form">
-                          <form action="" id="callback2">
-                            <div class="form-group">
-                              <div class="text-field">
-                                <input id="f2-name" type="text" name="name">
-                                <label for="f2-name">Имя</label>
-                                <span class="form-group__bar"></span>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="text-field">
-                                <input id="f2-email" type="text" name="email">
-                                <label for="f2-email">E-mail</label>
-                                <span class="form-group__bar"></span>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="text-field">
-                                <input id="f2-phone" class="tel" type="text" name="phone">
-                                <label for="f2-phone">Телефон</label>
-                                <span class="form-group__bar"></span>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <div class="text-field">
-                                <textarea name="message" id="f2-message" cols="30" rows="1"></textarea>
-                                <label for="f2-message">Сообщение</label>
-                                <span class="form-group__bar"></span>
-                              </div>
-                            </div>
-                            <div class="form-group">
-                              <label class="checkbox" for="privacy2">
-                                <input type="checkbox" class="checkbox__input" name="privacy" id="privacy2">
-                                <span class="checkbox__label">Ознакомлен и согласен с политикой обработки персональных данных</span>
-                              </label>
-                            </div>
-                            <div class="form-group">
-                              <button type="submit" class="btn btn-primary">Отправить</button>
-                            </div>
-                          </form>
-                        </div>
-                        <script>
-                          $(document).ready(function()
-                          {
-                            $("#callback2").validate(
-                            {
-                              rules:
-                              {
-                                phone:
-                                {
-                                  requiredphone: true,
-                                  minlengthphone: true
-                                },
-                                name:
-                                {
-                                  required: true
-                                },
-                                email:
-                                {
-                                  required: true,
-                                  email: true
-                                },
-                                privacy: "required",
-                              },
-                              messages:
-                              {
-                                phone:
-                                {
-                                  required: "Укажите номер телефона"
-                                },
-                                name:
-                                {
-                                  required: "Введите ваше имя"
-                                },
-                                email: "Введите корректный email адрес",
-                                privacy: "Примите соглашение"
-                              },
-                              errorElement: "span",
-                              errorPlacement: function(error, element)
-                              {
-                                error.addClass("form-text");
-                                if (element.prop("type") === "checkbox")
-                                {
-                                  error.insertAfter(element.parent(".checkbox"));
-                                }
-                                else if (element.prop("type") === "radio")
-                                {
-                                  error.insertAfter(element.parent(".radio"));
-                                }
-                                else
-                                {
-                                  error.insertAfter(element.parent(".text-field"));
-                                }
-                              },
-                              highlight: function(element, errorClass, validClass)
-                              {
-                                $(element).parents(".form-group").addClass("has-error").removeClass("has-success");
-                              },
-                              unhighlight: function(element, errorClass, validClass)
-                              {
-                                $(element).parents(".form-group").addClass("has-success").removeClass("has-error");
-                              },
-                            });
-                          });
-                        </script>
-                      </div>
-                    </div>
+                  <h3 class="contacts__title">Будем рады ответить Вам</h3>
+                  <div class="contacts__info">
+                    <p>+7 495 678 88 99 <br>Россия, Москва, улица Беговая, д.3, стр.1<br>info@softlab.ru</p>
+                  </div>
+                  <div class="contacts__map">
+                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A7b9ac1c8a188df8c2c7641c92ccba9bedb3d8b7c311834920d231c4846b2f9c5&amp;width=100%25&amp;height=100%&amp;lang=ru_RU&amp;scroll=true"></script>
                   </div>
                 </div>
               </div>
