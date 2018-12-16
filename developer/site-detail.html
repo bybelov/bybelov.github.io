@@ -167,7 +167,7 @@
             <div class="container-fluid">
               <div class="row no-gutters">
                 <div class="col-sm-6 col-xl-4">
-                  <div class="box">
+                  <div class="box animate-to-right">
                     <div class="counter">
                       <div class="counter__number">1 500</div>
                       <div class="counter__desc">оформленных банковских карт</div>
@@ -184,7 +184,7 @@
                   </div>
                 </div>
                 <div class="col-sm-6 col-xl-4">
-                  <div class="box">
+                  <div class="box animate-to-right">
                     <div class="counter">
                       <div class="counter__number">10 %</div>
                       <div class="counter__desc">конверсия лендинга</div>
@@ -205,49 +205,50 @@
                   </div>
                 </div>
                 <div class="offset-md-3 col-md-6 offset-xl-0 col-xl-4">
-                  <h3>Хотите с нами работать?</h3>
-                  <div class="callback-form">
-                    <form action="" id="callback2">
-                      <div class="form-group">
-                        <div class="text-field">
-                          <input id="f2-name" type="text" name="name">
-                          <label for="f2-name">Имя</label>
-                          <span class="form-group__bar"></span>
+                  <div class="animate-to-right">
+                    <h3>Хотите с нами работать?</h3>
+                    <div class="callback-form">
+                      <form action="" id="callback2">
+                        <div class="form-group">
+                          <div class="text-field">
+                            <input id="f2-name" type="text" name="name">
+                            <label for="f2-name">Имя</label>
+                            <span class="form-group__bar"></span>
+                          </div>
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="text-field">
-                          <input id="f2-email" type="text" name="email">
-                          <label for="f2-email">E-mail</label>
-                          <span class="form-group__bar"></span>
+                        <div class="form-group">
+                          <div class="text-field">
+                            <input id="f2-email" type="text" name="email">
+                            <label for="f2-email">E-mail</label>
+                            <span class="form-group__bar"></span>
+                          </div>
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="text-field">
-                          <input id="f2-phone" class="tel" type="text" name="phone">
-                          <label for="f2-phone">Телефон</label>
-                          <span class="form-group__bar"></span>
+                        <div class="form-group">
+                          <div class="text-field">
+                            <input id="f2-phone" class="tel" type="text" name="phone">
+                            <label for="f2-phone">Телефон</label>
+                            <span class="form-group__bar"></span>
+                          </div>
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <div class="text-field">
-                          <textarea name="message" id="f2-message" cols="30" rows="1"></textarea>
-                          <label for="f2-message">Сообщение</label>
-                          <span class="form-group__bar"></span>
+                        <div class="form-group">
+                          <div class="text-field">
+                            <textarea name="message" id="f2-message" cols="30" rows="1"></textarea>
+                            <label for="f2-message">Сообщение</label>
+                            <span class="form-group__bar"></span>
+                          </div>
                         </div>
-                      </div>
-                      <div class="form-group">
-                        <label class="checkbox" for="privacy2">
-                          <input type="checkbox" class="checkbox__input" name="privacy" id="privacy2">
-                          <span class="checkbox__label">Ознакомлен и согласен с политикой обработки персональных данных</span>
-                        </label>
-                      </div>
-                      <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Отправить</button>
-                      </div>
-                    </form>
-                  </div>
-                  <script> $(document).ready(function () {
+                        <div class="form-group">
+                          <label class="checkbox" for="privacy2">
+                            <input type="checkbox" class="checkbox__input" name="privacy" id="privacy2">
+                            <span class="checkbox__label">Ознакомлен и согласен с политикой обработки персональных данных</span>
+                          </label>
+                        </div>
+                        <div class="form-group">
+                          <button type="submit" class="btn btn-primary">Отправить</button>
+                        </div>
+                      </form>
+                    </div>
+                    <script> $(document).ready(function () {
       $("#callback2").validate({
         rules: {
           phone: {
@@ -294,6 +295,7 @@
       });
     });
   </script>
+                  </div>
                 </div>
               </div>
             </div>
