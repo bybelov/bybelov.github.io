@@ -15,16 +15,16 @@
     <meta name="theme-color" content="#ff1db0">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&amp;subset=cyrillic" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet" type="text/css">
-    <script src="js/vendor.js"></script>
-    <script src="js/app.js"></script>
+    <link href="css/main.css?v1" rel="stylesheet" type="text/css">
+    <script src="js/vendor.js?v1"></script>
+    <script src="js/app.js?v1"></script>
   </head>
   <body class="header--sticky">
     <!-- BEGIN page -->
     <div class="page">
       <header class="header" role="banner">
         <div class="header__inner">
-          <div class="container">
+          <div class="container-fluid">
             <a href="/" class="logo">
               <svg viewBox="0 0 176 30" class="icon-logo" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
                 <g fill="none" fill-rule="evenodd">
@@ -59,7 +59,7 @@
       <main class="main" role="main">
         <div class="intro" style="background-color: #edf2f5">
           <div class="lines">
-            <div class="container">
+            <div class="container-fluid">
               <div class="line"></div>
               <div class="line"></div>
               <div class="line"></div>
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="pluses">
-            <div class="container">
+            <div class="container-fluid">
               <div class="plus-row">
                 <div class="plus"></div>
                 <div class="plus"></div>
@@ -98,7 +98,7 @@
         </div>
         <div class="main__content">
           <div class="lines">
-            <div class="container">
+            <div class="container-fluid">
               <div class="line"></div>
               <div class="line"></div>
               <div class="line"></div>
@@ -106,7 +106,7 @@
             </div>
           </div>
           <div class="pluses">
-            <div class="container">
+            <div class="container-fluid">
               <div class="plus-row">
                 <div class="plus"></div>
                 <div class="plus"></div>
@@ -163,28 +163,163 @@
               </div>
             </div>
           </div>
+          <section class="section">
+            <div class="container-fluid">
+              <div class="row no-gutters">
+                <div class="col-sm-6 col-xl-4">
+                  <div class="box">
+                    <div class="counter">
+                      <div class="counter__number">1 500</div>
+                      <div class="counter__desc">оформленных банковских карт</div>
+                    </div>
+                    <p class="text-muted">Web банк:</p>
+                    <p>
+                      <a href="http://hive.card.ru" class="link">
+                        <svg class="svg-icon icon-attach">
+                          <use xlink:href="#attach"></use>
+                        </svg>
+                        <span>http://hive.card.ru</span>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-sm-6 col-xl-4">
+                  <div class="box">
+                    <div class="counter">
+                      <div class="counter__number">10 %</div>
+                      <div class="counter__desc">конверсия лендинга</div>
+                    </div>
+                    <p class="text-muted">Мобильное приложение:</p>
+                    <p>
+                      <a href="#" class="link-app">
+                        <svg class="svg-icon icon-app-store">
+                          <use xlink:href="#app-store"></use>
+                        </svg>
+                      </a>
+                      <a href="#" class="link-app">
+                        <svg class="svg-icon icon-google-play">
+                          <use xlink:href="#google-play"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+                </div>
+                <div class="offset-md-3 col-md-6 offset-xl-0 col-xl-4">
+                  <h3>Хотите с нами работать?</h3>
+                  <div class="callback-form">
+                    <form action="" id="callback2">
+                      <div class="form-group">
+                        <div class="text-field">
+                          <input id="f2-name" type="text" name="name">
+                          <label for="f2-name">Имя</label>
+                          <span class="form-group__bar"></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="text-field">
+                          <input id="f2-email" type="text" name="email">
+                          <label for="f2-email">E-mail</label>
+                          <span class="form-group__bar"></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="text-field">
+                          <input id="f2-phone" class="tel" type="text" name="phone">
+                          <label for="f2-phone">Телефон</label>
+                          <span class="form-group__bar"></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="text-field">
+                          <textarea name="message" id="f2-message" cols="30" rows="1"></textarea>
+                          <label for="f2-message">Сообщение</label>
+                          <span class="form-group__bar"></span>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="checkbox" for="privacy2">
+                          <input type="checkbox" class="checkbox__input" name="privacy" id="privacy2">
+                          <span class="checkbox__label">Ознакомлен и согласен с политикой обработки персональных данных</span>
+                        </label>
+                      </div>
+                      <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                      </div>
+                    </form>
+                  </div>
+                  <script> $(document).ready(function () {
+      $("#callback2").validate({
+        rules: {
+          phone: {
+            requiredphone: true,
+            minlengthphone: true
+          },
+          name: {
+            required: true
+          },
+          email: {
+            required: true,
+            email: true
+          },
+          privacy: "required",
+        },
+        messages: {
+          phone: {
+            required: "Укажите номер телефона"
+          },
+          name: {
+            required: "Введите ваше имя"
+          },
+          email: "Введите корректный email адрес",
+          privacy: "Примите соглашение"
+        },
+        errorElement: "span",
+        errorPlacement: function (error, element) {
+          error.addClass("form-text");
+          if (element.prop("type") === "checkbox") {
+            error.insertAfter(element.parent(".checkbox"));
+          } else if (element.prop("type") === "radio") {
+            error.insertAfter(element.parent(".radio"));
+          } else {
+            error.insertAfter(element.parent(".text-field"));
+          }
+
+        },
+        highlight: function (element, errorClass, validClass) {
+          $(element).parents(".form-group").addClass("has-error").removeClass("has-success");
+        },
+        unhighlight: function (element, errorClass, validClass) {
+          $(element).parents(".form-group").addClass("has-success").removeClass("has-error");
+        },
+      });
+    });
+  </script>
+                </div>
+              </div>
+            </div>
+          </section>
         </div>
       </main>
       <!-- end main -->
       <footer class="footer" role="contentinfo">
         <div class="lines">
-          <div class="container">
+          <div class="container-fluid">
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
             <div class="line"></div>
           </div>
         </div>
-        <div class="container">
-          <div class="footer-row">
-            <div class="footer-cell">
+        <div class="container-fluid">
+          <div class="row no-gutters">
+            <div class="col-md-4">
               <div class="animate-to-top"> © 2018 Softlab <br> Все права защищены </div>
             </div>
-            <div class="footer-cell">
+            <div class="col-md-4">
               <div class="animate-to-top"> г. Москва <br> ул. Беговая, д. 3, стр. 1 </div>
             </div>
-            <div class="footer-cell">
-              <div class="flex animate-to-top">
+            <div class="col-md-4">
+              <div class="d-flex animate-to-top">
                 <p>
                   <a href="tel:+74957370679" class="phone">+7 (495) 737-06-79</a> <br>
                   <a href="mailto:info@softlab.ru" class="email">info@softlab.ru</a>
@@ -211,7 +346,7 @@
       <div class="popup">
         <div class="popup__inner">
           <div class="lines">
-            <div class="container">
+            <div class="container-fluid">
               <div class="line"></div>
               <div class="line"></div>
               <div class="line"></div>
@@ -219,7 +354,7 @@
             </div>
           </div>
           <div class="pluses">
-            <div class="container">
+            <div class="container-fluid">
               <div class="plus-row">
                 <div class="plus"></div>
                 <div class="plus"></div>
@@ -247,7 +382,7 @@
             </div>
           </div>
           <div class="popup__header">
-            <div class="container">
+            <div class="container-fluid">
               <a href="/" class="logo">
                 <svg class="svg-icon icon-logo">
                   <use xlink:href="#logo"></use>
@@ -261,9 +396,9 @@
             </div>
           </div>
           <div class="popup__body">
-            <div class="container">
-              <div class="popup__row">
-                <div class="popup__left">
+            <div class="container-fluid">
+              <div class="row no-gutters">
+                <div class="col-lg-8">
                   <nav class="menu" role="navigation">
                     <ul class="menu__inner">
                       <li class="menu-item">
@@ -303,7 +438,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="popup__right">
+                <div class="col-lg-4">
+                  <h3>Будем рады ответить Вам</h3>
                   <div class="tabs">
                     <ul class="tabs-nav">
                       <li class="active"><a href="#tab1">Контакты</a></li>
@@ -432,7 +568,7 @@
             </div>
           </div>
           <div class="popup__footer">
-            <div class="container">
+            <div class="container-fluid">
               <div class="social-link">
                 <a href="#" class="social-link__item"><svg class="svg-icon icon-vk">
                     <use xlink:href="#vk"></use>
