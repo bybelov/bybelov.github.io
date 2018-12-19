@@ -29,6 +29,9 @@ body > svg {
 .icon-branding {
   width: 1em; }
 
+.icon-callback {
+  width: 1em; }
+
 .icon-check {
   width: 1em; }
 
@@ -52,6 +55,9 @@ body > svg {
 
 .icon-facebook {
   width: 0.52941em; }
+
+.icon-gift {
+  width: 1em; }
 
 .icon-google-play {
   width: 3.375em; }
@@ -96,6 +102,9 @@ body > svg {
   width: 1em; }
 
 .icon-prototype {
+  width: 1em; }
+
+.icon-thumbsup {
   width: 1em; }
 
 .icon-twitter {
