@@ -32,6 +32,9 @@ body > svg {
 .icon-callback {
   width: 1em; }
 
+.icon-cart {
+  width: 1.06383em; }
+
 .icon-check {
   width: 1em; }
 
@@ -48,6 +51,9 @@ body > svg {
   width: 1em; }
 
 .icon-close {
+  width: 1em; }
+
+.icon-coins {
   width: 1em; }
 
 .icon-design {
@@ -110,6 +116,9 @@ body > svg {
 .icon-prototype {
   width: 1em; }
 
+.icon-smartphone {
+  width: 1em; }
+
 .icon-thumbsup {
   width: 1em; }
 
@@ -127,3 +136,6 @@ body > svg {
 
 .icon-winner {
   width: 2.07407em; }
+
+.icon-world-map {
+  width: 0.96em; }
