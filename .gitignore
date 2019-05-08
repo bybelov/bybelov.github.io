@@ -1,0 +1,4 @@
+softlab/node_modules/**/*.*
+softlab/node_modules/
+study/blog/node_modules/**/*.*
+study/blog/node_modules/
