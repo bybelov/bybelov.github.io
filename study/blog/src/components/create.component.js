@@ -1,6 +1,7 @@
 import { Component } from "../core/component"
 import { Form } from "../core/form"
 import { Validators } from '../core/validators'
+import { apiService } from '../services/api.service'
 
 export class CreateComponent extends Component{
   constructor(id){
@@ -17,7 +18,7 @@ export class CreateComponent extends Component{
   }
 }
 
-function submitHandler(event) {
+async function submitHandler(event) {
 
   event.preventDefault()
 
@@ -25,14 +26,20 @@ function submitHandler(event) {
   
     const formData = {
       type: this.$el.type.value,
+      date: new Date().toLocaleDateString(),
       ...this.form.value()
     }
 
+    await apiService.createPost(formData)
+
     this.form.clear()
+
+    alert('Запись создана в базе данных')
   
-    console.log('FormData', formData);
+    // console.log('FormData', formData);
+
   } else{
-    console.warn('Form is invalid')
+    // console.warn('Form is invalid')
   }
   
 }
