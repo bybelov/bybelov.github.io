@@ -36,26 +36,29 @@ function buttonHandler(event){
   // console.log(event)
   const $el = event.target
   const id = $el.dataset.id
+  const title = $el.dataset.title
   // const title = $el.closest('.panel').querySelector('.panel-title').textContent.trim()
   // console.log(title);
 
   if(id){
     // console.log(id)
     let favorites = JSON.parse(localStorage.getItem('favorites')) || []
+    const candidate = favorites.find(p => p.id === id)
+
     // console.log(favorites);
-    if(favorites.includes(id)){
+    if(candidate){
       // удалить элменет
       $el.textContent = 'Сохранить'
       $el.classList.add('button-primary')
       $el.classList.remove('button-danger')
-      favorites = favorites.filter(fId => fId !== id)
+      favorites = favorites.filter(p => p.id !== id)
       // favorites = favorites.filter(fTitle => fTitle !== title)
     } else{
       // добавить
       $el.classList.remove('button-primary')
       $el.classList.add('button-danger')
       $el.textContent = 'Удалить'
-      favorites.push(id)
+      favorites.push({id, title})
       // favorites.push(title)
     }
 
