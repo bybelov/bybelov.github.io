@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue JS</title>
+
+</head>
+
+<body>
+
+<div id="app">
+  <input type="text" v-on:input="changeName">
+  <h1>Hello {{ name }}</h1>
+  <p>{{ sayHello() }}</p>
+  <p>Boolean: {{ isOk ? 'I am OK' : 'I am false' }}</p>
+  <h2>Functions: {{ string.split('').reverse().join('') }}</h2>
+
+  <p>
+    <a v-bind:href="url">Google</a>
+  </p>
+
+  <p v-html="link"></p> <!-- лучше не использовать директиву v-html  -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script>
+  
+  new Vue({
+    el: '#app',
+    data:{
+      name: 'VueJS',
+      isOk: false,
+      string: 'My name is Igor',
+      url: 'http://google.com',
+      link: '<a href="http://pcvector.net">pcvector</a>'
+    },
+    methods:{
+      changeName: function(event) {
+        this.name = event.target.value
+      },
+      sayHello: function() {
+        return 'I am function'
+      }
+    }
+  })
+
+
+</script>
+</body>
+</html>
