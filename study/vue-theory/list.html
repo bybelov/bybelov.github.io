@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue JS</title>
+</head>
+
+<body>
+
+  <div id="app">
+
+    <ul>
+      <li v-for="person in people">{{ person }}</li>
+    </ul>
+
+    <ul>
+      <li v-for="(person, index) in people">{{ index + 1 }} - {{ person }}</li>
+    </ul>
+
+    <ul>
+      <li v-for="(person, index) in peopleObj">
+        {{ index + 1 }} - {{ person.name }} - <b>{{ person.age }}</b>
+      </li>
+    </ul>
+
+    <!-- in или of -->
+    <ul>
+      <li v-for="(person, index) of peopleObj">
+        {{ index + 1 }} - {{ person.name }} - <b>{{ person.age }}</b>
+      </li>
+    </ul>
+
+    <ol>
+      <li v-for="num of 5">{{ num }}</li>
+    </ol>
+
+    <hr>
+
+    <ul>
+      <li v-for="value in person">{{ value }}</li>
+    </ul>
+
+    <ul>
+      <li v-for="(value, key, index) in person">{{ index + 1}} {{ value }} - <b>{{ key }}</b></li>
+    </ul>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        people: [
+          'Max',
+          'Igor',
+          'Elena',
+          'Evgeny'
+        ],
+        peopleObj:[
+          {
+            name: 'Max',
+            age: 20
+          },
+          {
+            name: 'Igor',
+            age: 34
+          }
+        ],
+        person:{
+          name: 'Max',
+          age: 50,
+          job: 'Frontend'
+        }
+      },
+      computed: {
+
+      },
+      methods: {
+
+      }
+    })
+  </script>
+</body>
+
+</html>

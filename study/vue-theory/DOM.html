@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue JS</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <!-- ref - referense -->
+    <h2 ref="heading">{{ title }}</h2>
+    <button @click="updateFirstTitle">Update title</button>
+
+    <hr ref="horLine">
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+  <script>
+    var vue1 = new Vue({
+      el: '#app',
+      data: {
+        title: 'Hellow I am Vue!'
+      },
+      computed: {
+
+      },
+      methods: {
+        updateFirstTitle(){
+          this.title = 'New title'
+          this.$refs.heading.style.color = 'red'
+          this.$refs.horLine.style.borderColor = 'red'
+
+          console.log(this.$refs);
+          
+        }
+      },
+      watch: {
+
+      }
+    })
+
+  </script>
+</body>
+
+</html>
