@@ -4,6 +4,8 @@
     <app-car
       v-bind:carName="carName"
       v-bind:carYear="carYear"
+      v-bind:changeFunc="changeNameAudi"
+      v-on:nameChanged="carName = $event"
     ></app-car>
   </div>
 </template>
@@ -15,8 +17,13 @@ export default {
 
   data () {
     return {
-      carName: 'Ford from parent',
+      carName: 'Ford',
       carYear: 2015
+    }
+  },
+  methods:{
+    changeNameAudi(){
+      this.carName = 'Audi'
     }
   },
   components:{
