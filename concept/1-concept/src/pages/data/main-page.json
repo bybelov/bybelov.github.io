@@ -1,0 +1,12 @@
+{
+	"page" : {
+		"title" : "Main page",
+		"url"		: "main-page.html",
+		"breadcrumbs" : [
+			{
+				"title" : "",
+				"url" : ""
+			}
+		]
+	}
+}
