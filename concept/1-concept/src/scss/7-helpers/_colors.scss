@@ -16,3 +16,12 @@
 .text-muted{
   color: $muted;
 }
+
+.bg{
+  &-orange{
+    background-color: #ffbb68;
+  }
+  &-cian{
+    background-color: #7dcfd1;
+  }
+}

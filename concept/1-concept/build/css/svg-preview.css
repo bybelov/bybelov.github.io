@@ -37,10 +37,19 @@ body > svg {
 .icon-facebook {
   width: 1em; }
 
+.icon-left-arrow {
+  width: 1em; }
+
 .icon-minus {
   width: 1em; }
 
 .icon-plus {
+  width: 1em; }
+
+.icon-right-arrow {
+  width: 1em; }
+
+.icon-search {
   width: 1em; }
 
 .icon-twitter {

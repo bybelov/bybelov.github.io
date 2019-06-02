@@ -15,7 +15,7 @@
 
 /* 4 Vendor */
 
-
+@import "../../node_modules/swiper/src/swiper.scss";
 // @import "4-vendor/";
 
 /* 5 Elements */
@@ -39,6 +39,10 @@
 @import "6-components/menu";
 @import "6-components/breadcrumb";
 @import "6-components/news";
+@import "6-components/buttons";
+@import "6-components/avatar";
+@import "6-components/intro";
+@import "6-components/slider";
 
 /* 7 Helpers */
 

@@ -8,5 +8,25 @@
 				"url" : ""
 			}
 		]
-	}
+	},
+	"slider": [
+		{
+			"title": "Yeeze Boost 350 V2 Clay",
+			"picture1": "",
+			"picture2": "",
+			"color": "orange"
+		},
+		{
+			"title": "Yeeze Boost 350 V2 Clay",
+			"picture1": "",
+			"picture2": "",
+			"color": "cian"
+		},
+		{
+			"title": "Yeeze Boost 350 V2 Clay",
+			"picture1": "",
+			"picture2": "",
+			"color": "orange"
+		}
+	]
 }

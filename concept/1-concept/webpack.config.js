@@ -20,7 +20,7 @@ function createConfig(env) {
     context: path.join(__dirname, config.src.js),
     entry: {
       vendor: [
-        'jquery',
+        //'jquery',
         './vendor.js',
       ],
       app: './app.js',
@@ -130,21 +130,21 @@ function createConfig(env) {
           },
         },
         // Allows you to unload jquery in the global scope
-        {
-          test: require.resolve('jquery'),
-          use: [{
-            loader: 'expose-loader',
-            options: 'jQuery',
-          },
-          {
-            loader: 'expose-loader',
-            options: '$',
-          },
-          {
-            loader: 'expose-loader',
-            options: 'window.jQuery',
-          }],
-        },
+        // {
+        //   test: require.resolve('jquery'),
+        //   use: [{
+        //     loader: 'expose-loader',
+        //     options: 'jQuery',
+        //   },
+        //   {
+        //     loader: 'expose-loader',
+        //     options: '$',
+        //   },
+        //   {
+        //     loader: 'expose-loader',
+        //     options: 'window.jQuery',
+        //   }],
+        // },
       ],
     },
   };

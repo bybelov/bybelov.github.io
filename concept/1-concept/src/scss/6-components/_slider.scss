@@ -1,0 +1,56 @@
+.slide {
+  height: 100vh;
+  background-color: $gray-100;
+  padding: 100px 0;
+
+  .container {
+    position: relative;
+    height: 100%;
+  }
+
+  &__text{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    max-width: 260px;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: font-weight(semibold);
+    text-transform: uppercase;
+    margin-bottom: 48px;
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+
+  &__circle {
+    width: 80vh;
+    height: 80vh;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 40vh);
+    left: calc(50% - 40vh);
+    z-index: 1;
+    min-height: 300px;
+    min-width: 300px;
+  }
+
+  &__picture {
+    position: absolute;
+    z-index: 2;
+    max-width: 65%;
+    &.left{
+      left: -15%;
+      top: 5%;
+    }
+    &.right{
+      bottom: 5%;
+      right: -15%;
+    }
+  }
+}

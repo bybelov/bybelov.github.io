@@ -1,0 +1,50 @@
+<section class="intro">
+  <!-- Slider main container -->
+  <div class="swiper-container js-slider">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      {% for item in slider %}
+      <div class="swiper-slide slide">
+        <div class="container">
+
+          <div class="slide__text">
+            <div class="slide__label">New in —</div>
+            <div class="slide__title">{{ item.title }}</div>
+            <div class="slide__buy">
+              <a href="#" class="btn-buy">Buy Now</a>
+            </div>
+          </div>
+
+
+
+          <div class="slide__circle bg-{{ item.color }}">
+            <div class="slide__picture left">
+              <img src="images/demo/picture-1.png" alt="">
+            </div>
+            <div class="slide__picture right">
+              <img src="images/demo/picture-2.png" alt="">
+            </div>
+          </div>
+          
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="container">
+      <div class="swiper-button-prev">
+        <svg class="svg-icon icon-left-arrow">
+          <use xlink:href="#left-arrow"></use>
+        </svg>
+      </div>
+      <div class="swiper-button-next">
+        <svg class="svg-icon icon-right-arrow">
+          <use xlink:href="#right-arrow"></use>
+        </svg>
+      </div>
+
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+</section>
