@@ -1,12 +1,16 @@
 .intro{
+  &__navigation{
+    position: absolute;
+    bottom: 40px;
+    z-index: 10;
+  }
+  // custom swiper
   .swiper-container{
     height: 100%;
   }
   .swiper-button-prev,
   .swiper-button-next{
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
+    float: left;
     height: 48px;
     width: 100px;
     display: flex;
@@ -17,10 +21,8 @@
     overflow: hidden;
     &:hover{
       .svg-icon{
-        animation-duration: 0.4s;
-        animation-timing-function: easeInOutCirc;
-        animation-iteration-count: 1;
-        animation-fill-mode: normal;
+        animation-duration: 0.6s;
+        animation-timing-function: ease-in-out;
       }
     }
     &:hover{
@@ -52,7 +54,7 @@
     }
   }
   .swiper-button-next{
-    margin-left: 100px;
+    margin-left: 1px;
     background-color: $white;
     &:hover{
       .svg-icon{
@@ -63,34 +65,58 @@
       fill: $body-color;
     }
   }
+  // paginations
+  .swiper-pagination{
+    float: left;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+    font-size: 14px;
+    font-weight: font-weight(semibold);
+    &-current{
+      overflow: hidden;
+      height: 20px;
+      > span{
+        display: block;
+      }
+    }
+    &-separator{
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 3px;
+    }
+
+    .is-changing{
+      transform: translateY(-20px);
+      transition: transform 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+  }
 }
 
-@keyframes slideLeft{
-  50%{
-    transform-origin: 0 0;
-    transform: translateX(-100px); 
-  }
-  75%{
-    opacity: 0;
-    transform: translateX(100px); 
-  }
-  100%{
-    opacity: 1;
-    transform: translateX(0px); 
-  }
-}
 @keyframes slideRight{
-  50%{
-    transform-origin: 0 0;
-    transform: translateX(100px); 
-  }
-  75%{
-    opacity: 0;
-    transform: translateX(-100px); 
-  }
-  100%{
-    opacity: 1;
-    transform: translateX(0px); 
-  }
+	50%{
+		transform: translateX(100px);
+	}
+	51%{
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0);
+	}
 }
-
+@keyframes slideLeft{
+	50%{
+		transform: translateX(-100px);
+	}
+	51%{
+		opacity: 0;
+		transform: translateX(100px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
