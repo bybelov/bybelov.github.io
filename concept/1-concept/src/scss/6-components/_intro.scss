@@ -77,8 +77,12 @@
     &-current{
       overflow: hidden;
       height: 20px;
-      > span{
+      &__inner{
+        overflow: hidden;
         display: block;
+        > span{
+          display: block;
+        }
       }
     }
     &-separator{
@@ -88,9 +92,21 @@
     }
 
     .is-changing{
-      transform: translateY(-20px);
-      transition: transform 200ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      animation-name: flip;
+      animation-duration: 0.3s;
+      // animation-direction: reverse;
+      // animation-fill-mode: forwards; 
+      animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
+  }
+}
+
+@keyframes flip{
+  from{
+    // transform: translateY(-20px);
+  }
+  to{
+    transform: translateY(-20px);
   }
 }
 
