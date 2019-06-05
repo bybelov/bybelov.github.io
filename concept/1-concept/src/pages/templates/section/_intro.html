@@ -16,14 +16,12 @@
             </div>
           </div>
 
-
-
           <div class="slide__circle bg-{{ item.color }}">
             <div class="slide__picture left">
-              <img src="images/demo/picture-1.png" alt="">
+              <img src="images/demo/picture-1.png" class="slide__img swing is-animated is-infinite" alt="">
             </div>
             <div class="slide__picture right">
-              <img src="images/demo/picture-2.png" alt="">
+              <img src="images/demo/picture-2.png" class="slide__img swingReverse is-animated is-infinite" alt="">
             </div>
           </div>
           
@@ -34,18 +32,18 @@
     <div class="container">
       <div class="intro__navigation">
         <div class="swiper-button-prev">
-            <svg class="svg-icon icon-left-arrow">
+            <svg class="svg-icon icon-left-arrow slideLeft">
               <use xlink:href="#left-arrow"></use>
             </svg>
           </div>
           <div class="swiper-button-next">
-            <svg class="svg-icon icon-right-arrow">
+            <svg class="svg-icon icon-right-arrow slideRight">
               <use xlink:href="#right-arrow"></use>
             </svg>
           </div>
           <div class="swiper-pagination">
             <span class="swiper-pagination-current">
-              <span class="swiper-pagination-current__inner">
+              <span class="swiper-pagination-current__inner flip">
                 <span class="js-swiper-pagination-current"></span>
                 <span class="js-swiper-pagination-next"></span>
               </span>

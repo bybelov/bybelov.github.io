@@ -1,0 +1,84 @@
+.is-animated{
+  &.slideLeft{
+    animation-name: slideLeft
+  }
+  &.slideRight{
+    animation-name: slideRight;
+  }
+  &.flip{
+    animation-name: flip;
+  }
+  &.swing{
+    animation-name: swing;
+  }
+  &.swingReverse{
+    animation-name: swingReverse;
+  }
+  // state
+  &.is-infinite {
+    animation-iteration-count: infinite;
+  }
+}
+
+.slideLeft{
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+}
+.slideRight{
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+}
+.flip{
+  animation-duration: 0.3s;
+  animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.swing,
+.swingReverse {
+  animation-duration: 12s;
+  transform-origin: center center;
+  animation-timing-function: easeInOutSine;
+}
+
+
+@keyframes flip{
+  to{
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slideRight{
+	50%{
+		transform: translateX(100px);
+	}
+	51%{
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes slideLeft{
+	50%{
+		transform: translateX(-100px);
+	}
+	51%{
+		opacity: 0;
+		transform: translateX(100px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+@keyframes swing {
+  50%{
+    transform: rotate(-10deg);
+  }
+}
+@keyframes swingReverse {
+  50%{
+    transform: rotate(10deg);
+  }
+}

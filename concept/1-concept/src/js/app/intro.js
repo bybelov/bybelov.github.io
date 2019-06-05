@@ -25,16 +25,21 @@ function Slider(selector) {
     on: {
       init: function() {
 
+        // pagination animation
+
         let current = this.$el[0].querySelector('.js-swiper-pagination-current');
         let total = this.$el[0].querySelector('.swiper-pagination-total');
         total.innerHTML = this.slides.length;
         current.innerHTML = this.activeIndex + 1;
 
+        // slide picture animation
+
       },
       slideChange: function() {
 
+        // pagination animation
         let elements = this.pagination.$el[0],
-          index = this.activeIndex + 1,
+          index = this.activeIndex,
           currentWrapper,
           current,
           currentNext;
@@ -43,9 +48,29 @@ function Slider(selector) {
         current = elements.querySelector('.js-swiper-pagination-current');
         currentNext = elements.querySelector('.js-swiper-pagination-next');
 
-        updateNextPagination(index, currentWrapper, current, currentNext);
+        updateNextPagination(index+1, currentWrapper, current, currentNext);
+
+        // slide picture animation
+        // let slideCurrent = this.slides[index];
+        // slideCurrent.querySelectorAll('.slide__img').forEach(element => {
+        //   element.classList.add('is-animated');
+        // });;
 
       },
+      slidePrevTransitionStart: function() {
+        let prev = this.navigation.$prevEl[0].querySelector('.svg-icon').classList;
+        prev.add('is-animated');
+        setTimeout(function() {
+          prev.remove('is-animated');
+        },610);
+      },
+      slideNextTransitionStart: function() {
+        let next = this.navigation.$nextEl[0].querySelector('.svg-icon').classList;
+        next.add('is-animated');
+        setTimeout(function() {
+          next.remove('is-animated');
+        },610);
+      }
     },
 
     // Navigation arrows
@@ -64,13 +89,14 @@ function Slider(selector) {
   function updateNextPagination(value, wrapper, current, next) {
 
     let timeout;
+
     next.innerHTML = value;
-    wrapper.classList.add('is-changing');
+    wrapper.classList.add('is-animated');
 
     window.clearTimeout(timeout);
     timeout = window.setTimeout(function() {
       current.innerHTML = value;
-      wrapper.classList.remove('is-changing');
+      wrapper.classList.remove('is-animated');
     }, 290);
 
   }

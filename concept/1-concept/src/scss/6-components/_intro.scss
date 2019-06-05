@@ -20,12 +20,6 @@
     transition: background-color ease 0.25s;
     overflow: hidden;
     &:hover{
-      .svg-icon{
-        animation-duration: 0.6s;
-        animation-timing-function: ease-in-out;
-      }
-    }
-    &:hover{
       background-color: $body-color;
       .svg-icon{
         fill: $white;
@@ -39,11 +33,6 @@
   .swiper-button-prev{
     background-color: $body-color;
     &:hover{
-      .svg-icon{
-        animation-name: slideLeft;
-      }
-    }
-    &:hover{
       background-color: $gray-300;
       .svg-icon{
         fill: $body-color;
@@ -56,11 +45,6 @@
   .swiper-button-next{
     margin-left: 1px;
     background-color: $white;
-    &:hover{
-      .svg-icon{
-        animation-name: slideRight;
-      }
-    }
     .svg-icon{
       fill: $body-color;
     }
@@ -90,49 +74,5 @@
       vertical-align: middle;
       margin: 0 3px;
     }
-
-    .is-changing{
-      animation-name: flip;
-      animation-duration: 0.3s;
-      // animation-direction: reverse;
-      // animation-fill-mode: forwards; 
-      animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    }
   }
-}
-
-@keyframes flip{
-  from{
-    // transform: translateY(-20px);
-  }
-  to{
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes slideRight{
-	50%{
-		transform: translateX(100px);
-	}
-	51%{
-		opacity: 0;
-		transform: translateX(-100px);
-	}
-	100%{
-		opacity: 1;
-		transform: translateX(0);
-	}
-}
-@keyframes slideLeft{
-	50%{
-		transform: translateX(-100px);
-	}
-	51%{
-		opacity: 0;
-		transform: translateX(100px);
-	}
-	100%{
-		opacity: 1;
-		transform: translateX(0);
-	}
 }
