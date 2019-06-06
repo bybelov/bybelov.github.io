@@ -28,16 +28,22 @@
     margin-bottom: 0.5em;
   }
 
-  &__circle {
+  &__pictures {
     width: 80vh;
     height: 80vh;
-    border-radius: 50%;
     position: absolute;
     top: calc(50% - 40vh);
     left: calc(50% - 40vh);
     z-index: 1;
     min-height: 300px;
     min-width: 300px;
+  }
+
+  &__circle{
+    position: absolute;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
   }
 
   &__picture {
