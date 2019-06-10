@@ -1,0 +1,94 @@
+.recommend{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.recommend-item{
+  background-color: #fff;
+  &__link{
+    text-decoration: none;
+    color: $body-color;
+    display: flex;
+    &:hover{
+      text-decoration: none;
+      color: $body-color;
+      .recommend-item__picture{
+        margin-top: -30px;
+        transform: rotate(10deg);
+        &:before{
+          top: 130%;
+          width: 30%;
+          transform: rotate(-10deg);
+        }
+      }
+      .recommend-item__cart{
+        background-color: #E5E5E5;
+        .svg-icon{
+          fill: $body-color;
+        }
+      }
+    }
+  }
+  &__container{
+    display: flex;
+    align-items: center;
+    padding: 3em 0;
+  }
+  &__cart{
+
+  }
+  &__left{
+    width: 200px;
+    min-height: 100px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  &__picture{
+    position: absolute;
+    left: 0;
+    // top: 0;
+    // height: 100%;
+    width: 100%;
+    padding: 0 2em;
+    display: flex;
+    align-items: center;
+    transform: rotate(0);
+    transition: all ease-out 0.25s;
+    &:before{
+      content:"";
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;
+      top: 100%;
+      width: 50%;
+      height: 1px;
+      box-shadow: 0 1px 2px rgba(0,0,0,.2);
+      transition: all ease 0.25s;
+    }
+  }
+  &__text{
+    padding: 0 2em 0 0;
+  }
+  &__badge{
+    text-transform: uppercase;
+    font-size: 14px;
+    color: $gray-500;
+    margin-bottom: 0.5em;
+  }
+  &__title{
+    font-weight: 700;
+  }
+  &__cart{
+    padding: 2em 4em;
+    background-color: $body-color;
+    display: flex;
+    align-items: center;
+    transition: all ease 0.25s;
+    .svg-icon{
+      fill: $white;
+      font-size: 26px;
+    }
+  }
+}

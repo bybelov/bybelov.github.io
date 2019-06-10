@@ -1,6 +1,6 @@
 .slide {
   height: 100vh;
-  background-color: $gray-100;
+  background-color: #F1F1F1;
   padding: 100px 0;
 
   .container {
@@ -12,7 +12,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    max-width: 260px;
+    max-width: 280px;
   }
 
   &__label {

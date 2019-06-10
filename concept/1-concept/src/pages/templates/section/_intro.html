@@ -19,10 +19,10 @@
           <div class="slide__pictures">
             <div class="slide__circle  bg-{{ item.color }}"></div>
             <div class="slide__picture left">
-              <img src="images/demo/picture-1.png" class="slide__img swing is-animated is-infinite" alt="">
+              <img src="{{ item.picture1 }}" class="slide__img swing is-animated is-infinite" alt="">
             </div>
             <div class="slide__picture right">
-              <img src="images/demo/picture-2.png" class="slide__img swingReverse is-animated is-infinite" alt="">
+              <img src="{{ item.picture2 }}" class="slide__img swingReverse is-animated is-infinite" alt="">
             </div>
           </div>
           
@@ -56,4 +56,7 @@
     </div>
 
   </div>
+
+  {% include './_recommend.html' %}
+
 </section>

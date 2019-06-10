@@ -12,39 +12,46 @@
 	"slider": [
 		{
 			"title": "Yeeze Boost 350 V2 Clay",
-			"picture1": "",
-			"picture2": "",
+			"picture1": "images/demo/picture-1.png",
+			"picture2": "images/demo/picture-2.png",
 			"color": "orange"
 		},
 		{
-			"title": "Yeeze Boost",
-			"picture1": "",
-			"picture2": "",
+			"title": "ECCO SOFT 7",
+			"picture1": "images/demo/picture-3.png",
+			"picture2": "images/demo/picture-4.png",
 			"color": "cian"
 		},
 		{
 			"title": "Boost 350 V2 Clay",
-			"picture1": "",
-			"picture2": "",
+			"picture1": "images/demo/picture-1.png",
+			"picture2": "images/demo/picture-2.png",
 			"color": "orange"
 		},
 		{
-			"title": "350 V2 Clay Yeeze Boost ",
-			"picture1": "",
-			"picture2": "",
+			"title": "ECCO SOFT 7",
+			"picture1": "images/demo/picture-3.png",
+			"picture2": "images/demo/picture-4.png",
 			"color": "cian"
 		},
 		{
 			"title": "Yeeze V2 Clay Boost 350 ",
-			"picture1": "",
-			"picture2": "",
+			"picture1": "images/demo/picture-1.png",
+			"picture2": "images/demo/picture-2.png",
 			"color": "orange"
 		},
 		{
-			"title": "Yeeze Clay Boost 350 V2 ",
-			"picture1": "",
-			"picture2": "",
+			"title": "ECCO SOFT 7",
+			"picture1": "images/demo/picture-3.png",
+			"picture2": "images/demo/picture-4.png",
 			"color": "cian"
+		}
+	],
+	"recommend": [
+		{
+			"title": "Nike Air Force 1'07 All Black",
+			"picture": "images/demo/recommend-1.png",
+			"url": "#"
 		}
 	]
 }

@@ -1,0 +1,24 @@
+<!-- BEGIN recommend -->
+<div class="recommend">
+  {% for item in recommend %}
+  <div class="recommend-item">
+    <a href="{{ item.url }}" class="recommend-item__link">
+      <div class="recommend-item__container">
+        <div class="recommend-item__left">
+          <div class="recommend-item__picture">
+            <img src="{{ item.picture }}" alt="">
+          </div>
+        </div>
+        <div class="recommend-item__text">
+          <div class="recommend-item__badge">Рекомендуем</div>
+          <div class="recommend-item__title">{{ item.title }}</div>
+        </div>
+      </div>
+      <div class="recommend-item__cart">
+        <svg class="svg-icon icon-shopping-bag"><use xlink:href="#shopping-bag"></use></svg>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+<!-- END recommend -->

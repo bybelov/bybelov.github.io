@@ -16,7 +16,7 @@ export class Intro {
     this.swiper = new Swiper(selector, {
       // Optional parameters
 
-      speed: 2000, // Set the speed of your animation in ms
+      speed: 1000, // Set the speed of your animation in ms
       effect: 'fade',
       loop: false,
       // roundLengths: true,
@@ -72,9 +72,11 @@ export class Intro {
             prev.remove('is-animated');
           }, 610);
 
-          scaleCircle(this.$el);
-          swipeTitle(this.$el);
-          
+          scaleCircle(this.$el, '.slide__circle');
+          swipeTitle(this.$el, '.slide__title');
+          swipeLeftPicture(this.$el, '.slide__picture.left');
+          swipeRightPicture(this.$el, '.slide__picture.right');
+
         },
         slideNextTransitionStart: function() {
 
@@ -84,8 +86,10 @@ export class Intro {
             next.remove('is-animated');
           }, 610);
 
-          scaleCircle(this.$el);
-          swipeTitle(this.$el);
+          scaleCircle(this.$el, '.slide__circle');
+          swipeTitle(this.$el, '.slide__title');
+          swipeLeftPicture(this.$el, '.slide__picture.left');
+          swipeRightPicture(this.$el, '.slide__picture.right');
         },
 
       },
@@ -119,67 +123,121 @@ export class Intro {
 
     }
 
-    function swipeTitle(sliderDOM) {
-
+    function getPrevCurSlide(sliderDOM, selector) {
       const slideActive = sliderDOM.find('.swiper-slide-active');
-      const active = slideActive.find('.slide__title');
-      
-      const oldActive = sliderDOM.find('.swiper-slide-prev, .swiper-slide-next');
-      const old = oldActive.find('.slide__title');
+      const current = slideActive.find(selector);
+      const slidePrevios = sliderDOM.find('.swiper-slide-prev, .swiper-slide-next');
+      const previos = slidePrevios.find(selector);
+      return {
+        current,
+        previos
+      };
+    }
 
-   
-      // out
-      TweenMax.to(old, 0.5, {
-        x: '200%',
-        opacity: 0
+    function swipeLeftPicture(sliderDOM, selector) {
+
+      const slide = getPrevCurSlide(sliderDOM, selector);
+
+      // out left
+      TweenMax.to(slide.previos, 0.25, {
+        rotation: 70,
+        autoAlpha: 0,
+        xPercent: -300,
+        ease: Power0.easeNone
+      });
+      // in left
+      TweenMax.set(slide.current, {
+        autoAlpha: 0,
+        xPercent: -300
       });
 
-      console.log(old);
-      
+      TweenMax.to(slide.current, 0.75, {
+        delay: 0.25,
+        autoAlpha: 1,
+        rotation: 0,
+        xPercent: 0,
+        ease: Expo.easeOut
+      });
+    }
 
-      // in
-      TweenMax.set(active, {
-        opacity: 0,
-        x: '-200%'
+    function swipeRightPicture(sliderDOM, selector) {
+
+      const slide = getPrevCurSlide(sliderDOM, selector);
+
+      // out right
+      TweenMax.to(slide.previos, 0.25, {
+        rotation: -70,
+        autoAlpha: 0,
+        xPercent: 300,
+        ease: Power0.easeNone
       });
 
-      TweenMax.to(active, 1,{
-        delay: 0.5,
-        opacity: 1,
-        x: '0%'
+      // in right
+      TweenMax.set(slide.current, {
+        autoAlpha: 0,
+        xPercent: 300
+      });
+
+      TweenMax.to(slide.current, 0.75, {
+        delay: 0.25,
+        autoAlpha: 1,
+        rotation: 0,
+        xPercent: 0,
+        ease: Expo.easeOut
       });
 
     }
 
-    function scaleCircle(sliderDOM) {
-      
-      const slideActive = sliderDOM.find('.swiper-slide-active');
-      const slideCircle = slideActive.find('.slide__circle');
-      
-      const oldActive = sliderDOM.find('.swiper-slide-prev, .swiper-slide-next');
-      const oldSlideCircle = oldActive.find('.slide__circle');
-   
+
+
+    function swipeTitle(sliderDOM, selector) {
+
+      const slide = getPrevCurSlide(sliderDOM, selector);
+
       // out
-      TweenMax.to(oldSlideCircle, 1, {
-        opacity: 0.1,
+      TweenMax.to(slide.previos, 0.25, {
+        xPercent: 200,
+        autoAlpha: 0
+      });
+
+      // in
+      TweenMax.set(slide.current, {
+        autoAlpha: 0,
+        xPercent: -200
+      });
+
+      TweenMax.to(slide.current, 0.5, {
+        delay: 0.25,
+        autoAlpha: 1,
+        xPercent: 0
+      });
+
+    }
+
+    function scaleCircle(sliderDOM, selector) {
+
+      const slide = getPrevCurSlide(sliderDOM, selector);
+
+      // out
+      TweenMax.to(slide.previos, 0.5, {
+        autoAlpha: 0.1,
         scale: 0.4
       });
 
       // in
-      TweenMax.set(slideCircle, {
-        opacity: 0,
+      TweenMax.set(slide.current, {
+        autoAlpha: 0,
         scale: 0.4
       });
 
-      TweenMax.to(slideCircle, 1,{
+      TweenMax.to(slide.current, 0.5, {
         ease: Elastic.easeOut.config(1, 0.5),
-        delay: 0.9,
-        opacity: 1,
+        delay: 0.5,
+        autoAlpha: 1,
         scale: 1
       });
 
     }
 
   }
-
 }
