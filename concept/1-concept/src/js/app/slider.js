@@ -31,6 +31,14 @@ export class Slider {
       virtualTranslate: true,
       effect: 'customEffect',
       on: {
+        init() {
+          that.getTotalSlides(this);
+          that.getCurrentNextNumberSlide(this);
+        },
+        slideChange() {
+          that.getCurrentNextNumberSlide(this);
+          that.prevNextAnimationArrow(this);
+        },
         progress(progress) {
           const swiper = this;
           if (swiper.params.effect !== 'customEffect') return;
@@ -61,15 +69,18 @@ export class Slider {
   }
 
   setTransition(swiper, duration) {
-    console.log('transition start, duration = ' + duration);
+    // console.log('transition start, duration = ' + duration);
 
-    const { slides, $wrapperEl } = swiper;
+    const {
+      slides,
+      $wrapperEl
+    } = swiper;
     slides.transition(duration);
     if (swiper.params.virtualTranslate && duration !== 0) {
       let eventTriggered = false;
       slides.transitionEnd(() => {
-        console.log('END transition');
-        
+        // console.log('END transition');
+
         if (eventTriggered) {
           return;
         };
@@ -90,7 +101,9 @@ export class Slider {
 
   setTranslate(swiper) {
     // console.log('translate start');
-    const { slides } = swiper; //analog: const slides = swiper.slides
+    const {
+      slides
+    } = swiper; //analog: const slides = swiper.slides
 
     for (let i = 0; i < slides.length; i += 1) {
       const $slideEl = swiper.slides.eq(i);
@@ -111,4 +124,71 @@ export class Slider {
     }
   }
 
+
+  getTotalSlides(swiper) {
+    const {
+      slides
+    } = swiper;
+    const total = swiper.$el.find('[data-swiper-page-total]')[0];
+    total ? total.innerHTML = addExtraZero(slides.length) : console.log('Attribute "data-swiper-page-total" not found!');
+  }
+
+  getCurrentNextNumberSlide(swiper) {
+
+    let timeout;
+    const wrapper = swiper.$el.find('.swiper-pagination-current__inner')[0];
+    wrapper.classList.add('is-animated');
+    const prevElement = swiper.$el.find('[data-swiper-page-current]')[0];
+    const nextElement = swiper.$el.find('[data-swiper-page-prev]')[0];
+    const prevIndex = swiper.previousIndex ? swiper.previousIndex + 1 : 1;
+    const nextIndex = swiper.activeIndex + 1;
+
+    nextElement.innerHTML = addExtraZero(prevIndex);
+    wrapper.classList.add('is-animated');
+
+    window.clearTimeout(timeout);
+    timeout = window.setTimeout(function() {
+      prevElement.innerHTML = addExtraZero(nextIndex);
+      wrapper.classList.remove('is-animated');
+    }, 200);
+
+  }
+
+  getDirection(swiper) {
+    if (swiper.previousIndex < swiper.activeIndex) {
+      return 'NEXT';
+    } else if (swiper.previousIndex > swiper.activeIndex) {
+      return 'BACK';
+    } else {
+      return 'NONE';
+    }
+  }
+
+  prevNextAnimationArrow(swiper) {
+
+    const { navigation } = swiper;
+    const prev = navigation.$prevEl[0].querySelector('.svg-icon').classList;
+    const next = navigation.$nextEl[0].querySelector('.svg-icon').classList;
+
+    if (this.getDirection(swiper) === 'NEXT') {
+      next.add('is-animated');
+      setTimeout(function() {
+        next.remove('is-animated');
+      }, 610);
+    } else if (this.getDirection(swiper) === 'BACK') {
+      prev.add('is-animated');
+      setTimeout(function() {
+        prev.remove('is-animated');
+      }, 610);
+    }
+
+  }
+
+}
+
+
+function addExtraZero(n) {
+  if (n < 10)
+    return '0' + n;
+  return n;
 }
