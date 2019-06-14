@@ -36,8 +36,21 @@ export class Slider {
           that.getCurrentNextNumberSlide(this);
         },
         slideChange() {
+          const swiper = this;
           that.getCurrentNextNumberSlide(this);
           that.prevNextAnimationArrow(this);
+
+          // animation
+          moveRotateIn(swiper, '.slide__picture.left');
+          moveRotateOut(swiper, '.slide__picture.left');
+          moveRotateIn(swiper, '.slide__picture.right', true);
+          moveRotateOut(swiper, '.slide__picture.right', true);
+          moveIn(swiper, '.slide__title');
+          moveOut(swiper, '.slide__title');
+          moveIn(swiper, '.slide__buy', 0.75);
+          moveOut(swiper, '.slide__buy', 0.5);
+          scaleIn(swiper, '.slide__circle');
+          scaleOut(swiper, '.slide__circle');
         },
         progress(progress) {
           const swiper = this;
@@ -71,16 +84,12 @@ export class Slider {
   setTransition(swiper, duration) {
     // console.log('transition start, duration = ' + duration);
 
-    const {
-      slides,
-      $wrapperEl
-    } = swiper;
+    const { slides, $wrapperEl } = swiper;
     slides.transition(duration);
     if (swiper.params.virtualTranslate && duration !== 0) {
       let eventTriggered = false;
       slides.transitionEnd(() => {
         // console.log('END transition');
-
         if (eventTriggered) {
           return;
         };
@@ -101,9 +110,7 @@ export class Slider {
 
   setTranslate(swiper) {
     // console.log('translate start');
-    const {
-      slides
-    } = swiper; //analog: const slides = swiper.slides
+    const { slides } = swiper; //analog: const slides = swiper.slides
 
     for (let i = 0; i < slides.length; i += 1) {
       const $slideEl = swiper.slides.eq(i);
@@ -191,4 +198,97 @@ function addExtraZero(n) {
   if (n < 10)
     return '0' + n;
   return n;
+}
+
+
+// ANIMATION
+// Out - find previos element;
+// In -  find active(next) element;
+
+function moveRotateOut(swiper, el, reverse = false) {
+  const {slides} = swiper;
+  const element = slides[swiper.previousIndex].querySelector(el);
+
+  let xPercent = -300;
+  let rotation = 70;
+  if(reverse) {
+    xPercent = xPercent * -1;
+    rotation = rotation * -1;
+  }
+  TweenMax.to(element, 0.25, {
+    rotation: rotation,
+    autoAlpha: 0,
+    xPercent: xPercent,
+    ease: Power0.easeNone
+  });
+}
+
+function moveRotateIn(swiper, el, reverse = false) {
+  const {slides} = swiper;
+  const element = slides[swiper.activeIndex].querySelector(el);
+  let xPercent = -300;
+  if(reverse) {
+    xPercent = xPercent * -1;
+  }
+  TweenMax.set(element, {
+    autoAlpha: 0,
+    xPercent: xPercent
+  });
+
+  TweenMax.to(element, 0.75, {
+    delay: 0.25,
+    autoAlpha: 1,
+    rotation: 0,
+    xPercent: 0,
+    ease: Expo.easeOut
+  });
+}
+
+function moveIn(swiper, el, delay = 0.5) {
+  const {slides} = swiper;
+  const element = slides[swiper.activeIndex].querySelector(el);
+  TweenMax.set(element, {
+    autoAlpha: 0,
+    xPercent: -200
+  });
+
+  TweenMax.to(element, delay, {
+    delay: 0.25,
+    autoAlpha: 1,
+    xPercent: 0
+  });
+}
+
+function moveOut(swiper, el, delay = 0.25) {
+  const {slides} = swiper;
+  const element = slides[swiper.previousIndex].querySelector(el);
+  TweenMax.to(element, delay, {
+    xPercent: 200,
+    autoAlpha: 0
+  });
+}
+
+function scaleIn(swiper, el) {
+  const {slides} = swiper;
+  const element = slides[swiper.activeIndex].querySelector(el);
+  TweenMax.set(element, {
+    autoAlpha: 0,
+    scale: 0.4
+  });
+
+  TweenMax.to(element, 0.5, {
+    ease: Elastic.easeOut.config(1, 0.5),
+    delay: 0.5,
+    autoAlpha: 1,
+    scale: 1
+  });
+}
+
+function scaleOut(swiper, el) {
+  const {slides} = swiper;
+  const element = slides[swiper.previousIndex].querySelector(el);
+  TweenMax.to(element, 0.5, {
+    autoAlpha: 0.1,
+    scale: 0.4
+  });
 }
