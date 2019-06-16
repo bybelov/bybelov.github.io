@@ -12,7 +12,7 @@ export class Slider {
     const that = this;
 
     let options = {
-      speed: 1000,
+      speed: 750,
       loop: false,
       pagination: {
         el: '.swiper-pagination',
@@ -43,14 +43,21 @@ export class Slider {
           // animation
           moveRotateIn(swiper, '.slide__picture.left');
           moveRotateOut(swiper, '.slide__picture.left');
+
           moveRotateIn(swiper, '.slide__picture.right', true);
           moveRotateOut(swiper, '.slide__picture.right', true);
-          moveIn(swiper, '.slide__title');
-          moveOut(swiper, '.slide__title');
-          moveIn(swiper, '.slide__buy', 0.75);
-          moveOut(swiper, '.slide__buy', 0.5);
+
           scaleIn(swiper, '.slide__circle');
           scaleOut(swiper, '.slide__circle');
+
+          moveIn(swiper, '.slide__title');
+          moveOut(swiper, '.slide__title');
+
+          moveVerticalIn(swiper, '.slide__label', 0.75);
+          moveVerticalOut(swiper, '.slide__label', 0.5);
+
+          moveVerticalIn(swiper, '.slide__buy', 0.75);
+          moveVerticalOut(swiper, '.slide__buy', 0.5);
         },
         progress(progress) {
           const swiper = this;
@@ -82,14 +89,14 @@ export class Slider {
   }
 
   setTransition(swiper, duration) {
-    // console.log('transition start, duration = ' + duration);
+    console.log('transition start, duration = ' + duration);
 
     const { slides, $wrapperEl } = swiper;
     slides.transition(duration);
     if (swiper.params.virtualTranslate && duration !== 0) {
       let eventTriggered = false;
       slides.transitionEnd(() => {
-        // console.log('END transition');
+        console.log('END transition');
         if (eventTriggered) {
           return;
         };
@@ -268,7 +275,7 @@ function moveOut(swiper, el, delay = 0.25) {
   });
 }
 
-function scaleIn(swiper, el) {
+function scaleIn(swiper, el, delay = 0.5) {
   const {slides} = swiper;
   const element = slides[swiper.activeIndex].querySelector(el);
   TweenMax.set(element, {
@@ -276,7 +283,7 @@ function scaleIn(swiper, el) {
     scale: 0.4
   });
 
-  TweenMax.to(element, 0.5, {
+  TweenMax.to(element, delay, {
     ease: Elastic.easeOut.config(1, 0.5),
     delay: 0.5,
     autoAlpha: 1,
@@ -288,7 +295,39 @@ function scaleOut(swiper, el) {
   const {slides} = swiper;
   const element = slides[swiper.previousIndex].querySelector(el);
   TweenMax.to(element, 0.5, {
-    autoAlpha: 0.1,
+    // autoAlpha: 0.1,
     scale: 0.4
+  });
+}
+
+function moveVerticalIn(swiper, el, delay = 0.25, reverse = false) {
+  const {slides} = swiper;
+  const element = slides[swiper.activeIndex].querySelector(el);
+  let y = -100;
+  if(reverse) {
+    y = y * -1;
+  }
+  TweenMax.set(element, {
+    autoAlpha: 0,
+    y: y
+  });
+
+  TweenMax.to(element, delay, {
+    delay: 0.25,
+    autoAlpha: 1,
+    y: 0
+  });
+}
+
+function moveVerticalOut(swiper, el, delay = 0.25, reverse = false) {
+  const {slides} = swiper;
+  const element = slides[swiper.previousIndex].querySelector(el);
+  let y = 100;
+  if(reverse) {
+    y = y * -1;
+  }
+  TweenMax.to(element, delay, {
+    y: y,
+    autoAlpha: 0
   });
 }

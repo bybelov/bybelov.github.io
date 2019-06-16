@@ -1,0 +1,32 @@
+.panel {
+  position: fixed;
+  display: none;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 800px;
+  background-color: #7DCFD1;
+  z-index: 99;
+  &__inner{
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+}
+
+.overlay{
+  display: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 98;
+  &.is-active{
+    display: block;
+    background-color:rgba(255,255,255,.8);
+  }
+}
