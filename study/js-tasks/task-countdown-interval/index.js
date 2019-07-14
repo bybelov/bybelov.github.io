@@ -4,17 +4,18 @@ const $counter = document.querySelector('#counter');
 const $hour = document.createElement('span');
 const $min = document.createElement('span');
 const $sec = document.createElement('span');
+
 $counter.appendChild($hour);
 $counter.appendChild($min);
 $counter.appendChild($sec);
 
 function Counter (countTo){
 
-  let interval = setInterval(() => {
+  const interval = setInterval(() => {
 
-    let h = parseInt(countTo / 3600);
-    let m = parseInt(countTo / 60);
-    let s =  parseInt(countTo % 60);
+    let h = countTo / 3600;
+    let m = countTo / 60;
+    let s = countTo % 60;
 
     $hour.innerHTML = h.toFixed() + ':';
     $min.innerHTML = m.toFixed() + ':';
@@ -23,6 +24,7 @@ function Counter (countTo){
     if(countTo < 0){
       Stop(interval);
     }
+
   }, 1000);
 
 }
