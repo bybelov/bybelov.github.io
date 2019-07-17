@@ -1,26 +1,28 @@
 import React, {Component} from 'react';
 import './App.css';
 import Car from './Car/Car';
+import ErrorBoundary from './ErrorBoundary/ErrorBoundary';
+import Counter from './Counter/counter';
+
+export const ClickedContext = React.createContext(false)
 
 class App extends Component {
 
-  state = {
-    cars: [
-      {
-        name: 'Ford',
-        year: 2018
-      },
-      {
-        name: 'Mazda',
-        year: 2010
-      },
-      {
-        name: 'BMW',
-        year: 2010
-      }
-    ],
-    pageTitle: 'React components',
-    showCars: false
+  constructor(props) {
+
+    console.log('app constructor');
+    
+    super(props)
+    this.state = {
+      clicked: false,
+      cars: [
+        { name: 'Ford', year: 2018 },
+        { name: 'Mazda', year: 2010 },
+        { name: 'BMW', year: 2010 }
+      ],
+      pageTitle: 'React components',
+      showCars: false
+    }
   }
 
   onChangeName(name, index) {
@@ -61,7 +63,19 @@ class App extends Component {
     })
   }
 
+  componentWillMount(){
+    console.log('app componentWillMount');
+  }
+
+  componentDidMount() {
+    console.log('app componentDidMount');
+  }
+
+
   render(){
+
+    console.log('app render');
+    
 
     // const cars = this.state.cars
 
@@ -70,13 +84,16 @@ class App extends Component {
     if (this.state.showCars){
       cars = this.state.cars.map((car, i) => {
         return (
-          <Car 
-            key={i}
-            name={car.name}
-            year={car.year}
-            onDelete={this.deleteHandler.bind(this, i)}
-            onChangeName={(event) => this.onChangeName(event.target.value, i)}
-          />
+
+          <ErrorBoundary key={i}>
+            <Car 
+              index={i}
+              name={car.name}
+              year={car.year}
+              onDelete={this.deleteHandler.bind(this, i)}
+              onChangeName={(event) => this.onChangeName(event.target.value, i)}
+            />
+          </ErrorBoundary>
         )
       })
     }
@@ -84,20 +101,32 @@ class App extends Component {
     return (
       <div className="App">
 
-        <h1>{this.state.pageTitle}</h1>
+        {/* <h1>{this.state.pageTitle}</h1> */}
+        <h1>{this.props.title}</h1>
 
-        <input type="text" onChange={this.handleInput}/>
+        <ClickedContext.Provider value={this.state.clicked}>
+          <Counter />
+        </ClickedContext.Provider>
+        
 
-        <button onClick={this.toggleCarsHandle}>
-          Toggle cars
-        </button>
-        <div style={{
-          width: 400,
-          margin: 'auto',
-          paddingTop: 20
-        }}>
-          { cars }
+        <div style={{ marginTop: 20 + 'px' }}>
+          <input type="text" onChange={this.handleInput}/>
+
+          <button onClick={this.toggleCarsHandle}>
+            Toggle cars
+          </button>
+
+          <button onClick={ () => this.setState({ clicked: true }) }>Changed clicked</button>
+
+          <div style={{
+            width: 400,
+            margin: 'auto',
+            paddingTop: 20
+          }}>
+            { cars }
+          </div>
         </div>
+
       </div>
     )
   }
