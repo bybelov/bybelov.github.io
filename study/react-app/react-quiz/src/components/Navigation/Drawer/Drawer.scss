@@ -28,7 +28,11 @@
         position: relative;
         padding: 0 20px 10px 20px;
         transition: opacity .3s;
-        &.active,
+        &.active{
+          font-weight: bold;
+          color: rgb(0, 41, 153);
+          opacity: 1;
+        }
         &:hover{
           opacity: .7;
         }
