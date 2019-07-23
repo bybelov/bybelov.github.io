@@ -104,7 +104,16 @@ class Quiz extends Component {
     })
   }
 
+  goToHomePage = () => {
+    this.props.history.push({
+      pathname: '/'
+    })
+  }
+
   render(){
+
+    console.log(this.props);
+
     return (
       <div className={classes.Quiz}>
         <div className={classes.QuizWrapper}>
@@ -125,6 +134,9 @@ class Quiz extends Component {
                 state={this.state.answerState}
               />
           }
+          <br/>
+          <br/>
+          <button onClick={this.goToHomePage}>На главную страницу</button>
 
         </div>
       </div>

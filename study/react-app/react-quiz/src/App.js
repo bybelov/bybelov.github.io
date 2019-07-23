@@ -1,15 +1,23 @@
 import React, {Component} from 'react'
+import { Route, Switch } from 'react-router-dom'
 import Layout from './hoc/Layout/Layout'
+import Auth from './containers/Auth/Auth'
 import Quiz from './containers/Quiz/Quiz'
-import { Route } from 'react-router-dom'
+import QuizList from './containers/QuizList/QuizList'
+import QuizCreator from './containers/QuizCreator/QuizCreator'
 
 class App extends Component {
   render() {
     return (
       <Layout>
-        <Route path="/" render={ ()=> (<h1>Home page</h1>) } exact />
-        <Route path="/quiz" component={Quiz} />
-        <Route path="/about" render={ ()=> (<h1>About page</h1>) } />
+        <Switch>
+          <Route path="/auth" component={Auth} />
+          <Route path="/quiz-creator" component={QuizCreator} />
+          <Route path="/quiz/:id" component={Quiz} />
+          <Route path="/" component={QuizList} />
+          <Route render={ () => <h1>404 error not found</h1>} />
+        </Switch>
+
       </Layout>
     )
   }

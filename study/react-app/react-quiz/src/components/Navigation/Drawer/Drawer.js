@@ -6,32 +6,40 @@ import {NavLink} from 'react-router-dom'
 const links = [
   {
     url: '/',
-    title: 'Home'
+    title: 'Список тестов',
+    exact: true
   },
   {
-    url: '/about',
-    title: 'About'
+    url: '/auth',
+    title: 'Авторизация',
+    exact: false
   },
   {
-    url: '/quiz',
-    title: 'Quiz'
+    url: '/quiz-creator',
+    title: 'Создать тест',
+    exact: false
   }
 ]
 
 class Drawer extends Component {
 
+  clickHandler = () => {
+    this.props.onClosed()
+  }
+
   renderLinks() {
     return links.map((link, index) => {
       return(
         <li key={index}>
-          <NavLink 
+          <NavLink
             to={{
               pathname: link.url,
               // search: '',
               // hash: ''
             }}
             activeClassName={classes.active}
-            exact
+            exact={link.exact}
+            onClick={this.clickHandler}
           >
             {link.title}
           </NavLink>
