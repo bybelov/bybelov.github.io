@@ -24,9 +24,7 @@ class QuizList extends Component {
   }
 
   componentDidMount (){
-    // axios.get('https://react-quiz-7a01f.firebaseio.com/quiz.json').then(response => {
-    //   console.log(response); 
-    // })
+
   }
 
   render() {
