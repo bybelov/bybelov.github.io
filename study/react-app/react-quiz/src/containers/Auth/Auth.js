@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import classes from './Auth.scss'
 import Button from './../../components/UI/Button/Button'
 import Input from '../../components/UI/Input/Input'
-import is  from 'is_js'
+import is from 'is_js'
 import {connect} from 'react-redux'
 import {auth} from '../../store/actions/auth'
 

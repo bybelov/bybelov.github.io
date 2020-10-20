@@ -1,3 +1,5 @@
+@import '../../../variables.scss';
+
 .Button{
   display: inline-block;
   padding: 8px 16px;
@@ -30,7 +32,7 @@
   color: #fff;
 }
 .success{
-  background: rgba(161,240,69, 1);
+  background: $success;
   color: #333;
 }
 .primary{
