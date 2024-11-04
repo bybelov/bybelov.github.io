@@ -2,3 +2,5 @@ softlab/node_modules/**/*.*
 softlab/node_modules/
 study/blog/node_modules/**/*.*
 study/blog/node_modules/
+.DS_Store
+.DS_Store?
